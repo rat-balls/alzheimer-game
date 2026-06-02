@@ -40,8 +40,8 @@ func throw_object() -> void:
             
 func drop_object() -> void:
     held_object.gravity_scale = 1.0
-    held_object.angular_damp = 0.0
-    held_object.linear_damp = 0.0
+    held_object.angular_damp = 0.05
+    held_object.linear_damp = 0.05
     held_object = null
     
 func try_grab_object() -> void:
