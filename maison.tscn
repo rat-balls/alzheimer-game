@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dgbygy4ej7eiu"]
+
+[ext_resource type="PackedScene" uid="uid://d1w34qikii2qf" path="res://Scenes/Home/Maison.glb" id="1_5ne08"]
+
+[node name="Maison" unique_id=1782801759 instance=ExtResource("1_5ne08")]
+
+[node name="House_Demo_001" parent="." index="0" unique_id=739142810]
+visible = false
+
+[node name="House_Demo_040_004" parent="." index="32" unique_id=447057984]
+visible = false
