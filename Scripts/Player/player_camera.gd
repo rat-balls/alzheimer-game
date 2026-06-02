@@ -7,6 +7,7 @@ const HOLD_FORCE = 15.0
 const THROW_FORCE = 6.0
 
 var player: CharacterBody3D
+var valid_hold_target: RigidBody3D = null
 var held_object: RigidBody3D = null
 
 func _ready() -> void:
@@ -43,26 +44,34 @@ func drop_object() -> void:
 	held_object.angular_damp = 0.0
 	held_object.linear_damp = 0.0
 	held_object = null
-	
-func try_grab_object() -> void:
+
+func find_valid_grab_target() -> void:
 	var space_state = get_world_3d().direct_space_state
 	var from = global_position
 	var to = global_position + -global_transform.basis.z * INTERACT_DISTANCE
 	var query = PhysicsRayQueryParameters3D.create(from, to)
 	var result = space_state.intersect_ray(query)
 	if result.is_empty():
+		valid_hold_target = null
 		return
-	var obj = result["collider"]
-	print("name:", obj.name, "type:",obj.get_class())
-	if obj is RigidBody3D and obj.is_in_group("interactable"):
-		held_object = obj
+	
+	if result["collider"] is RigidBody3D and result["collider"].is_in_group("interactable"):
+		valid_hold_target = result["collider"]
+	else:
+		valid_hold_target = null
+
+func try_grab_object() -> void:
+	if valid_hold_target != null:
+		print("name:", valid_hold_target.name, "type:",valid_hold_target.get_class())
+		held_object = valid_hold_target
 		held_object.gravity_scale = 0.0
 		held_object.linear_damp = 6.0
 		held_object.angular_damp = 6.0
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	find_valid_grab_target()
+
 func _physics_process(delta: float) -> void:
 	if held_object:
 		var taget_position = global_position + -global_transform.basis.z * HOLD_DISTANCE
