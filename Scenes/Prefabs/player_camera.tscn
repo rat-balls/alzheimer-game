@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dmhgiml00bguu"]
+
+[ext_resource type="Script" uid="uid://b41nd265m0muj" path="res://Scripts/Player/player_camera.gd" id="1_d00q6"]
+
+[node name="PlayerCamera" type="Camera3D" unique_id=537137786]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+script = ExtResource("1_d00q6")
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=1783065532]

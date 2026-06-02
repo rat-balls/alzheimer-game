@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bfaou6tdfmf3d"]
+
+[ext_resource type="Script" uid="uid://dekj0xntg4pbx" path="res://Scripts/Player/player_movement.gd" id="1_pv3ct"]
+[ext_resource type="PackedScene" uid="uid://dmhgiml00bguu" path="res://Scenes/Prefabs/player_camera.tscn" id="2_pv3ct"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_63f0y"]
+radius = 0.001
+height = 3.0
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_63f0y"]
+radius = 0.25
+height = 3.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_f7424"]
+
+[node name="Player" type="CharacterBody3D" unique_id=812184645 groups=["Player"]]
+script = ExtResource("1_pv3ct")
+
+[node name="PlayerColl" type="CollisionShape3D" parent="." unique_id=1342834600]
+shape = SubResource("CapsuleShape3D_63f0y")
+
+[node name="PlayerBodMesh" type="MeshInstance3D" parent="." unique_id=1166725560]
+mesh = SubResource("CapsuleMesh_63f0y")
+
+[node name="PlayerHeadMesh" type="MeshInstance3D" parent="." unique_id=2115032129]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.524355, 0)
+visible = false
+mesh = SubResource("BoxMesh_f7424")
+
+[node name="PlayerCamera" parent="." unique_id=537137786 instance=ExtResource("2_pv3ct")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0, 2.032617, 0)
