@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://dtoqgovwuhw2m" path="res://icon.svg" id="1_8v6fc"]
 [ext_resource type="PackedScene" uid="uid://hry5epxqfm8v" path="res://Scenes/Prefabs/Player/player.tscn" id="1_g0qe1"]
-[ext_resource type="Script" path="res://Scripts/Player/reticle_handler.gd" id="3_gd5k8"]
-[ext_resource type="PackedScene" path="res://maison.tscn" id="4_ducwh"]
+[ext_resource type="Script" uid="uid://dxbpv7qmp6gwn" path="res://Scripts/Player/reticle_handler.gd" id="3_gd5k8"]
+[ext_resource type="PackedScene" uid="uid://dgbygy4ej7eiu" path="res://maison.tscn" id="4_ducwh"]
 
 [sub_resource type="Environment" id="Environment_gd5k8"]
 ambient_light_color = Color(1, 0.34657717, 0.2800086, 1)
@@ -15,10 +15,12 @@ friction = 0.3
 
 [sub_resource type="BoxMesh" id="BoxMesh_rwo3f"]
 
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ducwh"]
+
 [node name="sc_game" type="Node3D" unique_id=562576744]
 
 [node name="Player" parent="." unique_id=812184645 instance=ExtResource("1_g0qe1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0862236, -0.6557621, -1.9318938)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.057529, -0.6557621, -1.8317473)
 
 [node name="Labels" type="Node3D" parent="." unique_id=894076747]
 
@@ -77,3 +79,9 @@ script = ExtResource("3_gd5k8")
 
 [node name="Maison" parent="." unique_id=1782801759 instance=ExtResource("4_ducwh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.9842327, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Maison" unique_id=1470439654]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.64933944, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Maison/StaticBody3D" unique_id=1915449303]
+shape = SubResource("WorldBoundaryShape3D_ducwh")
