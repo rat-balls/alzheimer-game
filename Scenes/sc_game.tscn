@@ -18,7 +18,7 @@ friction = 0.3
 [node name="sc_game" type="Node3D" unique_id=562576744]
 
 [node name="Player" parent="." unique_id=812184645 instance=ExtResource("1_g0qe1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4673828, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0862236, -0.6557621, -1.9318938)
 
 [node name="Labels" type="Node3D" parent="." unique_id=894076747]
 
@@ -76,3 +76,4 @@ texture = ExtResource("1_8v6fc")
 script = ExtResource("3_gd5k8")
 
 [node name="Maison" parent="." unique_id=1782801759 instance=ExtResource("4_ducwh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.9842327, 0)
