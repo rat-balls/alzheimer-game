@@ -96,6 +96,6 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	if held_object:
-		var taget_position = global_position + -global_transform.basis.z * HOLD_DISTANCE
+		var taget_position = global_position + -global_transform.basis.z * hold_distance
 		var direction = taget_position - held_object.global_position
 		held_object.linear_velocity = direction * HOLD_FORCE
