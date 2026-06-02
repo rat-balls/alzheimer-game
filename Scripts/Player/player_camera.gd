@@ -4,6 +4,7 @@ const SENSITIVITY = 0.003
 const INTERACT_DISTANCE = 5.0
 const HOLD_DISTANCE = 2.0
 const HOLD_FORCE = 15.0
+const THROW_FORCE = 6.0
 
 var player: CharacterBody3D
 var held_object: RigidBody3D = null
@@ -29,12 +30,20 @@ func _input(event: InputEvent) -> void:
             drop_object()
         else: 
             try_grab_object()
+    if event.is_action_pressed("throw") and held_object:
+        throw_object()
+        
+func throw_object() -> void:
+    var obj = held_object
+    drop_object()
+    obj.apply_central_impulse(-global_transform.basis.z * THROW_FORCE)    
             
 func drop_object() -> void:
     held_object.gravity_scale = 1.0
     held_object.angular_damp = 0.0
     held_object.linear_damp = 0.0
     held_object = null
+    
 func try_grab_object() -> void:
     var space_state = get_world_3d().direct_space_state
     var from = global_position
@@ -50,6 +59,7 @@ func try_grab_object() -> void:
         held_object.gravity_scale = 0.0
         held_object.linear_damp = 6.0
         held_object.angular_damp = 6.0
+        
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
     pass
