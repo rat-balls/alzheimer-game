@@ -1,9 +1,9 @@
-[gd_scene format=3 uid="uid://bxu1lgm37v1d4"]
+[gd_scene load_steps=9 format=3 uid="uid://bxu1lgm37v1d4"]
 
 [ext_resource type="Texture2D" uid="uid://dtoqgovwuhw2m" path="res://icon.svg" id="1_8v6fc"]
 [ext_resource type="PackedScene" uid="uid://hry5epxqfm8v" path="res://Scenes/Prefabs/Player/player.tscn" id="1_g0qe1"]
-[ext_resource type="Script" path="res://Scripts/Player/reticle_handler.gd" id="3_gd5k8"]
-[ext_resource type="PackedScene" path="res://maison.tscn" id="4_ducwh"]
+[ext_resource type="Script" uid="uid://dxbpv7qmp6gwn" path="res://Scripts/Player/reticle_handler.gd" id="3_gd5k8"]
+[ext_resource type="PackedScene" uid="uid://dgbygy4ej7eiu" path="res://maison.tscn" id="4_ducwh"]
 
 [sub_resource type="Environment" id="Environment_gd5k8"]
 ambient_light_color = Color(1, 0.34657717, 0.2800086, 1)
@@ -15,41 +15,41 @@ friction = 0.3
 
 [sub_resource type="BoxMesh" id="BoxMesh_rwo3f"]
 
-[node name="sc_game" type="Node3D" unique_id=562576744]
+[node name="sc_game" type="Node3D"]
 
-[node name="Player" parent="." unique_id=812184645 instance=ExtResource("1_g0qe1")]
+[node name="Player" parent="." instance=ExtResource("1_g0qe1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4673828, 0)
 
-[node name="Labels" type="Node3D" parent="." unique_id=894076747]
+[node name="Labels" type="Node3D" parent="."]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=471156657]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_gd5k8")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2047103638]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.9756916, 0.16495071, -0.14428143, 0, 0.65837425, 0.75269073, 0.21914807, -0.734394, 0.6423702, -12.610869, 14.710951, 8.609891)
 light_color = Color(1, 1, 0.99215686, 1)
 light_energy = 3.376
 light_indirect_energy = 3.218
 
-[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="." unique_id=1437523994]
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.75219643, -0.49597725, 0.43382838, 3.776458e-08, 0.6583742, 0.75269085, -0.65893906, 0.5661713, -0.49522662, -12.610869, 14.710951, 8.609891)
 light_color = Color(1, 0.84705883, 0.9137255, 1)
 light_energy = 0.846
 light_indirect_energy = 3.218
 
-[node name="Cube" type="RigidBody3D" parent="." unique_id=1926856492 groups=["interactable"]]
+[node name="Cube" type="RigidBody3D" parent="." groups=["interactable"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1733419, 1.9465607)
 physics_material_override = SubResource("PhysicsMaterial_gd5k8")
 linear_damp = 0.1
 angular_damp = 0.1
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube" unique_id=2044832357]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube"]
 shape = SubResource("BoxShape3D_gd5k8")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Cube" unique_id=1115518746]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cube"]
 mesh = SubResource("BoxMesh_rwo3f")
 
-[node name="UserInterface" type="Control" parent="." unique_id=250221643]
+[node name="UserInterface" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -57,7 +57,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Reticle" type="TextureRect" parent="UserInterface" unique_id=130276597]
+[node name="Reticle" type="TextureRect" parent="UserInterface"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -75,4 +75,7 @@ pivot_offset = Vector2(65, 70)
 texture = ExtResource("1_8v6fc")
 script = ExtResource("3_gd5k8")
 
-[node name="Maison" parent="." unique_id=1782801759 instance=ExtResource("4_ducwh")]
+[node name="Maison" parent="." instance=ExtResource("4_ducwh")]
+
+[editable path="Maison"]
+[editable path="Maison/Door"]
