@@ -102,8 +102,9 @@ size = Vector3(0.006713867, 5.0091553, 0.001)
 transform = Transform3D(-1.6292068e-07, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 1.6292068e-07, 7.12149e-15, 0, 5.333437, 0.00826931)
 collision_layer = 5
 collision_mask = 2
-axis_lock_angular_x = true
-axis_lock_angular_z = true
+mass = 5.0
+gravity_scale = 0.0
+linear_damp = 100.0
 
 [node name="Door_hitbox" type="CollisionShape3D" parent="Door_base" unique_id=288375928]
 transform = Transform3D(1, 0, 0, 0, 1, 1.1602379e-21, 0, 1.1602379e-21, 1, 0.12121582, 1.0007759, -2.8038921)
@@ -141,7 +142,6 @@ axis_lock_linear_x = true
 axis_lock_linear_y = true
 axis_lock_linear_z = true
 axis_lock_angular_x = true
-axis_lock_angular_y = true
 axis_lock_angular_z = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HingeAxis" unique_id=1808811703]

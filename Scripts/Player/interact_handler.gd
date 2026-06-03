@@ -11,7 +11,8 @@ const SCROLL_SPEED = 0.3
 var player: CharacterBody3D
 var camera: Camera3D
 
-var hold_distance: float = 2.0
+var default_hold_distance: float = 2.0
+var hold_distance: float = default_hold_distance
 var valid_hold_target: RigidBody3D = null
 var valid_interact_target: Area3D = null
 var held_object: RigidBody3D = null
@@ -100,6 +101,7 @@ func try_interact_object() -> void:
 		interact()
 
 func grab() -> void:
+	hold_distance = default_hold_distance
 	print("name:", valid_hold_target.name, "type:", valid_hold_target.get_class())
 	held_object = valid_hold_target
 	held_object.gravity_scale = 0.0
