@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bxu1lgm37v1d4"]
+[gd_scene load_steps=10 format=3 uid="uid://bxu1lgm37v1d4"]
 
 [ext_resource type="Texture2D" uid="uid://dtoqgovwuhw2m" path="res://icon.svg" id="1_8v6fc"]
 [ext_resource type="PackedScene" uid="uid://hry5epxqfm8v" path="res://Scenes/Prefabs/Player/player.tscn" id="1_g0qe1"]
@@ -17,9 +17,9 @@ friction = 0.3
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ducwh"]
 
-[node name="sc_game" type="Node3D" unique_id=562576744]
+[node name="sc_game" type="Node3D"]
 
-[node name="Player" parent="." unique_id=812184645 instance=ExtResource("1_g0qe1")]
+[node name="Player" parent="." instance=ExtResource("1_g0qe1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.057529, -0.6557621, -1.8317473)
 
 [node name="Labels" type="Node3D" parent="."]
@@ -77,11 +77,11 @@ pivot_offset = Vector2(65, 70)
 texture = ExtResource("1_8v6fc")
 script = ExtResource("3_gd5k8")
 
-[node name="Maison" parent="." unique_id=1782801759 instance=ExtResource("4_ducwh")]
+[node name="Maison" parent="." instance=ExtResource("4_ducwh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.9842327, 0)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Maison" unique_id=1470439654]
+[node name="StaticBody3D" type="StaticBody3D" parent="Maison"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.64933944, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Maison/StaticBody3D" unique_id=1915449303]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Maison/StaticBody3D"]
 shape = SubResource("WorldBoundaryShape3D_ducwh")

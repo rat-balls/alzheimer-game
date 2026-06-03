@@ -19,6 +19,8 @@ config/icon="res://icon.svg"
 
 interactable=""
 InteractHandler=""
+door_handle=""
+door=""
 
 [input]
 

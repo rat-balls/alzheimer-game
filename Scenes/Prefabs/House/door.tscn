@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=4 uid="uid://db6bav2exlwp6"]
+[gd_scene load_steps=13 format=4 uid="uid://db6bav2exlwp6"]
 
 [ext_resource type="Texture2D" uid="uid://f8mmw3nx8a2e" path="res://Scenes/Home/Maison_Image_0_56.png" id="1_3c8rj"]
+[ext_resource type="Script" uid="uid://c63h00x3cesng" path="res://Scripts/Door/door.gd" id="1_smoqx"]
 [ext_resource type="Texture2D" uid="uid://b4rgx4fer6buk" path="res://Scenes/Home/Maison_Image_1_57.png" id="2_nxy12"]
 [ext_resource type="Texture2D" uid="uid://5sygtpgiblio" path="res://Scenes/Home/Maison_Image_2_55.png" id="3_wne60"]
 
@@ -90,12 +91,13 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_skig8")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x2i7t"]
-size = Vector3(0.56188476, 0.55202687, 0.17404938)
+size = Vector3(0.7507007, 0.55202687, 0.17404938)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_smoqx"]
 size = Vector3(0.006713867, 5.0091553, 0.001)
 
 [node name="Door" type="Node3D"]
+script = ExtResource("1_smoqx")
 
 [node name="Door_base" type="RigidBody3D" parent="."]
 transform = Transform3D(-1.6292068e-07, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 1.6292068e-07, 7.12149e-15, 0, 5.333437, 0.00826931)
@@ -107,7 +109,7 @@ shape = SubResource("BoxShape3D_72j4c")
 [node name="Door_sprite" type="MeshInstance3D" parent="Door_base"]
 mesh = SubResource("ArrayMesh_yr1jr")
 
-[node name="Handle_base" type="Area3D" parent="Door_base"]
+[node name="Handle_base" type="RigidBody3D" parent="Door_base"]
 transform = Transform3D(1, 0, 0, 0, 1, 1.1602379e-21, 0, 1.1602379e-21, 1, 0.25903514, 1.7846471, -2.6874068)
 
 [node name="Handle_sprite" type="MeshInstance3D" parent="Door_base/Handle_base"]
@@ -115,12 +117,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 1.1602379e-21, 0, 1.1602379e-21, 1, -0.00
 mesh = SubResource("ArrayMesh_mhitx")
 
 [node name="Handle_hitbox" type="CollisionShape3D" parent="Door_base/Handle_base"]
-transform = Transform3D(1, 0, 0, 0, 1, 1.1602379e-21, 0, 1.1602379e-21, 1, -0.14435059, -0.19539726, -0.0010948181)
+transform = Transform3D(1, 0, 0, 0, 1, 1.1602379e-21, 0, 1.1602379e-21, 1, -0.12446901, -0.19539726, -0.0010948181)
 shape = SubResource("BoxShape3D_x2i7t")
 
 [node name="HingeJoint3D" type="HingeJoint3D" parent="."]
+transform = Transform3D(1.3113416e-07, 1, 4.371139e-08, 3.821371e-15, 4.371139e-08, -1, -1, 1.3113416e-07, 1.9106855e-15, 0, 0, 0)
 node_a = NodePath("../Door_base")
 node_b = NodePath("../StaticBody3D")
+angular_limit/enable = true
+angular_limit/upper = 0.0
+angular_limit/lower = -2.6179938
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 

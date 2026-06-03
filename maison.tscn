@@ -3817,8 +3817,6 @@ mesh = SubResource("ArrayMesh_jc448")
 [node name="Door" parent="." instance=ExtResource("55_r0yx4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5277977, 0.63114643, -2.0423129)
 
-[node name="Door_base" parent="Door" index="0" groups=["interactable"]]
-
 [node name="Door_handle_001" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1.2885918e-07, -1.0809492, 1.5361214e-14, 6.442959e-08, 3.840304e-15, 1.0809492, -1.0809491, 1.288592e-07, 6.44296e-08, 4.2523956, 3.1766264, 3.6605098)
 mesh = SubResource("ArrayMesh_adlsj")
@@ -3836,5 +3834,3 @@ transform = Transform3D(-1.2885918e-07, -1.0809492, 1.5361214e-14, 6.442959e-08,
 mesh = SubResource("ArrayMesh_4c5vv")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-
-[editable path="Door"]

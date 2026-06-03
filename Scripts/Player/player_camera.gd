@@ -76,9 +76,9 @@ func find_valid_grab_target() -> void:
 	if result.is_empty():
 		valid_hold_target = null
 		return
-	
-	if result["collider"] is RigidBody3D and result["collider"].is_in_group("interactable"):
-		valid_hold_target = result["collider"]
+	var obj = result["collider"]
+	if obj is RigidBody3D and obj.is_in_group("interactable"):
+		valid_hold_target = obj
 	else:
 		valid_hold_target = null
 
