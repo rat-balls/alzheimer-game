@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://db6bav2exlwp6"]
+[gd_scene format=4 uid="uid://db6bav2exlwp6"]
 
 [ext_resource type="Texture2D" uid="uid://f8mmw3nx8a2e" path="res://Scenes/Home/Maison_Image_0_56.png" id="1_3c8rj"]
 [ext_resource type="Script" uid="uid://c63h00x3cesng" path="res://Scripts/Door/door.gd" id="1_smoqx"]
@@ -96,40 +96,42 @@ size = Vector3(0.7507007, 0.55202687, 0.17404938)
 [sub_resource type="BoxShape3D" id="BoxShape3D_smoqx"]
 size = Vector3(0.006713867, 5.0091553, 0.001)
 
-[node name="Door" type="Node3D"]
+[node name="Door" type="Node3D" unique_id=580823533]
 script = ExtResource("1_smoqx")
 
-[node name="Door_base" type="RigidBody3D" parent="."]
+[node name="Door_base" type="RigidBody3D" parent="." unique_id=1105293989 groups=["interactable"]]
 transform = Transform3D(-1.6292068e-07, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 1.6292068e-07, 7.12149e-15, 0, 5.333437, 0.00826931)
 
-[node name="Door_hitbox" type="CollisionShape3D" parent="Door_base"]
+[node name="Door_hitbox" type="CollisionShape3D" parent="Door_base" unique_id=288375928]
 transform = Transform3D(1, 0, 0, 0, 1, 1.1602379e-21, 0, 1.1602379e-21, 1, 0.12121582, 1.0007759, -2.8038921)
 shape = SubResource("BoxShape3D_72j4c")
 
-[node name="Door_sprite" type="MeshInstance3D" parent="Door_base"]
+[node name="Door_sprite" type="MeshInstance3D" parent="Door_base" unique_id=419894588]
 mesh = SubResource("ArrayMesh_yr1jr")
 
-[node name="Handle_base" type="RigidBody3D" parent="Door_base"]
+[node name="Handle_base" type="Area3D" parent="Door_base" unique_id=874400402 groups=["door_handle", "interactable"]]
 transform = Transform3D(1, 0, 0, 0, 1, 1.1602379e-21, 0, 1.1602379e-21, 1, 0.25903514, 1.7846471, -2.6874068)
 
-[node name="Handle_sprite" type="MeshInstance3D" parent="Door_base/Handle_base"]
+[node name="Handle_sprite" type="MeshInstance3D" parent="Door_base/Handle_base" unique_id=965359136]
 transform = Transform3D(1, 0, 0, 0, 1, 1.1602379e-21, 0, 1.1602379e-21, 1, -0.0013039708, 0, 0)
 mesh = SubResource("ArrayMesh_mhitx")
 
-[node name="Handle_hitbox" type="CollisionShape3D" parent="Door_base/Handle_base"]
+[node name="Handle_hitbox" type="CollisionShape3D" parent="Door_base/Handle_base" unique_id=1888412240]
 transform = Transform3D(1, 0, 0, 0, 1, 1.1602379e-21, 0, 1.1602379e-21, 1, -0.12446901, -0.19539726, -0.0010948181)
 shape = SubResource("BoxShape3D_x2i7t")
 
-[node name="HingeJoint3D" type="HingeJoint3D" parent="."]
+[node name="HingeJoint3D" type="HingeJoint3D" parent="." unique_id=1584299198]
 transform = Transform3D(1.3113416e-07, 1, 4.371139e-08, 3.821371e-15, 4.371139e-08, -1, -1, 1.3113416e-07, 1.9106855e-15, 0, 0, 0)
 node_a = NodePath("../Door_base")
-node_b = NodePath("../StaticBody3D")
+node_b = NodePath("../HingeAxis")
 angular_limit/enable = true
 angular_limit/upper = 0.0
-angular_limit/lower = -2.6179938
+angular_limit/lower = 0.0
+angular_limit/bias = 0.99
+angular_limit/relaxation = 0.01
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="HingeAxis" type="StaticBody3D" parent="." unique_id=177839828]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HingeAxis" unique_id=1808811703]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.523, 0.007)
 shape = SubResource("BoxShape3D_smoqx")

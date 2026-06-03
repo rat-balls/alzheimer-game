@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dekj0xntg4pbx" path="res://Scripts/Player/player_movement.gd" id="1_pv3ct"]
 [ext_resource type="PackedScene" uid="uid://dmhgiml00bguu" path="res://Scenes/Prefabs/Player/player_camera.tscn" id="2_pv3ct"]
+[ext_resource type="Script" uid="uid://dpe4d5p7xlpki" path="res://Scripts/Player/interact_handler.gd" id="3_o22ie"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_63f0y"]
 radius = 0.001
@@ -27,5 +28,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.524355, 0)
 visible = false
 mesh = SubResource("BoxMesh_f7424")
 
-[node name="PlayerCamera" parent="." unique_id=537137786 groups=["InteractHandler"] instance=ExtResource("2_pv3ct")]
+[node name="PlayerCamera" parent="." unique_id=537137786 groups=["PlayerCamera"] instance=ExtResource("2_pv3ct")]
 transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0, 2.032617, 0)
+
+[node name="InteractHandler" type="Node3D" parent="PlayerCamera" unique_id=1640480601 groups=["InteractHandler"]]
+script = ExtResource("3_o22ie")
