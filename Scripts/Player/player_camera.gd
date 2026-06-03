@@ -2,7 +2,7 @@ extends Camera3D
 
 const SENSITIVITY = 0.003
 
-var interact_handler: Node
+var interact_handler: Node3D
 var player: CharacterBody3D
 
 var mouse_visible: bool = false

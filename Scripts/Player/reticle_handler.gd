@@ -10,7 +10,7 @@ const RETICLE_ICON = preload("uid://cemueeiiwuruf")
 func _ready() -> void:
 	interact_handler = get_tree().get_first_node_in_group("InteractHandler")
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if(interact_handler):
 		if(interact_handler.held_object != null):
 			texture = HOLD_HAND_ICON
