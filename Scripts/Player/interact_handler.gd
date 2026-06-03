@@ -13,6 +13,7 @@ var camera: Camera3D
 
 var hold_distance: float = 2.0
 var valid_hold_target: RigidBody3D = null
+var valid_interact_target: Area3D = null
 var held_object: RigidBody3D = null
 var is_rotating_object: bool = false
 
@@ -20,25 +21,36 @@ func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player")
 	camera = get_tree().get_first_node_in_group("PlayerCamera")
 
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	find_valid_grab_target()
+
+func _physics_process(_delta: float) -> void:
+	if held_object:
+		var target_position = global_position + -global_transform.basis.z * hold_distance
+		var direction = target_position - held_object.global_position
+		held_object.linear_velocity = direction * HOLD_FORCE
+
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion and !camera.mouse_visible and held_object and is_rotating_object:
-		rotate_held_object(event.relative)
-	
-	if event.is_action_pressed("Interact"):
-		if held_object:
-			drop_object()
-		else: 
-			try_grab_object()
-	elif event.is_action_pressed("Throw") and held_object:
-		throw_object()
-	elif event.is_action_pressed("RotateObject") and held_object:
-		is_rotating_object = true
-	elif event.is_action_released("RotateObject"):
-		is_rotating_object = false
-	elif event.is_action_pressed("WHEEL_UP"):
-		hold_distance = clamp(hold_distance + SCROLL_SPEED,MIN_HOLD_DISTANCE,MAX_HOLD_DISTANCE)
-	elif event.is_action_pressed("WHEEL_DOWN"):
-		hold_distance = clamp(hold_distance - SCROLL_SPEED,MIN_HOLD_DISTANCE,MAX_HOLD_DISTANCE)
+	if !camera.mouse_visible:
+		if event is InputEventMouseMotion and held_object and is_rotating_object:
+			rotate_held_object(event.relative)
+		
+		if event.is_action_pressed("Interact"):
+			if held_object:
+				drop_object()
+			else: 
+				try_interact_object()
+		elif event.is_action_pressed("Throw") and held_object:
+			throw_object()
+		elif event.is_action_pressed("RotateObject") and held_object and held_object.is_in_group("Rotatable"):
+			is_rotating_object = true
+		elif event.is_action_released("RotateObject"):
+			is_rotating_object = false
+		elif event.is_action_pressed("WHEEL_UP"):
+			hold_distance = clamp(hold_distance + SCROLL_SPEED,MIN_HOLD_DISTANCE,MAX_HOLD_DISTANCE)
+		elif event.is_action_pressed("WHEEL_DOWN"):
+			hold_distance = clamp(hold_distance - SCROLL_SPEED,MIN_HOLD_DISTANCE,MAX_HOLD_DISTANCE)
 
 func rotate_held_object(mouse_delta: Vector2) -> void:
 	held_object.angular_velocity = Vector3.ZERO
@@ -59,34 +71,41 @@ func drop_object() -> void:
 	held_object = null
 
 func find_valid_grab_target() -> void:
-	var space_state = get_world_3d().direct_space_state
+	var space_state: PhysicsDirectSpaceState3D = get_world_3d().direct_space_state
 	var from = global_position
 	var to = global_position + -global_transform.basis.z * INTERACT_DISTANCE
-	var query = PhysicsRayQueryParameters3D.create(from, to)
+	var query: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.create(from, to)
+	query.collide_with_areas = true
 	var result = space_state.intersect_ray(query)
 	if result.is_empty():
 		valid_hold_target = null
+		valid_interact_target = null
 		return
+	
 	var obj = result["collider"]
-	if obj is RigidBody3D and obj.is_in_group("interactable"):
+	if obj is Area3D:
+		valid_interact_target = obj
+		valid_hold_target = null
+	elif obj is RigidBody3D:
 		valid_hold_target = obj
+		valid_interact_target = null
 	else:
 		valid_hold_target = null
+		valid_interact_target = null
 
-func try_grab_object() -> void:
+func try_interact_object() -> void:
 	if valid_hold_target != null:
-		print("name:", valid_hold_target.name, "type:",valid_hold_target.get_class())
-		held_object = valid_hold_target
-		held_object.gravity_scale = 0.0
-		held_object.linear_damp = 6.0
-		held_object.angular_damp = 6.0
-		
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	find_valid_grab_target()
+		grab()
+	if valid_interact_target != null:
+		interact()
 
-func _physics_process(_delta: float) -> void:
-	if held_object:
-		var target_position = global_position + -global_transform.basis.z * hold_distance
-		var direction = target_position - held_object.global_position
-		held_object.linear_velocity = direction * HOLD_FORCE
+func grab() -> void:
+	print("name:", valid_hold_target.name, "type:", valid_hold_target.get_class())
+	held_object = valid_hold_target
+	held_object.gravity_scale = 0.0
+	held_object.linear_damp = 6.0
+	held_object.angular_damp = 6.0
+
+func interact() -> void:
+	print("name:", valid_interact_target.name, "type:", valid_interact_target.get_class())
+	valid_interact_target.interact()

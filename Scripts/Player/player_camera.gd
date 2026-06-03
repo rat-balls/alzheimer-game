@@ -20,12 +20,13 @@ func _input(event: InputEvent) -> void:
 	#Prevent camera from rotating in menu
 	if event is InputEventMouseMotion and !mouse_visible:
 		if !interact_handler.is_rotating_object:
-			rotation.x -= event.relative.y * SENSITIVITY
-			#Prevent camera from rotating verticaly
-			rotation.x = clamp(rotation.x, deg_to_rad(-80), deg_to_rad(80)) 
-			player.rotation.y -= event.relative.x * SENSITIVITY
+			handle_rot_camera(event.relative)
 
-	
+func handle_rot_camera(mouse_motion: Vector2):
+	rotation.x -= mouse_motion.y * SENSITIVITY
+	#Prevent camera from rotating verticaly
+	rotation.x = clamp(rotation.x, deg_to_rad(-80), deg_to_rad(80)) 
+	player.rotation.y -= mouse_motion.x * SENSITIVITY
 
 func handle_mouse_visible():
 	if(!mouse_visible):

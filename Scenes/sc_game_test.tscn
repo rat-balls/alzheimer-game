@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://dqmeb3lfbcatj"]
 
-[ext_resource type="PackedScene" path="res://Scenes/Prefabs/player.tscn" id="1_8lr3n"]
 [ext_resource type="Texture2D" uid="uid://dtoqgovwuhw2m" path="res://icon.svg" id="2_ckqhn"]
 [ext_resource type="Script" uid="uid://dxbpv7qmp6gwn" path="res://Scripts/Player/reticle_handler.gd" id="3_p03dt"]
+
+[sub_resource type="Resource" id="Resource_wo1is"]
+metadata/__load_path__ = "res://Scenes/Prefabs/player.tscn"
 
 [sub_resource type="BoxMesh" id="BoxMesh_8v6fc"]
 size = Vector3(4.5, 1, 25)
@@ -90,7 +92,7 @@ friction = 0.3
 
 [node name="sc_game" type="Node3D" unique_id=562576744]
 
-[node name="Player" parent="." unique_id=812184645 instance=ExtResource("1_8lr3n")]
+[node name="Player" parent="." unique_id=812184645]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4673828, 0)
 
 [node name="Layout" type="Node3D" parent="." unique_id=225930178]
@@ -302,7 +304,7 @@ light_color = Color(1, 0.84705883, 0.9137255, 1)
 light_energy = 0.846
 light_indirect_energy = 3.218
 
-[node name="Cube" type="RigidBody3D" parent="." unique_id=1926856492 groups=["interactable"]]
+[node name="Cube" type="RigidBody3D" parent="." unique_id=1926856492]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1733419, 1.9465607)
 physics_material_override = SubResource("PhysicsMaterial_gd5k8")
 linear_damp = 0.1

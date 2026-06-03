@@ -102,8 +102,6 @@ size = Vector3(0.006713867, 5.0091553, 0.001)
 transform = Transform3D(-1.6292068e-07, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 1.6292068e-07, 7.12149e-15, 0, 5.333437, 0.00826931)
 collision_layer = 5
 collision_mask = 2
-axis_lock_angular_x = true
-axis_lock_angular_z = true
 
 [node name="Door_hitbox" type="CollisionShape3D" parent="Door_base" unique_id=288375928]
 transform = Transform3D(1, 0, 0, 0, 1, 1.1602379e-21, 0, 1.1602379e-21, 1, 0.12121582, 1.0007759, -2.8038921)
@@ -113,7 +111,7 @@ shape = SubResource("BoxShape3D_72j4c")
 mesh = SubResource("ArrayMesh_yr1jr")
 
 [node name="Handle_base" type="Area3D" parent="Door_base" unique_id=296723261]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25903514, 1.7846471, -2.6874068)
+transform = Transform3D(1, 0, 0, 0, 1, 1.1602379e-21, 0, 1.1602379e-21, 1, 0.25903514, 1.7846471, -2.6874068)
 collision_layer = 4
 collision_mask = 0
 collision_priority = 7.565
@@ -128,8 +126,8 @@ mesh = SubResource("ArrayMesh_mhitx")
 transform = Transform3D(1, 0, 0, 0, 1, 1.1602379e-21, 0, 1.1602379e-21, 1, -0.122741506, -0.19539726, -0.0010948181)
 shape = SubResource("BoxShape3D_x2i7t")
 
-[node name="DoorHingeJoint" type="HingeJoint3D" parent="." unique_id=1584299198 groups=["DoorHingeJoint"]]
-transform = Transform3D(-4.371139e-08, -0.99999994, 4.3711385e-08, 0, -4.3711385e-08, -0.99999994, 1, -4.3711385e-08, 1.9106853e-15, 0, 0, 0)
+[node name="HingeJoint3D" type="HingeJoint3D" parent="." unique_id=1584299198]
+transform = Transform3D(1.3113416e-07, 1, 4.371139e-08, 3.821371e-15, 4.371139e-08, -1, -1, 1.3113416e-07, 1.9106855e-15, 0, 0, 0)
 node_a = NodePath("../Door_base")
 node_b = NodePath("../HingeAxis")
 angular_limit/enable = true
