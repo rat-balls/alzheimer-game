@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://hry5epxqfm8v" path="res://Scenes/Prefabs/Player/player.tscn" id="1_g0qe1"]
 [ext_resource type="Script" uid="uid://dxbpv7qmp6gwn" path="res://Scripts/Player/reticle_handler.gd" id="3_gd5k8"]
 [ext_resource type="PackedScene" uid="uid://dgbygy4ej7eiu" path="res://maison.tscn" id="4_ducwh"]
+[ext_resource type="PackedScene" uid="uid://dlpx1gtgus4pi" path="res://Assets/Models/Arm/arm.glb" id="5_u45ye"]
 
 [sub_resource type="Environment" id="Environment_gd5k8"]
 ambient_light_color = Color(1, 0.34657717, 0.2800086, 1)
@@ -87,5 +88,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.64933944, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Maison/StaticBody3D" unique_id=1259411204]
 shape = SubResource("WorldBoundaryShape3D_ducwh")
+
+[node name="arm" parent="." unique_id=476277159 instance=ExtResource("5_u45ye")]
+transform = Transform3D(0.19, 0, 0, 0, 0.19, 0, 0, 0, 0.19, -28.197884, 1.8820734, 9.376135)
 
 [editable path="Maison"]
