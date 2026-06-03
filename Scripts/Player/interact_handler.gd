@@ -83,6 +83,7 @@ func drop_object() -> void:
 	if grabbed_grinder:
 		grabbed_grinder.stop_grabbing_handle()
 		grabbed_grinder = null
+		is_rotating_object = false
 		return
 
 	if held_object:
@@ -129,7 +130,6 @@ func grab() -> void:
 func interact() -> void:
 	print("name:", valid_interact_target.name, "type:", valid_interact_target.get_class())
 	if valid_interact_target.is_in_group("GrinderHandle"):
-		valid_interact_target.interact()
 		grabbed_grinder = valid_interact_target.grinder
-		return
+		is_rotating_object = true
 	valid_interact_target.interact()

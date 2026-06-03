@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://dpsgy45k84orn"]
+[gd_scene format=4 uid="uid://dpsgy45k84orn"]
 
 [ext_resource type="Texture2D" uid="uid://cgy5wbk5a4wwv" path="res://Scenes/Home/Maison_Image_3.png" id="1_jj2ob"]
 [ext_resource type="Script" uid="uid://c8hvppj11fnop" path="res://Scripts/Grinder/grinder.gd" id="1_x55j8"]
