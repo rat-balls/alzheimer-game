@@ -1,11 +1,12 @@
 extends Node3D
 
 @onready var grinder_handle: Node3D = $Grinder_handle
-
-var handle_grabbed := false
-var virtual_mouse_pos := Vector2.ZERO
-var previous_angle := 0.0
-var rotation_sensitivity := 1.0
+@onready var grinder_drawer: Node3D = $Grinder_drawer
+var handle_grabbed :bool= false
+var drawer_grabbed :bool= false
+var virtual_mouse_pos :Vector2= Vector2.ZERO
+var previous_angle :float= 0.0
+var rotation_sensitivity :float= 1.0
 
 func start_grabbing_handle() -> void:
 	handle_grabbed = true
