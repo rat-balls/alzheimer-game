@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://dekj0xntg4pbx" path="res://Scripts/Player/player_movement.gd" id="1_pv3ct"]
 [ext_resource type="PackedScene" uid="uid://dmhgiml00bguu" path="res://Scenes/Prefabs/Player/player_camera.tscn" id="2_pv3ct"]
 [ext_resource type="Script" uid="uid://dpe4d5p7xlpki" path="res://Scripts/Player/interact_handler.gd" id="3_o22ie"]
-[ext_resource type="PackedScene" uid="uid://v2mnu5rpphai" path="res://Scenes/Prefabs/Player/arm.tscn" id="4_7cae0"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_63f0y"]
 radius = 0.001
@@ -35,18 +34,3 @@ transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0, 2
 
 [node name="InteractHandler" type="Node3D" parent="PlayerCamera" unique_id=1640480601 groups=["InteractHandler"]]
 script = ExtResource("3_o22ie")
-
-[node name="arm" parent="." unique_id=1706108156 instance=ExtResource("4_7cae0")]
-transform = Transform3D(-0.4, 0, -6.039832e-08, 0, 0.4, 0, 6.039832e-08, 0, -0.4, 0, 1.6576431, 0)
-
-[node name="arm2" parent="." unique_id=1708680223 instance=ExtResource("4_7cae0")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 1.6576431, 0)
-visible = false
-
-[node name="arm3" parent="." unique_id=1672020416 instance=ExtResource("4_7cae0")]
-transform = Transform3D(-1.7484556e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.7484556e-08, 0, 1.6576431, 0)
-visible = false
-
-[node name="arm4" parent="." unique_id=176125988 instance=ExtResource("4_7cae0")]
-transform = Transform3D(-1.7484556e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.7484556e-08, 0, 1.6576431, 0)
-visible = false

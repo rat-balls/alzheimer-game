@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ujisa36bwnui"
-path="res://.godot/imported/arm.glb-720131645185045d2e21560fee2efe43.scn"
+uid="uid://dsl4nety5rhdo"
+path="res://.godot/imported/arm_placeholder.glb-ec9a90516ff664cdf62ef33db581a7d5.scn"
 
 [deps]
 
-source_file="res://Assets/Models/Arm/arm.glb"
-dest_files=["res://.godot/imported/arm.glb-720131645185045d2e21560fee2efe43.scn"]
+source_file="res://Assets/Models/Arm/arm_placeholder.glb"
+dest_files=["res://.godot/imported/arm_placeholder.glb-ec9a90516ff664cdf62ef33db581a7d5.scn"]
 
 [params]
 
