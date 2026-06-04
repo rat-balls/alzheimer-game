@@ -82,11 +82,19 @@ skin = SubResource("Skin_w3qe4")
 
 [node name="FABRIK3D" type="FABRIK3D" parent="Armature/Skeleton3D" unique_id=65880735]
 setting_count = 1
-settings/0/target_node = NodePath("")
-settings/0/root_bone_name = ""
-settings/0/root_bone = -1
-settings/0/end_bone_name = ""
-settings/0/end_bone = -1
-settings/0/joint_count = 0
+settings/0/target_node = NodePath("../../../IK_target")
+settings/0/root_bone_name = "Arm"
+settings/0/root_bone = 0
+settings/0/end_bone_name = "Wrist"
+settings/0/end_bone = 2
+settings/0/extend_end_bone = false
+settings/0/joint_count = 3
+settings/0/joints/0/rotation_axis = 3
+settings/0/joints/0/limitation = null
+settings/0/joints/1/rotation_axis = 3
+settings/0/joints/1/limitation = null
+settings/0/joints/2/rotation_axis = 3
+settings/0/joints/2/limitation = null
 
 [node name="IK_target" type="Node3D" parent="." unique_id=1690327641]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.897671, -0.07167721, -0.3631854)

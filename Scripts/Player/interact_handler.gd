@@ -10,7 +10,7 @@ const SCROLL_SPEED = 0.3
 
 var player: CharacterBody3D
 var camera: Camera3D
-var wrist_bone: BoneAttachment3D
+var ik_target: Node3D
 
 var default_hold_distance: float = 2.0
 var hold_distance: float = default_hold_distance
@@ -25,7 +25,7 @@ func _ready() -> void:
 	var scene_tree = get_tree()
 	player = scene_tree.get_first_node_in_group("Player")
 	camera = scene_tree.get_first_node_in_group("PlayerCamera")
-	wrist_bone = scene_tree.get_first_node_in_group("WristBone")
+	ik_target = scene_tree.get_first_node_in_group("IK_Target")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -35,7 +35,7 @@ func _process(_delta: float) -> void:
 func _physics_process(_delta: float) -> void:
 	if held_object:
 		var target_position = global_position + -global_transform.basis.z * hold_distance
-		wrist_bone.global_position = held_obj_grab_point
+		ik_target.global_position = held_obj_grab_point
 		var direction = target_position - held_object.global_position
 		held_object.linear_velocity = direction * HOLD_FORCE
 
@@ -98,7 +98,6 @@ func drop_object() -> void:
 		held_object.angular_damp = 0.05
 		held_object.linear_damp = 0.05
 		held_object = null
-		wrist_bone.position = Vector3(2, -2, -2)
 
 func find_valid_grab_target() -> void:
 	var space_state: PhysicsDirectSpaceState3D = get_world_3d().direct_space_state
