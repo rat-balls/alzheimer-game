@@ -1,7 +1,6 @@
 extends Node3D
 
-@onready var grinder_handle: Node3D = $Grinder_handle
-@onready var grinder_drawer: Node3D = $Grinder_drawer
+@export var grinder_handle: Node3D
 var handle_grabbed :bool= false
 var drawer_grabbed :bool= false
 var virtual_mouse_pos :Vector2= Vector2.ZERO

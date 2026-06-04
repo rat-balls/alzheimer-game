@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://2grnl4vl0826"]
+
+[ext_resource type="PackedScene" uid="uid://r0a8or7mswry" path="res://Assets/Models/House/house.glb" id="1_mebax"]
+[ext_resource type="PackedScene" uid="uid://db6bav2exlwp6" path="res://Scenes/Prefabs/House/door.tscn" id="2_e7tt3"]
+[ext_resource type="PackedScene" uid="uid://cflthynr6d1y2" path="res://Scenes/Prefabs/House/grinder2.tscn" id="3_e7tt3"]
+
+[node name="house" unique_id=1270187101 instance=ExtResource("1_mebax")]
+
+[node name="Doors" type="Node3D" parent="." index="1" unique_id=1455572208]
+
+[node name="Door" parent="Doors" index="0" unique_id=580823533 instance=ExtResource("2_e7tt3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.554628, 0.7620208, -2.0932167)
+
+[node name="Door2" parent="Doors" index="1" unique_id=287948244 instance=ExtResource("2_e7tt3")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4.1336284, 0.7620208, 3.4828997)
+
+[node name="grinder" parent="." index="2" unique_id=1062756497 instance=ExtResource("3_e7tt3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.4921455, 2.8966231, -3.5471053)
