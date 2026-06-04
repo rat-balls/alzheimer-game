@@ -23,6 +23,9 @@ friction = 0.3
 [node name="Player" parent="." unique_id=734951698 instance=ExtResource("1_g0qe1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.057529, -0.6557621, -1.8317473)
 
+[node name="IK_target" parent="Player/arm_placeholder" parent_id_path=PackedInt32Array(734951698, 2055318626) index="1" unique_id=987979574]
+transform = Transform3D(0.99999976, 0, 8.940696e-08, 0, 0.99999976, 0, -8.940696e-08, 0, 0.99999976, 8.664071, 0.17075014, -7.1556787)
+
 [node name="Labels" type="Node3D" parent="." unique_id=1342907622]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=627650426]
@@ -40,7 +43,7 @@ light_color = Color(1, 0.84705883, 0.9137255, 1)
 light_energy = 0.846
 light_indirect_energy = 3.218
 
-[node name="Cube" type="RigidBody3D" parent="." unique_id=1710714858]
+[node name="Cube" type="RigidBody3D" parent="." unique_id=1710714858 groups=["Rotatable"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1733419, 1.9465607)
 collision_layer = 5
 collision_mask = 3
@@ -100,5 +103,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.64933944, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Maison/StaticBody3D" unique_id=1259411204]
 shape = SubResource("WorldBoundaryShape3D_ducwh")
 
+[editable path="Player"]
+[editable path="Player/arm_placeholder"]
 [editable path="Maison"]
 [editable path="Maison/Grinder"]

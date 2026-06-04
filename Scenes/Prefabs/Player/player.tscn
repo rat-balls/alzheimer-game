@@ -36,10 +36,14 @@ transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0, 2
 [node name="InteractHandler" type="Node3D" parent="PlayerCamera" unique_id=1640480601 groups=["InteractHandler"]]
 script = ExtResource("3_o22ie")
 
-[node name="arm_placeholder" parent="." unique_id=2055318626 instance=ExtResource("4_7cae0")]
-transform = Transform3D(-0.2, 0, -1.7484556e-08, 0, 0.2, 0, 1.7484556e-08, 0, -0.2, -0.088801265, 1.1263506, -0.24488664)
+[node name="arm_placeholder" parent="." unique_id=984566011 instance=ExtResource("4_7cae0")]
+transform = Transform3D(-0.01736482, 0, -0.098480776, 0, 0.1, 0, 0.098480776, 0, -0.01736482, -0.38450623, 1.3073962, 0)
 
-[node name="IK_target" parent="arm_placeholder" index="1" unique_id=1690327641 groups=["IK_Target"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.897673, 0.08520985, -1.05259)
+[node name="AimModifier3D" parent="arm_placeholder/Armature/Skeleton3D" parent_id_path=PackedInt32Array(984566011, 1714011374) index="2" unique_id=1592973634]
+settings/0/forward_axis = 3
+settings/0/use_euler = false
+
+[node name="WristIK_Target" parent="arm_placeholder" index="1" unique_id=105438438]
+transform = Transform3D(0.9999999, 0, 1.4901161e-08, 0, 1, 0, -1.4901161e-08, 0, 0.9999999, 18.671104, 1.9261799, -2.1809883)
 
 [editable path="arm_placeholder"]
