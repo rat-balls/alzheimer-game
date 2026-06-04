@@ -19,6 +19,8 @@ func interact() -> void:
 
 func unlock_door() -> void:
 	door_base.rotation_degrees.y = door_closed_rotation
+	door_base.axis_lock_angular_x = false
+	door_base.axis_lock_angular_z = false
 	door_locked = false
 	door_joint.set_deferred("angular_limit/lower", deg_to_rad(-150.0))
 

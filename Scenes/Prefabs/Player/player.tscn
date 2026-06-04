@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://dmhgiml00bguu" path="res://Scenes/Prefabs/Player/player_camera.tscn" id="2_pv3ct"]
 [ext_resource type="Script" uid="uid://dpe4d5p7xlpki" path="res://Scripts/Player/interact_handler.gd" id="3_o22ie"]
 [ext_resource type="PackedScene" uid="uid://v2mnu5rpphai" path="res://Scenes/Prefabs/Player/arm.tscn" id="4_7cae0"]
-[ext_resource type="Script" uid="uid://dhtxbrg61b6qm" path="res://Scripts/Player/arm_handler.gd" id="5_wery2"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_63f0y"]
 radius = 0.001
@@ -37,27 +36,17 @@ transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0, 2
 [node name="InteractHandler" type="Node3D" parent="PlayerCamera" unique_id=1640480601 groups=["InteractHandler"]]
 script = ExtResource("3_o22ie")
 
-[node name="arm" parent="." unique_id=1473366990 instance=ExtResource("4_7cae0")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
-script = ExtResource("5_wery2")
+[node name="arm" parent="." unique_id=1706108156 instance=ExtResource("4_7cae0")]
+transform = Transform3D(-0.4, 0, -6.039832e-08, 0, 0.4, 0, 6.039832e-08, 0, -0.4, 0, 1.6576431, 0)
 
-[node name="Skeleton3D" parent="arm/arms" parent_id_path=PackedInt32Array(1473366990, 286270791) index="0" unique_id=883362974]
-transform = Transform3D(-0.9999998, 0, 8.742276e-08, 0, 0.9999998, 0, -8.742276e-08, 0, -0.9999998, -0.066020384, 6.5396256, 0)
-bones/4/position = Vector3(-0.11362947, 2.566183, -0.00619783)
-bones/5/position = Vector3(0.004634832, 0.5740605, -0.27609476)
-bones/6/rotation = Quaternion(-0.029239727, -0.020094793, 0.07211108, 0.9967654)
-bones/7/rotation = Quaternion(-0.0411792, -0.0063710245, 0.009783111, 0.9990836)
-bones/10/rotation = Quaternion(-0.04147529, -0.021051304, 0.0022018543, 0.9989153)
-bones/11/rotation = Quaternion(-0.0069454876, -0.0064766654, -0.030040294, 0.9995037)
-bones/14/rotation = Quaternion(-0.00090826117, -0.018355893, 0.11083093, 0.99366933)
-bones/15/rotation = Quaternion(-0.026190612, 0.033585776, -0.108720355, 0.99315965)
-bones/16/rotation = Quaternion(1.4901161e-08, -4.8428777e-08, -3.3527613e-08, 1)
-bones/17/position = Vector3(-0.00882633, 0.6932962, 0.24929777)
-bones/18/rotation = Quaternion(0.0050183954, -0.027478104, 0.12586884, 0.99165356)
-bones/19/rotation = Quaternion(-0.027114045, 0.00014557794, -0.07767769, 0.99660975)
-bones/21/position = Vector3(-0.07261727, 0.1688841, 0.24721679)
-bones/22/rotation = Quaternion(-0.16249216, -0.0637157, 0.028204894, 0.9842465)
-bones/23/rotation = Quaternion(-0.111162335, 0.029767856, -0.0011744248, 0.99335563)
-bones/28/rotation = Quaternion(-0.0017837059, -0.009100978, 0.010717123, 0.99989957)
+[node name="arm2" parent="." unique_id=1708680223 instance=ExtResource("4_7cae0")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 1.6576431, 0)
+visible = false
 
-[editable path="arm"]
+[node name="arm3" parent="." unique_id=1672020416 instance=ExtResource("4_7cae0")]
+transform = Transform3D(-1.7484556e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.7484556e-08, 0, 1.6576431, 0)
+visible = false
+
+[node name="arm4" parent="." unique_id=176125988 instance=ExtResource("4_7cae0")]
+transform = Transform3D(-1.7484556e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.7484556e-08, 0, 1.6576431, 0)
+visible = false

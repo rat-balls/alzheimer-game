@@ -323,79 +323,80 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_weftd")
 
-[node name="Grinder" type="Node3D"]
+[node name="Grinder" type="Node3D" unique_id=1410508301]
 script = ExtResource("1_x55j8")
 
-[node name="Grinder_handle" type="Node3D" parent="."]
+[node name="Grinder_handle" type="Node3D" parent="." unique_id=676877298]
 transform = Transform3D(0.1404691, 0, 0, 0, 0.14046909, 0, 0, 0, 0.1404691, 0, 0, 0)
 
-[node name="polySurface38" type="Node3D" parent="Grinder_handle"]
+[node name="polySurface38" type="Node3D" parent="Grinder_handle" unique_id=255989366]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8146973e-06, 0, 0)
 
-[node name="polySurface38_rsWood1_0" type="MeshInstance3D" parent="Grinder_handle/polySurface38"]
+[node name="polySurface38_rsWood1_0" type="MeshInstance3D" parent="Grinder_handle/polySurface38" unique_id=159445145]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8146973e-06, 0, 0)
 mesh = SubResource("ArrayMesh_jip6c")
 
-[node name="StaticBody3D" type="Area3D" parent="Grinder_handle" node_paths=PackedStringArray("grinder") groups=["GrinderHandle"]]
+[node name="StaticBody3D" type="Area3D" parent="Grinder_handle" unique_id=993823630 node_paths=PackedStringArray("grinder") groups=["GrinderHandle"]]
 script = ExtResource("7_33e8m")
 grinder = NodePath("../..")
 
-[node name="CollisionPolygon3D" type="CollisionShape3D" parent="Grinder_handle/StaticBody3D"]
+[node name="CollisionPolygon3D" type="CollisionShape3D" parent="Grinder_handle/StaticBody3D" unique_id=943159029]
 transform = Transform3D(0.79515606, 0, -0.60640484, 0, 1.0000005, 0, 0.60640484, 0, 0.79515606, 0.76606077, 3.945731, -0.87205034)
 shape = SubResource("BoxShape3D_jj2ob")
 
-[node name="Grinder_drawer" type="Node3D" parent="."]
+[node name="Grinder_drawer" type="Node3D" parent="." unique_id=1032516855]
 transform = Transform3D(0.14046913, 0, 0, 0, 0.14046909, 0, 0, 0, 0.14046913, 0, 0, 0)
+top_level = true
 
-[node name="polySurface46" type="Node3D" parent="Grinder_drawer"]
+[node name="polySurface46" type="Node3D" parent="Grinder_drawer" unique_id=959723671]
 
-[node name="polySurface47" type="Node3D" parent="Grinder_drawer"]
+[node name="polySurface47" type="Node3D" parent="Grinder_drawer" unique_id=1291579184]
 
-[node name="polySurface48" type="Node3D" parent="Grinder_drawer"]
+[node name="polySurface48" type="Node3D" parent="Grinder_drawer" unique_id=2378583]
 
-[node name="polySurface48_rsWood1_0" type="MeshInstance3D" parent="Grinder_drawer/polySurface48"]
+[node name="polySurface48_rsWood1_0" type="MeshInstance3D" parent="Grinder_drawer/polySurface48" unique_id=1483218196]
 mesh = SubResource("ArrayMesh_htwgn")
 
-[node name="Grinder_body" type="Node3D" parent="."]
+[node name="Grinder_body" type="Node3D" parent="." unique_id=1201180622]
 transform = Transform3D(0.14046913, 0, 0, 0, 0.14046909, 0, 0, 0, 0.14046913, 0, 0, 0)
 
-[node name="polySurface39" type="Node3D" parent="Grinder_body"]
+[node name="polySurface39" type="Node3D" parent="Grinder_body" unique_id=776417574]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4125386e-06, 0, 3.547405e-06)
 
-[node name="polySurface40" type="Node3D" parent="Grinder_body"]
+[node name="polySurface40" type="Node3D" parent="Grinder_body" unique_id=1432403414]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4125386e-06, 0, 3.547405e-06)
 
-[node name="polySurface41" type="Node3D" parent="Grinder_body"]
+[node name="polySurface41" type="Node3D" parent="Grinder_body" unique_id=1278679838]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4125386e-06, 0, 3.547405e-06)
 
-[node name="polySurface41_rsWood1_0" type="MeshInstance3D" parent="Grinder_body/polySurface41"]
+[node name="polySurface41_rsWood1_0" type="MeshInstance3D" parent="Grinder_body/polySurface41" unique_id=1891558800]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4125386e-06, 0, 3.547405e-06)
 mesh = SubResource("ArrayMesh_3qhwu")
 
-[node name="polySurface42" type="Node3D" parent="Grinder_body"]
+[node name="polySurface42" type="Node3D" parent="Grinder_body" unique_id=1239267211]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4125386e-06, 0, 3.547405e-06)
 
-[node name="polySurface42_rsWood1_0" type="MeshInstance3D" parent="Grinder_body/polySurface42"]
+[node name="polySurface42_rsWood1_0" type="MeshInstance3D" parent="Grinder_body/polySurface42" unique_id=903845070]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4125386e-06, 0, 3.547405e-06)
 mesh = SubResource("ArrayMesh_tkq7t")
 
-[node name="polySurface43" type="Node3D" parent="Grinder_body"]
+[node name="polySurface43" type="Node3D" parent="Grinder_body" unique_id=784998474]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4125386e-06, 0, 3.547405e-06)
 
-[node name="polySurface43_rsWood1_0" type="MeshInstance3D" parent="Grinder_body/polySurface43"]
+[node name="polySurface43_rsWood1_0" type="MeshInstance3D" parent="Grinder_body/polySurface43" unique_id=1799498908]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4125386e-06, 0, 3.547405e-06)
 mesh = SubResource("ArrayMesh_md8ms")
 
-[node name="polySurface44" type="Node3D" parent="Grinder_body"]
+[node name="polySurface44" type="Node3D" parent="Grinder_body" unique_id=539128662]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4125386e-06, 0, 3.547405e-06)
 
-[node name="polySurface44_rsWood1_0" type="MeshInstance3D" parent="Grinder_body/polySurface44"]
+[node name="polySurface44_rsWood1_0" type="MeshInstance3D" parent="Grinder_body/polySurface44" unique_id=139262802]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4125386e-06, 0, 3.547405e-06)
 mesh = SubResource("ArrayMesh_wnfcn")
 
-[node name="polySurface45" type="Node3D" parent="Grinder_body"]
+[node name="polySurface45" type="Node3D" parent="Grinder_body" unique_id=288469765]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4125386e-06, 0, 3.547405e-06)
 
-[node name="polySurface45_rsWood1_0" type="MeshInstance3D" parent="Grinder_body/polySurface45"]
+[node name="polySurface45_rsWood1_0" type="MeshInstance3D" parent="Grinder_body/polySurface45" unique_id=595888957]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4125386e-06, 0, 3.547405e-06)
 mesh = SubResource("ArrayMesh_tyrxd")

@@ -10,18 +10,24 @@ const SCROLL_SPEED = 0.3
 
 var player: CharacterBody3D
 var camera: Camera3D
+var wrist_bone: BoneAttachment3D
 
 var default_hold_distance: float = 2.0
 var hold_distance: float = default_hold_distance
 var valid_hold_target: RigidBody3D = null
 var valid_interact_target: Area3D = null
 var held_object: RigidBody3D = null
+var held_obj_grab_point: Vector3 = Vector3.ZERO
 var grabbed_grinder: Node3D = null
 var is_rotating_object: bool = false
 
 func _ready() -> void:
-	player = get_tree().get_first_node_in_group("Player")
-	camera = get_tree().get_first_node_in_group("PlayerCamera")
+	var scene_tree = get_tree()
+	player = scene_tree.get_first_node_in_group("Player")
+	camera = scene_tree.get_first_node_in_group("PlayerCamera")
+	wrist_bone = scene_tree.get_first_node_in_group("WristBone")
+
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	find_valid_grab_target()
@@ -29,6 +35,7 @@ func _process(_delta: float) -> void:
 func _physics_process(_delta: float) -> void:
 	if held_object:
 		var target_position = global_position + -global_transform.basis.z * hold_distance
+		wrist_bone.global_position = held_obj_grab_point
 		var direction = target_position - held_object.global_position
 		held_object.linear_velocity = direction * HOLD_FORCE
 
@@ -91,6 +98,7 @@ func drop_object() -> void:
 		held_object.angular_damp = 0.05
 		held_object.linear_damp = 0.05
 		held_object = null
+		wrist_bone.position = Vector3(2, -2, -2)
 
 func find_valid_grab_target() -> void:
 	var space_state: PhysicsDirectSpaceState3D = get_world_3d().direct_space_state
@@ -104,11 +112,13 @@ func find_valid_grab_target() -> void:
 		valid_interact_target = null
 		return
 	var obj = result["collider"]
+	
 	if obj is Area3D:
 		valid_interact_target = obj
 		valid_hold_target = null	
 	elif obj is RigidBody3D:
 		valid_hold_target = obj
+		held_obj_grab_point = result["position"]
 		valid_interact_target = null
 	else:
 		valid_hold_target = null
