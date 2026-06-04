@@ -4,15 +4,14 @@
 [ext_resource type="Script" uid="uid://dhhvodesedabd" path="res://Scripts/Player/arm_ik_handler.gd" id="2_r1roq"]
 
 [sub_resource type="JointLimitationCone3D" id="JointLimitationCone3D_6m1ft"]
-angle = 2.5307274
 
-[sub_resource type="JointLimitationCone3D" id="JointLimitationCone3D_r1roq"]
-angle = 4.4731045
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6m1ft"]
-albedo_color = Color(1, 1, 0.15686275, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r1roq"]
+albedo_color = Color(1, 1, 0, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_6m1ft"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6m1ft"]
+albedo_color = Color(0.2, 0, 0.24705882, 1)
 
 [node name="arm_placeholder" unique_id=984566011 instance=ExtResource("1_6m1ft")]
 script = ExtResource("2_r1roq")
@@ -27,24 +26,22 @@ settings/0/end_bone_name = "Wrist"
 settings/0/end_bone = 2
 settings/0/extend_end_bone = false
 settings/0/joint_count = 3
-settings/0/joints/0/rotation_axis = 3
+settings/0/joints/0/rotation_axis = 2
 settings/0/joints/0/limitation = SubResource("JointLimitationCone3D_6m1ft")
 settings/0/joints/0/limitation/right_axis = 0
 settings/0/joints/0/limitation/rotation_offset = Quaternion(0, 0, 0, 1)
-settings/0/joints/1/rotation_axis = 2
-settings/0/joints/1/limitation = SubResource("JointLimitationCone3D_r1roq")
-settings/0/joints/1/limitation/right_axis = 0
-settings/0/joints/1/limitation/rotation_offset = Quaternion(0, 0, 0, 1)
+settings/0/joints/1/rotation_axis = 3
+settings/0/joints/1/limitation = null
 settings/0/joints/2/rotation_axis = 3
 settings/0/joints/2/limitation = null
 
-[node name="WristLookAt" type="AimModifier3D" parent="Armature/Skeleton3D" parent_id_path=PackedInt32Array(1714011374) index="2" unique_id=1592973634 groups=["WristLookAt"]]
+[node name="WristLookAt" type="AimModifier3D" parent="Armature/Skeleton3D" parent_id_path=PackedInt32Array(1714011374) index="2" unique_id=1592973634]
 setting_count = 1
 settings/0/amount = 1.0
 settings/0/apply_bone_name = "Wrist"
 settings/0/apply_bone = 2
 settings/0/reference_type = 1
-settings/0/reference_node = NodePath("../../../WristIK_Target")
+settings/0/reference_node = NodePath("../../../WristLookAt_Target")
 settings/0/forward_axis = 2
 settings/0/use_euler = true
 settings/0/primary_rotation_axis = 0
@@ -52,8 +49,15 @@ settings/0/use_secondary_rotation = true
 settings/0/relative = true
 
 [node name="WristIK_Target" type="Node3D" parent="." index="1" unique_id=105438438 groups=["IK_Target"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.591507, 0.691782, -7.665556)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2460423, 0.6259594, -7.665556)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="WristIK_Target" index="0" unique_id=1068863661]
+material_override = SubResource("StandardMaterial3D_r1roq")
+mesh = SubResource("SphereMesh_6m1ft")
+
+[node name="WristLookAt_Target" type="Node3D" parent="." index="2" unique_id=1758139740 groups=["LookAt_Target"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.950909, 0.691782, -9.866476)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WristLookAt_Target" index="0" unique_id=1726819383]
 material_override = SubResource("StandardMaterial3D_6m1ft")
 mesh = SubResource("SphereMesh_6m1ft")

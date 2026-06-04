@@ -14,6 +14,10 @@ friction = 0.3
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gd5k8"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u45ye"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.25490198)
+
 [sub_resource type="BoxMesh" id="BoxMesh_rwo3f"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ducwh"]
@@ -23,8 +27,9 @@ friction = 0.3
 [node name="Player" parent="." unique_id=734951698 instance=ExtResource("1_g0qe1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.057529, -0.6557621, -1.8317473)
 
-[node name="IK_target" parent="Player/arm_placeholder" parent_id_path=PackedInt32Array(734951698, 2055318626) index="1" unique_id=987979574]
-transform = Transform3D(0.99999976, 0, 8.940696e-08, 0, 0.99999976, 0, -8.940696e-08, 0, 0.99999976, 8.664071, 0.17075014, -7.1556787)
+[node name="WristLookAt" parent="Player/arm_placeholder/Armature/Skeleton3D" parent_id_path=PackedInt32Array(734951698, 984566011, 1714011374) index="2" unique_id=1592973634]
+settings/0/forward_axis = 3
+settings/0/use_euler = false
 
 [node name="Labels" type="Node3D" parent="." unique_id=1342907622]
 
@@ -55,6 +60,7 @@ angular_damp = 0.1
 shape = SubResource("BoxShape3D_gd5k8")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Cube" unique_id=2096635935]
+material_override = SubResource("StandardMaterial3D_u45ye")
 mesh = SubResource("BoxMesh_rwo3f")
 
 [node name="UserInterface" type="Control" parent="." unique_id=1295240603]
