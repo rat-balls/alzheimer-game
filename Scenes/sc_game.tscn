@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://hry5epxqfm8v" path="res://Scenes/Prefabs/Player/player.tscn" id="1_g0qe1"]
 [ext_resource type="Script" uid="uid://dxbpv7qmp6gwn" path="res://Scripts/Player/reticle_handler.gd" id="3_gd5k8"]
 [ext_resource type="PackedScene" uid="uid://dgbygy4ej7eiu" path="res://maison.tscn" id="4_ducwh"]
+[ext_resource type="Script" uid="uid://byu06mldr4wn5" path="res://Scripts/Grinder/grinder_drawer.gd" id="5_u45ye"]
 
 [sub_resource type="Environment" id="Environment_gd5k8"]
 ambient_light_color = Color(1, 0.34657717, 0.2800086, 1)
@@ -81,6 +82,17 @@ script = ExtResource("3_gd5k8")
 
 [node name="Maison" parent="." unique_id=1785692665 instance=ExtResource("4_ducwh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.9842327, 0)
+
+[node name="House_Demo_001" parent="Maison" index="0" unique_id=72567348]
+visible = true
+
+[node name="Grinder_drawer" parent="Maison/Grinder" parent_id_path=PackedInt32Array(1785692665, 2123431111) index="1" unique_id=697607744 node_paths=PackedStringArray("table_position") groups=["interactable"]]
+transform = Transform3D(0.019178372, 0, 0.112375215, 0, 0.114, 0, -0.112375215, 0, 0.019178372, -6.41672, -0.093330026, -3.7039137)
+script = ExtResource("5_u45ye")
+table_position = NodePath("../TableDrawerTarget")
+
+[node name="TableDrawerTarget" type="Marker3D" parent="Maison/Grinder" parent_id_path=PackedInt32Array(1785692665, 2123431111) index="3" unique_id=2091067723]
+transform = Transform3D(0.9999999, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 0.9999999, -3.3681908, 0, 0.5748291)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Maison" unique_id=390503693]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.64933944, 0)

@@ -126,7 +126,10 @@ func find_valid_grab_target() -> void:
 
 func try_interact_object() -> void:
 	if valid_hold_target:
-		grab()
+		if valid_hold_target.has_method("interact"):
+			valid_hold_target.interact()
+		else:
+			grab()
 	if valid_interact_target:
 		interact()
 
