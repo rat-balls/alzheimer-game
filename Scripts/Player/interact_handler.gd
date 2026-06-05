@@ -5,7 +5,7 @@ const HOLD_FORCE = 15.0
 const THROW_FORCE = 6.0
 const OBJECT_ROTATE_SENSITIVITY = 1
 const MIN_HOLD_DISTANCE = 1.0
-const MAX_HOLD_DISTANCE = 5.0
+const MAX_HOLD_DISTANCE = 3.0
 const SCROLL_SPEED = 0.3
 
 var player: CharacterBody3D

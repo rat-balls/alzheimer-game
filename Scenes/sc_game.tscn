@@ -23,9 +23,6 @@ albedo_color = Color(1, 1, 1, 0.25490198)
 
 [node name="sc_game" type="Node3D" unique_id=533166297]
 
-[node name="Player" parent="." unique_id=734951698 instance=ExtResource("1_g0qe1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.057529, -0.6557621, -1.8317473)
-
 [node name="Labels" type="Node3D" parent="." unique_id=1342907622]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=627650426]
@@ -93,5 +90,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.66495657, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="house/StaticBody3D" unique_id=1259411204]
 shape = SubResource("WorldBoundaryShape3D_ducwh")
 
-[editable path="Player"]
-[editable path="Player/arm_placeholder"]
+[node name="Player" parent="." unique_id=812184645 instance=ExtResource("1_g0qe1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.4011023, 0)

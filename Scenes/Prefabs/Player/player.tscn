@@ -37,19 +37,4 @@ transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0, 2
 script = ExtResource("3_o22ie")
 
 [node name="arm_placeholder" parent="." unique_id=984566011 instance=ExtResource("4_7cae0")]
-transform = Transform3D(-0.01736482, -0.085286856, -0.049240384, 0, 0.049999997, -0.086602546, 0.098480776, -0.015038376, -0.008682409, -0.38450623, 1.3073962, 0)
-
-[node name="WristLookAt" parent="arm_placeholder/Armature/Skeleton3D" parent_id_path=PackedInt32Array(984566011, 1714011374) index="2" unique_id=1592973634]
-settings/0/forward_axis = 3
-settings/0/use_euler = false
-
-[node name="WristIK_Target" parent="arm_placeholder" index="1" unique_id=105438438]
-transform = Transform3D(0.9999998, 0, 2.9802322e-08, 0, 0.99999994, 2.4214387e-08, -2.2351742e-08, -6.053597e-08, 0.9999999, 9.125895, -0.9217529, 5.359599)
-
-[node name="WristLookAt_Target" parent="arm_placeholder" index="2" unique_id=1758139740]
-transform = Transform3D(0.99999994, 0, 7.450581e-09, 0, 0.99999994, 0, -7.450581e-09, -6.053597e-08, 1, 17.982092, -1.3506784, 5.367441)
-
-[node name="MeshInstance3D" parent="arm_placeholder/WristLookAt_Target" index="0" unique_id=1726819383]
-transform = Transform3D(0.99999994, 0, 0, 0, 0.9999999, -1.8626451e-09, -7.450581e-09, 5.6810677e-08, 0.99999994, -6.7204485, 1.6459007, 0.95026064)
-
-[editable path="arm_placeholder"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.59143233, 1.39398, -0.47719255)
