@@ -15,7 +15,6 @@ friction = 0.3
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u45ye"]
 transparency = 1
-albedo_color = Color(1, 1, 1, 0.25490198)
 
 [sub_resource type="BoxMesh" id="BoxMesh_rwo3f"]
 
@@ -54,6 +53,12 @@ shape = SubResource("BoxShape3D_gd5k8")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Cube" unique_id=2096635935]
 material_override = SubResource("StandardMaterial3D_u45ye")
 mesh = SubResource("BoxMesh_rwo3f")
+
+[node name="GrabPointMark" type="Marker3D" parent="Cube" unique_id=2080532973]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27412653, -0.10941148, -0.5979601)
+
+[node name="LookAtMark" type="Marker3D" parent="Cube" unique_id=1137124971]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27412653, -0.10941148, -0.16165555)
 
 [node name="UserInterface" type="Control" parent="." unique_id=1295240603]
 layout_mode = 3

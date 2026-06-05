@@ -1,11 +1,11 @@
 extends Node3D
 
-const INTERACT_DISTANCE = 5.0
+const INTERACT_DISTANCE = 4.0
 const HOLD_FORCE = 15.0
 const THROW_FORCE = 6.0
 const OBJECT_ROTATE_SENSITIVITY = 1
 const MIN_HOLD_DISTANCE = 1.0
-const MAX_HOLD_DISTANCE = 3.0
+const MAX_HOLD_DISTANCE = 4.0
 const SCROLL_SPEED = 0.3
 
 var player: CharacterBody3D
@@ -35,6 +35,8 @@ func _physics_process(_delta: float) -> void:
 		var target_position = global_position + -global_transform.basis.z * hold_distance
 		var direction = target_position - held_object.global_position
 		held_object.linear_velocity = direction * HOLD_FORCE
+		if held_object.global_position.distance_to(global_position) > MAX_HOLD_DISTANCE + 1.5:
+			drop_object()
 
 func _input(event: InputEvent) -> void:
 	if camera.mouse_visible:

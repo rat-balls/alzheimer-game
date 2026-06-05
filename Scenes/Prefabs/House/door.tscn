@@ -122,13 +122,14 @@ shape = SubResource("BoxShape3D_72j4c")
 [node name="Door_sprite" type="MeshInstance3D" parent="Door_base" unique_id=419894588]
 mesh = SubResource("ArrayMesh_yr1jr")
 
-[node name="Handle_base" type="Area3D" parent="Door_base" unique_id=296723261]
+[node name="Handle_base" type="Area3D" parent="Door_base" unique_id=296723261 node_paths=PackedStringArray("door_joint")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25903514, 1.7846471, -2.6874068)
 collision_layer = 4
 collision_mask = 0
 collision_priority = 7.565
 priority = 7
 script = ExtResource("4_smoqx")
+door_joint = NodePath("../../DoorHingeJoint")
 
 [node name="Handle_sprite" type="MeshInstance3D" parent="Door_base/Handle_base" unique_id=965359136]
 transform = Transform3D(1, 0, 0, 0, 1, 1.1602379e-21, 0, 1.1602379e-21, 1, -0.0013039708, 0, 0)
@@ -138,7 +139,13 @@ mesh = SubResource("ArrayMesh_mhitx")
 transform = Transform3D(1, 0, 0, 0, 1, 1.1602379e-21, 0, 1.1602379e-21, 1, -0.122741506, -0.19539726, -0.0010948181)
 shape = SubResource("BoxShape3D_x2i7t")
 
-[node name="DoorHingeJoint" type="HingeJoint3D" parent="." unique_id=1584299198 groups=["DoorHingeJoint"]]
+[node name="GrabPointMark" type="Marker3D" parent="Door_base" unique_id=1261946097]
+transform = Transform3D(-1.6292068e-07, 0, -1, -1, -4.371139e-08, 1.6292068e-07, -4.371139e-08, 1, 7.12149e-15, 0.054436706, 1.6040488, -2.709992)
+
+[node name="LookAtMark" type="Marker3D" parent="Door_base" unique_id=1959296257]
+transform = Transform3D(-1.6292068e-07, 0, -1, -1, -4.371139e-08, 1.6292068e-07, -4.371139e-08, 1, 7.12149e-15, 0.15436457, 1.6040488, -2.709992)
+
+[node name="DoorHingeJoint" type="HingeJoint3D" parent="." unique_id=1584299198]
 transform = Transform3D(-4.371139e-08, -0.99999994, 4.3711385e-08, 0, -4.3711385e-08, -0.99999994, 1, -4.3711385e-08, 1.9106853e-15, 0, 0, 0)
 node_a = NodePath("../Door_base")
 node_b = NodePath("../HingeAxis")

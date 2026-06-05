@@ -21,6 +21,7 @@ wrist_look_at = NodePath("WristLookAt_Target")
 armature = NodePath("Armature/Skeleton3D")
 
 [node name="FABRIK3D" type="FABRIK3D" parent="Armature/Skeleton3D" parent_id_path=PackedInt32Array(2121869969) index="1" unique_id=984959619]
+transform = Transform3D(0.8251628, 0, -0.564895, 0, 1, 0, 0.564895, 0, 0.8251628, 0, 0, 0)
 max_iterations = 15
 setting_count = 1
 settings/0/target_node = NodePath("../../../WristIK_Target")
@@ -49,7 +50,7 @@ settings/0/use_euler = false
 settings/0/relative = false
 
 [node name="WristIK_Target" type="Node3D" parent="." index="1" unique_id=105438438]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7253673, 0, -0.09850788)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.028361611, -2.4205704, -0.15033627)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="WristIK_Target" index="0" unique_id=1068863661]
 visible = false
@@ -57,7 +58,7 @@ material_override = SubResource("StandardMaterial3D_r1roq")
 mesh = SubResource("SphereMesh_6m1ft")
 
 [node name="WristLookAt_Target" type="Node3D" parent="." index="2" unique_id=1758139740]
-transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 3.5112243, 1.1920929e-07, 0.022557203)
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.33388874, -2.609622, 9.949475e-05)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="WristLookAt_Target" index="0" unique_id=1726819383]
 visible = false

@@ -1,13 +1,12 @@
 extends Area3D
 
 var door_base: RigidBody3D
-var door_joint: HingeJoint3D
+@export var door_joint: HingeJoint3D
 var door_closed_rotation: float
 var door_locked: bool = true
 var handle_tween: Tween
 
 func _ready() -> void:
-	door_joint = get_tree().get_first_node_in_group("DoorHingeJoint")
 	door_base = get_parent()
 	door_closed_rotation = door_base.rotation_degrees.y
 
@@ -18,6 +17,7 @@ func interact() -> void:
 
 
 func unlock_door() -> void:
+	print("unlocking_door")
 	door_base.rotation_degrees.y = door_closed_rotation
 	door_base.axis_lock_angular_x = false
 	door_base.axis_lock_angular_z = false

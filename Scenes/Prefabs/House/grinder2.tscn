@@ -348,8 +348,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.8146973e-06)
 mesh = SubResource("ArrayMesh_std76")
 skeleton = NodePath("")
 
-[node name="HandDest" type="Marker3D" parent="Grinder_handle/polySurface38/polySurface38_rsWood1_0" unique_id=756114195 groups=["GrinderHandDest"]]
-transform = Transform3D(0.99999976, 0, 5.9604645e-08, 0, 0.99999964, 0, -5.9604645e-08, 0, 0.99999976, 1.7583112, 4.8914237, -1.8399575)
+[node name="GrabPointMark" type="Marker3D" parent="Grinder_handle/polySurface38/polySurface38_rsWood1_0" unique_id=756114195]
+transform = Transform3D(0.99999946, 0, 8.940697e-08, 0, 0.9999994, 0, -8.940697e-08, 0, 0.99999946, 1.6915779, 4.8914227, -1.8359274)
+
+[node name="LookAtMark" type="Marker3D" parent="Grinder_handle/polySurface38/polySurface38_rsWood1_0" unique_id=339686578]
+transform = Transform3D(0.9999993, 0, 8.940697e-08, 0, 0.9999992, 0, -8.940697e-08, 0, 0.9999993, 1.6915777, 2.7943418, -1.8359271)
 
 [node name="StaticBody3D" type="Area3D" parent="Grinder_handle" unique_id=827627681 node_paths=PackedStringArray("grinder") groups=["GrinderHandle"]]
 script = ExtResource("7_7uqnd")
@@ -359,7 +362,7 @@ grinder = NodePath("../..")
 transform = Transform3D(0.79515606, 0, -0.60640484, 0, 1.0000005, 0, 0.60640484, 0, 0.79515606, 0.76606077, 3.945731, -0.87205034)
 shape = SubResource("BoxShape3D_vkprn")
 
-[node name="GrinderDrawerBod" type="RigidBody3D" parent="." unique_id=913572563]
+[node name="GrinderDrawerBod" type="RigidBody3D" parent="." unique_id=913572563 groups=["Rotatable"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GrinderDrawerBod" unique_id=365354741]
 transform = Transform3D(0.029798334, 0, 0.13727212, 0, 0.14046909, 0, -0.13727212, 0, 0.029798334, 0.008099478, 0.09962082, -0.0067870812)
@@ -369,6 +372,12 @@ shape = SubResource("BoxShape3D_yiaim")
 transform = Transform3D(0.029798338, 0, 0.13727213, 0, 0.14046909, 0, -0.13727213, 0, 0.029798338, 0.10449493, 0.09962082, 0.0141379535)
 mesh = SubResource("ArrayMesh_kyjuc")
 skeleton = NodePath("")
+
+[node name="GrabPointMark" type="Marker3D" parent="GrinderDrawerBod" unique_id=565197736]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18206975, 0.123207346, -2.9802322e-08)
+
+[node name="LookAtMark" type="Marker3D" parent="GrinderDrawerBod" unique_id=1582261969]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014381617, 0.08141601, 0)
 
 [node name="GrinderDrawerArea" type="Area3D" parent="." unique_id=637394387 node_paths=PackedStringArray("grinder_drawer_bod", "table_position")]
 linear_damp = 0.05
