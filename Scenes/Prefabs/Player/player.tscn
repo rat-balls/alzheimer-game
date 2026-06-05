@@ -23,6 +23,7 @@ script = ExtResource("1_pv3ct")
 shape = SubResource("CapsuleShape3D_63f0y")
 
 [node name="PlayerBodMesh" type="MeshInstance3D" parent="." unique_id=1166725560]
+visible = false
 mesh = SubResource("CapsuleMesh_63f0y")
 
 [node name="PlayerHeadMesh" type="MeshInstance3D" parent="." unique_id=2115032129]
