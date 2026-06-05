@@ -103,6 +103,7 @@ size = Vector3(0.74724555, 0.55202687, 0.17404938)
 size = Vector3(0.006713867, 5.0091553, 0.001)
 
 [node name="Door" type="Node3D" unique_id=580823533]
+transform = Transform3D(1.05, 0, 0, 0, 0.98, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Door_base" type="RigidBody3D" parent="." unique_id=1105293989]
 transform = Transform3D(-1.6292068e-07, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 1.6292068e-07, 7.12149e-15, 0, 5.333437, 0.00826931)
@@ -140,7 +141,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 1.1602379e-21, 0, 1.1602379e-21, 1, -0.12
 shape = SubResource("BoxShape3D_x2i7t")
 
 [node name="GrabPointMark" type="Marker3D" parent="Door_base" unique_id=1261946097]
-transform = Transform3D(-1.6292068e-07, 0, -1, -1, -4.371139e-08, 1.6292068e-07, -4.371139e-08, 1, 7.12149e-15, 0.054436706, 1.6040488, -2.709992)
+transform = Transform3D(-1.629207e-07, 0, -1, -1.0000001, -4.3711392e-08, 1.629207e-07, -4.371139e-08, 1, 7.12149e-15, -0.082716264, 1.604049, -2.709992)
 
 [node name="LookAtMark" type="Marker3D" parent="Door_base" unique_id=1959296257]
 transform = Transform3D(-1.6292068e-07, 0, -1, -1, -4.371139e-08, 1.6292068e-07, -4.371139e-08, 1, 7.12149e-15, 0.15436457, 1.6040488, -2.709992)

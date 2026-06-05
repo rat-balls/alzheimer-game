@@ -25,8 +25,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if(interact_handler.held_object):
 		handle_held_obj(interact_handler.held_object)
-		armature.set_bone_pose_scale(arm_bone_idx, Vector3(1, interact_handler.hold_distance * 0.5, 1))
-		armature.set_bone_pose_scale(forearm_bone_idx, Vector3(1, interact_handler.hold_distance * 0.5, 1))
+		
 	elif(interact_handler.grabbed_grinder):
 		handle_held_obj(interact_handler.grabbed_grinder)
 	else:
@@ -41,4 +40,5 @@ func handle_held_obj(obj) ->void:
 	if(obj_gp):
 		wrist_look_at.global_position = obj_la.global_position
 		wrist_ik.global_position = obj_gp.global_position
-		
+		armature.set_bone_pose_scale(arm_bone_idx, Vector3(1, armature.global_position.distance_to(obj_gp.global_position) * 0.47, 1))
+		armature.set_bone_pose_scale(forearm_bone_idx, Vector3(1, armature.global_position.distance_to(obj_gp.global_position) * 0.47, 1))

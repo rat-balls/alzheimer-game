@@ -6,8 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dpvl8fqkv17ef" path="res://Scenes/Prefabs/Player/arm_placeholder.tscn" id="4_7cae0"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_63f0y"]
-radius = 0.001
-height = 3.0
+radius = 0.2
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_63f0y"]
 radius = 0.25
