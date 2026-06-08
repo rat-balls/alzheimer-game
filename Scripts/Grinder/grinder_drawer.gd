@@ -23,6 +23,11 @@ func interact() -> void:
 func animate_to_table() -> void:
 	is_animating = true
 	get_child(0).disabled = true
+	grinder_drawer_bod.freeze_mode = RigidBody3D.FREEZE_MODE_KINEMATIC
+	grinder_drawer_bod.freeze = true
+	grinder_drawer_bod.gravity_scale = 0.0
+	grinder_drawer_bod.linear_velocity = Vector3.ZERO
+	grinder_drawer_bod.angular_velocity = Vector3.ZERO
 
 	var tween = create_tween()
 	tween.set_parallel(true)
@@ -36,5 +41,11 @@ func animate_to_table() -> void:
 	#gravity_scale = 1.0
 	
 	is_animating = false
-	remove_from_group("AnimatedInteractable")
+	grinder_drawer_bod.freeze = false
+	grinder_drawer_bod.gravity_scale = 1.0
+	grinder_drawer_bod.linear_velocity = Vector3.ZERO
+	grinder_drawer_bod.angular_velocity = Vector3.ZERO
+
+	grinder_drawer_bod.remove_from_group("AnimatedInteractable")
+	remove_from_group("AnimatedInteractable")	
 	is_available = true
