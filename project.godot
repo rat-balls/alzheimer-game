@@ -23,6 +23,13 @@ config/icon="res://icon.svg"
 
 DiseaseProgManager="*uid://c852g52rp1ow1"
 
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+
 [global_group]
 
 interactable=""
