@@ -59,12 +59,13 @@ func handle_held_obj(obj) ->void:
 			
 			ik_tween = create_tween()
 			ik_tween.set_parallel(true)
-			ik_tween.tween_property(wrist_look_at, "global_position", obj_la.global_position, 0.5).set_trans(Tween.TRANS_QUAD)
-			ik_tween.tween_property(wrist_ik, "global_position", obj_gp.global_position, 0.5).set_trans(Tween.TRANS_QUAD)
+			ik_tween.tween_property(wrist_look_at, "global_position", obj_la.global_position, 0.3).set_trans(Tween.TRANS_QUAD)
+			ik_tween.tween_property(wrist_ik, "global_position", obj_gp.global_position, 0.3).set_trans(Tween.TRANS_QUAD)
 			
-			#ik_tween.tween_method({() => animating = false})
-			
-		else:
+			ik_tween.tween_callback(func() -> void: 
+				animating = false 
+				print("here2")).set_delay(0.3)
+		elif(!animating):
 			print("here")
 			wrist_look_at.global_position = obj_la.global_position
 			wrist_ik.global_position = obj_gp.global_position
