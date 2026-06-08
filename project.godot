@@ -26,6 +26,7 @@ InteractHandler=""
 door_handle=""
 door=""
 GrinderHandle=""
+GrinderDrawer=""
 Rotatable=""
 
 [input]

@@ -28,7 +28,7 @@ environment = SubResource("Environment_gd5k8")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1767550168]
 transform = Transform3D(0.9756916, 0.16495071, -0.14428143, 0, 0.65837425, 0.75269073, 0.21914807, -0.734394, 0.6423702, -12.610869, 14.710951, 8.609891)
 light_color = Color(1, 1, 0.99215686, 1)
-light_energy = 1.291
+light_energy = 0.25
 light_indirect_energy = 3.218
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="." unique_id=961163658]
