@@ -132,7 +132,7 @@ func try_interact_object() -> void:
 		interact()
 
 func grab() -> void:
-	hold_distance = default_hold_distance
+	hold_distance = valid_hold_target.global_position.distance_to(global_position)
 	held_object = valid_hold_target
 	held_object.gravity_scale = 0.0
 	held_object.linear_damp = 6.0
