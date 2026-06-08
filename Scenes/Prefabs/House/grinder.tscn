@@ -1,12 +1,12 @@
 [gd_scene format=4 uid="uid://dpsgy45k84orn"]
 
-[ext_resource type="Texture2D" uid="uid://cgy5wbk5a4wwv" path="res://Scenes/Home/Maison_Image_3.png" id="1_jj2ob"]
+[ext_resource type="Texture2D" path="res://Scenes/Home/Maison_Image_3.png" id="1_jj2ob"]
 [ext_resource type="Script" uid="uid://c8hvppj11fnop" path="res://Scripts/Grinder/grinder.gd" id="1_x55j8"]
-[ext_resource type="Texture2D" uid="uid://cc283dvujs8gs" path="res://Scenes/Home/Maison_Image_4.png" id="2_33e8m"]
-[ext_resource type="Texture2D" uid="uid://uhnsfqg361dv" path="res://Scenes/Home/Maison_Image_5.png" id="3_x55j8"]
-[ext_resource type="Texture2D" uid="uid://44els6avcyjq" path="res://Scenes/Home/Maison_Image_0_52.png" id="4_oqy7v"]
-[ext_resource type="Texture2D" uid="uid://dqxynvkf5rfqq" path="res://Scenes/Home/Maison_Image_1_53.png" id="5_3h6t4"]
-[ext_resource type="Texture2D" uid="uid://dbk7lbi8svuvd" path="res://Scenes/Home/Maison_Image_2.png" id="6_0iq71"]
+[ext_resource type="Texture2D" path="res://Scenes/Home/Maison_Image_4.png" id="2_33e8m"]
+[ext_resource type="Texture2D" path="res://Scenes/Home/Maison_Image_5.png" id="3_x55j8"]
+[ext_resource type="Texture2D" path="res://Scenes/Home/Maison_Image_0_52.png" id="4_oqy7v"]
+[ext_resource type="Texture2D" path="res://Scenes/Home/Maison_Image_1_53.png" id="5_3h6t4"]
+[ext_resource type="Texture2D" path="res://Scenes/Home/Maison_Image_2.png" id="6_0iq71"]
 [ext_resource type="Script" uid="uid://b5c7iwpwccxpr" path="res://Scripts/Grinder/grinder_handle.gd" id="7_33e8m"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oyg41"]
