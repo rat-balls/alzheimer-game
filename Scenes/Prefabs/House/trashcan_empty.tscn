@@ -1,7 +1,6 @@
 [gd_scene format=4 uid="uid://do3jrebx7cya"]
 
 [ext_resource type="Texture2D" uid="uid://c0lckh6vn53ql" path="res://Assets/Models/House/trashfull_Trash_can.png" id="1_8w1js"]
-[ext_resource type="Texture2D" uid="uid://vd33ghpekawl" path="res://Assets/Models/House/trashfull_Garbage_bags.png" id="2_4tjrh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qnfra"]
 resource_name = "Trash_can.002"
@@ -45,81 +44,19 @@ shadow_mesh = SubResource("ArrayMesh_fyyu3")
 [sub_resource type="BoxShape3D" id="BoxShape3D_8w1js"]
 size = Vector3(0.7640381, 1.1329231, 1.1692352)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_euowc"]
-resource_name = "Garbage_bags.002"
-cull_mode = 2
-albedo_texture = ExtResource("2_4tjrh")
+[node name="trashcan_empty" type="RigidBody3D" unique_id=224210030 groups=["Rotatable"]]
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_s6mar"]
-_surfaces = [{
-"aabb": AABB(-1.3472183, -1.7052537, -1.5906109, 2.673693, 4.220045, 3.2461078),
-"format": 34896613377,
-"index_count": 102,
-"index_data": PackedByteArray("CgABAAIAAAAKAAIACgAAAAsAAAACAAgACwAAAAgABwAIAAIACwAIAAkABwAJAAgACQAGAAsABwAMAAkACQAMAAYACgALAA0AAQAKAA0ACwAGAA4ADgAGAAwACwAOAA0ABwAPAAwADgAMAA8AAwAPAAcAAwAHAAIAAQAQAAIAAwACABAAAQADABAADQAOAAUABQAOAA8AAQANAAQADQAFAAQAAQAEAAMABQAPABEABAAFABEAAwARAA8ABAARAAMAEgATABQAEgAUABMA"),
-"lods": [1.2263377, PackedByteArray("AAABAAIAAwACAAEAAQAAAAQAAQAEAAMABAAFAAMAAAAGAAQABAAGAAUAAwAFAAcAAwAHAAIABwAFAAYAAAACAAgABwAIAAIABgAAAAgABwAJAAgABgAIAAkABwAGAAkA")],
-"name": "Garbage_bags.002",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 21,
-"vertex_data": PackedByteArray("GwDeOoTVAAAAAKQ0pTcAAFoCrbNoggAAHKNlewAAAABKlXYThSsAAJ3pKUPlDwAAyvf2NZe5AAAerYfmvGEAAJFNe4Qv9gAAF6JMg///AAAAAB0sgoYAAHycABl91gAAhvpYeAisAABPnQAAinoAAND3QS0XeQAA//9vkUdRAABCHO15dTMAAMDyUWg6FQAAeqm235JlAADosxv6rncAAHqp//+aOwAA")
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_8uxws"]
-resource_name = "trashfull_Garbage_bags_002"
-_surfaces = [{
-"aabb": AABB(-1.3472183, -1.7052537, -1.5906109, 2.673693, 4.220045, 3.2461078),
-"attribute_data": PackedByteArray("elNiR/0Paiz9F2B/elPgdRJhIJRPKPWAziMiv7cI1p0SYQ7gxCA0/6m9z5Z0bGHlp2LPrX+2NP/d1jT/jvjwtgD+fNa/x5eiK2NhN+dvL5VCsfVv7L3nj7+razc0/1lM/t6OkoG/DF80/zqV8zNOM8oA/FLbVqi9ygC4zIQFFrTfgg7EBq8ZyCGFofapvQrqPr+X4AD+m/h9h2E3p2KYcu2M9HKOjTqVfJQTaiaGo3H0gotYfJQTavSCi1gmhqNx"),
-"format": 34896613399,
-"index_count": 102,
-"index_data": PackedByteArray("GwABAAIAAQAcAAIAAAAbAAIAAAACAAMABAAGAB0ABgAIAB0ABgAJAAgABgAeAAkABAAFAAYABgAfAB4ABQAfAAYABQAHAB8ACgAgAAwACgAhACAAIgAgACEAIgALACAADQAiACEADQAhACMAJAAPABAAJAARAA8AEAAOACQAEAAlAA4AJgAnACgAJgASACcAFgAmACgAFgAoABQAKAAVABQAKAApABUAJwApACgAJwATACkAFwAYABkAFwAaABgAKgArACwALQAuAC8A"),
-"lods": [1.2263377, PackedByteArray("AAABAAIAAAACAAMABAAFAAYABQAHAAYABgAIAAQABgAHAAkABgAJAAgACgALAAwACgANAAsADgAPABAADgARAA8AEgATABQAFAATABUAFgASABQAFwAYABkAFwAaABgA")],
-"material": SubResource("StandardMaterial3D_euowc"),
-"name": "Garbage_bags.002",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 48,
-"vertex_data": PackedByteArray("GwDeOoTV81sAAKQ0pTcoKFoCrbNogho4kU17hC/2E2AAAKQ0pTcBIkqVdhOFKxAAHKNlewAAYgCd6SlD5Q9tE1oCrbNogjYqHq2H5rxh9gIerYfmvGHn0sr39jWXuZOtF6JMg///vaed6SlD5Q/538r39jWXuY7BkU17hC/2v7MXokyD//8zvRsA3jqE1TTBGwDeOoTVsRrK9/Y1l7kKTUqVdhOFK1EZnekpQ+UP/B8AAKQ0pTd5Bh6th+a8YW/GkU17hC/2U5haAq2zaIJNxheiTIP//56QAAAdLIKGLERCHO15dTOaGUIc7Xl1M48a//9vkUdRKTPA8lFoOhUAIYb6WHgIrGe0//9vkUdRMc3Q90EtF3mUwcDyUWg6FcrgfJwAGX3WXL6G+lh4CKxaxAAAHSyChn4UfJwAGX3WST9PnQAAinpzLdD3QS0XeTI8eqm235JltNzosxv6rne03Hqp//+aO7Tceqm235JlASp6qf//mjsBKuizG/qudwEquFNz1QFXZ96OlEzKS5PItg6gsfu7VPz73H/O8RuadTSmesXH5T6hCTnOhSsGU3oo1NziDTpW5C1zHBcw8vCG2mziygKazl71u1Y8e9919C+JTOtK9VaBLdA9/Wfn6yZ74McH0CPfUL0vwVlEz0u525x55OhWggjvuWBYADh6UAHUUSoI7F6xAUhYCi+vWhQYshLH1BAzRxjFSu9wIGZ3W0BXn1GwZ0wtQqibUEKom1BCqJtQClxSqgpcUqoKXFKq")
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_s6mar")
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8w1js"]
-radius = 0.3876953
-height = 0.9459839
-
-[node name="trashfull" type="Node3D" unique_id=221618746]
-
-[node name="trashcan" type="RigidBody3D" parent="." unique_id=224210030 groups=["Rotatable"]]
-
-[node name="Trash_can_empty" type="MeshInstance3D" parent="trashcan" unique_id=2136931366]
+[node name="Trash_can_empty" type="MeshInstance3D" parent="." unique_id=2136931366]
 transform = Transform3D(-0.010626517, 0, 0.99994355, 0, 1, 0, -0.99994355, 0, -0.010626517, 0, 0, 0)
 mesh = SubResource("ArrayMesh_7rcof")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="trashcan" unique_id=464533661]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=464533661]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.0017700195, -0.13014412, 0.0005722046)
 shape = SubResource("BoxShape3D_8w1js")
 
-[node name="GrabPointMark" type="Marker3D" parent="trashcan" unique_id=419236188]
+[node name="GrabPointMark" type="Marker3D" parent="." unique_id=419236188]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0045775473, 0.50331813, 0.36695695)
 
-[node name="LookAtMark" type="Marker3D" parent="trashcan" unique_id=762928863]
+[node name="LookAtMark" type="Marker3D" parent="." unique_id=762928863]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10008478, 0.16860533, 0)
-
-[node name="trash_bag" type="RigidBody3D" parent="." unique_id=904768920 groups=["Rotatable"]]
-
-[node name="Garbage_bag" type="MeshInstance3D" parent="trash_bag" unique_id=1364476990]
-transform = Transform3D(-0.011383968, -0.001698541, 0.30575272, 0.04331905, 0.30286926, 0.0032954037, -0.30267322, 0.043410994, -0.01102815, 0, 0, 1.0083455)
-mesh = SubResource("ArrayMesh_8uxws")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="trash_bag" unique_id=1844701421]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.044708252, 1.0114579)
-shape = SubResource("CapsuleShape3D_8w1js")
-
-[node name="GrabPointMark" type="Marker3D" parent="trash_bag" unique_id=240419617]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.103339285, 0.63713735, 0.9654174)
-
-[node name="LookAtMark" type="Marker3D" parent="trash_bag" unique_id=596040142]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10008478, 0.16752794, 1.0750945)

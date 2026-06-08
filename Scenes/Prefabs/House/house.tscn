@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://b31ajnbqdx5dv" path="res://Scenes/Prefabs/House/kettle.tscn" id="5_y480s"]
 [ext_resource type="PackedScene" uid="uid://qkd572dhhsv3" path="res://Scenes/Prefabs/House/phone.tscn" id="6_f2p8l"]
 [ext_resource type="PackedScene" uid="uid://cyims0wc7yfkc" path="res://Scenes/Prefabs/House/plate_spoon.tscn" id="7_ab6x3"]
-[ext_resource type="PackedScene" uid="uid://bal6ajj0yh1ba" path="res://Scenes/Prefabs/House/trash_empty.tscn" id="8_qpnvf"]
-[ext_resource type="PackedScene" uid="uid://do3jrebx7cya" path="res://Scenes/Prefabs/House/trash_full.tscn" id="9_do88s"]
+[ext_resource type="PackedScene" uid="uid://bal6ajj0yh1ba" path="res://Scenes/Prefabs/House/trashcan_full.tscn" id="8_qpnvf"]
+[ext_resource type="PackedScene" uid="uid://do3jrebx7cya" path="res://Scenes/Prefabs/House/trashcan_empty.tscn" id="9_do88s"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s6yue"]
 size = Vector3(0.9317627, 1.6720428, 1.7729492)
