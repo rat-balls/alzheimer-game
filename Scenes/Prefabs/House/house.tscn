@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://r0a8or7mswry" path="res://Assets/Models/House/house.glb" id="1_mebax"]
 [ext_resource type="PackedScene" uid="uid://db6bav2exlwp6" path="res://Scenes/Prefabs/House/door.tscn" id="2_e7tt3"]
 [ext_resource type="PackedScene" uid="uid://cflthynr6d1y2" path="res://Scenes/Prefabs/House/grinder2.tscn" id="3_e7tt3"]
+[ext_resource type="PackedScene" uid="uid://cihx4qv2rbskr" path="res://Scenes/Prefabs/House/cannedfood.tscn" id="4_w0q4l"]
+[ext_resource type="PackedScene" uid="uid://b31ajnbqdx5dv" path="res://Scenes/Prefabs/House/kettle.tscn" id="5_y480s"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e7tt3"]
 size = Vector3(1.6943359, 0.14172363, 1.7749023)
@@ -134,7 +136,7 @@ transform = Transform3D(-1.05, 0, -1.509958e-07, 0, 0.98, 0, 1.5854559e-07, 0, -
 transform = Transform3D(-1.05, 0, -1.509958e-07, 0, 0.98, 0, 1.5854559e-07, 0, -1, 9.23, 0.737, 3.483)
 
 [node name="grinder" parent="." index="2" unique_id=1062756497 instance=ExtResource("3_e7tt3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.4921455, 2.8966231, -3.5471053)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.4921455, 2.8966231, -4.313884)
 
 [node name="Colliders" type="StaticBody3D" parent="." index="3" unique_id=538779629]
 
@@ -320,4 +322,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.66495657, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" index="0" unique_id=1876821739]
 shape = SubResource("WorldBoundaryShape3D_do88s")
 
-[editable path="grinder"]
+[node name="cannedfood" parent="." index="5" unique_id=924927323 instance=ExtResource("4_w0q4l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.804163, 2.9453826, -5.053669)
+
+[node name="moka" parent="." index="6" unique_id=777016317 instance=ExtResource("5_y480s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.7122936, 2.9672983, -2.9739916)
