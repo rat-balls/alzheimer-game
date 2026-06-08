@@ -49,6 +49,10 @@ shadow_mesh = SubResource("ArrayMesh_sifat")
 height = 0.23309326
 radius = 0.11425781
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_12cju"]
+height = 0.19332123
+radius = 0.14013672
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_25hbx"]
 size = Vector3(0.1161499, 0.23537064, 0.111091614)
 
@@ -106,6 +110,10 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Kettle" unique_id=809324178]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15945435, 0)
 shape = SubResource("CylinderShape3D_dmuhg")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Kettle" unique_id=646486860]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.40306094, 0)
+shape = SubResource("CylinderShape3D_12cju")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Kettle" unique_id=1695656357]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13198853, 0.38489342, 0.15755081)
