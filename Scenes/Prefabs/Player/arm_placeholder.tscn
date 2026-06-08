@@ -56,11 +56,21 @@ settings/0/forward_axis = 2
 settings/0/use_euler = false
 settings/0/relative = false
 
+[node name="BoneTwistDisperser3D" type="BoneTwistDisperser3D" parent="Armature/Skeleton3D" parent_id_path=PackedInt32Array(2121869969) index="3" unique_id=1736502038]
+setting_count = 1
+settings/0/root_bone_name = "Arm"
+settings/0/root_bone = 0
+settings/0/end_bone_name = "Wrist"
+settings/0/end_bone = 2
+settings/0/extend_end_bone = false
+settings/0/twist_from_rest = true
+settings/0/disperse_mode = 0
+settings/0/joint_count = 3
+
 [node name="WristIK_Target" type="Node3D" parent="." index="1" unique_id=105438438]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.028361611, -2.4205704, -0.15033627)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05742959, -1.7426813, 0.47567773)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="WristIK_Target" index="0" unique_id=1068863661]
-visible = false
 material_override = SubResource("StandardMaterial3D_r1roq")
 mesh = SubResource("SphereMesh_6m1ft")
 
@@ -68,6 +78,6 @@ mesh = SubResource("SphereMesh_6m1ft")
 transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.33388874, -2.609622, 9.949475e-05)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="WristLookAt_Target" index="0" unique_id=1726819383]
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.103461385, 0, 0.7341861)
 material_override = SubResource("StandardMaterial3D_6m1ft")
 mesh = SubResource("SphereMesh_6m1ft")
