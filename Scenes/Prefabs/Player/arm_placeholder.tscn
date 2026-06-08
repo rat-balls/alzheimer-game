@@ -3,6 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://ct15vjl0abwew" path="res://Assets/Models/Arm/arm_placeholder.glb" id="1_6m1ft"]
 [ext_resource type="Script" uid="uid://dhhvodesedabd" path="res://Scripts/Player/arm_ik_handler.gd" id="2_r1roq"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_moh0u"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.50980395)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r1roq"]
 albedo_color = Color(1, 1, 0, 1)
 
@@ -19,6 +23,9 @@ script = ExtResource("2_r1roq")
 wrist_ik = NodePath("WristIK_Target")
 wrist_look_at = NodePath("WristLookAt_Target")
 armature = NodePath("Armature/Skeleton3D")
+
+[node name="ArmMesh" parent="Armature/Skeleton3D" parent_id_path=PackedInt32Array(2121869969) index="0" unique_id=279143546]
+material_override = SubResource("StandardMaterial3D_moh0u")
 
 [node name="FABRIK3D" type="FABRIK3D" parent="Armature/Skeleton3D" parent_id_path=PackedInt32Array(2121869969) index="1" unique_id=984959619]
 transform = Transform3D(0.8251628, 0, -0.564895, 0, 1, 0, 0.564895, 0, 0.8251628, 0, 0, 0)
