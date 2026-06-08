@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://b31ajnbqdx5dv"]
+[gd_scene load_steps=0 format=4 uid="uid://b31ajnbqdx5dv"]
 
 [ext_resource type="Texture2D" uid="uid://ykyiiydgjdc0" path="res://Assets/Models/House/moka_Image_0.png" id="1_dmuhg"]
 [ext_resource type="Texture2D" uid="uid://ccd6um7y0bewg" path="res://Assets/Models/House/moka_Image_1_2.png" id="2_25hbx"]
