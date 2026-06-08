@@ -19,6 +19,10 @@ run/main_scene="uid://bxu1lgm37v1d4"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+DiseaseProgManager="*uid://c852g52rp1ow1"
+
 [global_group]
 
 interactable=""
