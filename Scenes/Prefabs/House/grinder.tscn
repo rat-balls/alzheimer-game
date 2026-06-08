@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene format=4 uid="uid://dpsgy45k84orn"]
+=======
+[gd_scene load_steps=31 format=4 uid="uid://cflthynr6d1y2"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Texture2D" path="res://Scenes/Home/Maison_Image_3.png" id="1_jj2ob"]
 [ext_resource type="Script" uid="uid://c8hvppj11fnop" path="res://Scripts/Grinder/grinder.gd" id="1_x55j8"]
@@ -95,7 +99,16 @@ shadow_mesh = SubResource("ArrayMesh_i4wv0")
 [sub_resource type="BoxShape3D" id="BoxShape3D_jj2ob"]
 size = Vector3(1.1606445, 1, 3.315918)
 
+<<<<<<< Updated upstream
 [sub_resource type="ArrayMesh" id="ArrayMesh_ieyni"]
+=======
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_oqy7v"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yiaim"]
+size = Vector3(1.5, 0.9, 1.8097168)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_334wk"]
+>>>>>>> Stashed changes
 _surfaces = [{
 "aabb": AABB(-0.75342375, 0.28482318, -0.6571903, 1.5068532, 0.88448143, 1.9005111),
 "format": 34896613377,
@@ -329,6 +342,7 @@ shadow_mesh = SubResource("ArrayMesh_weftd")
 [sub_resource type="BoxShape3D" id="BoxShape3D_oqy7v"]
 size = Vector3(1.9499512, 0.7833252, 1.9726563)
 
+<<<<<<< Updated upstream
 [node name="Grinder" type="Node3D" unique_id=1407272849]
 script = ExtResource("1_x55j8")
 
@@ -346,14 +360,65 @@ script = ExtResource("7_33e8m")
 grinder = NodePath("../..")
 
 [node name="CollisionPolygon3D" type="CollisionShape3D" parent="Grinder_handle/StaticBody3D" unique_id=1030513500]
+=======
+[node name="grinder" type="Node3D" node_paths=PackedStringArray("grinder_handle")]
+script = ExtResource("1_vkprn")
+grinder_handle = NodePath("Grinder_handle")
+
+[node name="Grinder_handle" type="Node3D" parent="."]
+transform = Transform3D(-0.11287217, 0, -0.08361488, 0, 0.14046909, 0, 0.08361488, 0, -0.11287217, 0, 0, 0)
+
+[node name="polySurface38" type="Node3D" parent="Grinder_handle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.8146973e-06)
+
+[node name="polySurface38_rsWood1_0" type="MeshInstance3D" parent="Grinder_handle/polySurface38"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.8146973e-06)
+mesh = SubResource("ArrayMesh_std76")
+skeleton = NodePath("")
+
+[node name="GrabPointMark" type="Marker3D" parent="Grinder_handle/polySurface38/polySurface38_rsWood1_0"]
+transform = Transform3D(0.99999946, 0, 8.940697e-08, 0, 0.9999994, 0, -8.940697e-08, 0, 0.99999946, 1.6915779, 4.8914227, -1.8359274)
+
+[node name="LookAtMark" type="Marker3D" parent="Grinder_handle/polySurface38/polySurface38_rsWood1_0"]
+transform = Transform3D(0.9999993, 0, 8.940697e-08, 0, 0.9999992, 0, -8.940697e-08, 0, 0.9999993, 1.6915777, 2.7943418, -1.8359271)
+
+[node name="StaticBody3D" type="Area3D" parent="Grinder_handle" node_paths=PackedStringArray("grinder") groups=["GrinderHandle"]]
+script = ExtResource("7_7uqnd")
+grinder = NodePath("../..")
+
+[node name="CollisionPolygon3D" type="CollisionShape3D" parent="Grinder_handle/StaticBody3D"]
+>>>>>>> Stashed changes
 transform = Transform3D(0.79515606, 0, -0.60640484, 0, 1.0000005, 0, 0.60640484, 0, 0.79515606, 0.76606077, 3.945731, -0.87205034)
 shape = SubResource("BoxShape3D_jj2ob")
 
+<<<<<<< Updated upstream
 [node name="Grinder_drawer" type="RigidBody3D" parent="." unique_id=697607744]
 top_level = true
+=======
+[node name="GrinderDrawerBod" type="RigidBody3D" parent="." groups=["Rotatable"]]
+physics_material_override = SubResource("PhysicsMaterial_oqy7v")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GrinderDrawerBod"]
+transform = Transform3D(0.029798334, 0, 0.13727212, 0, 0.14046909, 0, -0.13727212, 0, 0.029798334, 0.008099478, 0.09962082, -0.0067870812)
+shape = SubResource("BoxShape3D_yiaim")
+
+[node name="Grinder_drawer" type="MeshInstance3D" parent="GrinderDrawerBod"]
+transform = Transform3D(0.029798338, 0, 0.13727213, 0, 0.14046909, 0, -0.13727213, 0, 0.029798338, 0.10449493, 0.09962082, 0.0141379535)
+mesh = SubResource("ArrayMesh_kyjuc")
+skeleton = NodePath("")
+
+[node name="GrabPointMark" type="Marker3D" parent="GrinderDrawerBod"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18206975, 0.123207346, -2.9802322e-08)
+
+[node name="LookAtMark" type="Marker3D" parent="GrinderDrawerBod"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014381617, 0.08141601, 0)
+
+[node name="GrinderDrawerArea" type="Area3D" parent="." node_paths=PackedStringArray("grinder_drawer_bod", "table_position")]
+>>>>>>> Stashed changes
 linear_damp = 0.05
 angular_damp = 0.05
 
+<<<<<<< Updated upstream
 [node name="polySurface46" type="Node3D" parent="Grinder_drawer" unique_id=1863002305]
 
 [node name="polySurface47" type="Node3D" parent="Grinder_drawer" unique_id=1503670379]
@@ -379,37 +444,95 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4125386e-06, 0, 3.547405e-0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4125386e-06, 0, 3.547405e-06)
 
 [node name="polySurface41_rsWood1_0" type="MeshInstance3D" parent="Grinder_body/polySurface41" unique_id=797961552]
+=======
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="GrinderDrawerArea"]
+transform = Transform3D(0.029798334, 0, 0.13727212, 0, 0.14046909, 0, -0.13727212, 0, 0.029798334, 0.016376985, 0.10718729, -0.004434831)
+shape = SubResource("BoxShape3D_2210i")
+
+[node name="Grinder_body" type="Node3D" parent="."]
+transform = Transform3D(0.029798344, 0, 0.13727212, 0, 0.14046909, 0, -0.13727212, 0, 0.029798344, 0, 0, 0)
+
+[node name="polySurface39" type="Node3D" parent="Grinder_body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4125386e-06, 0, 3.547405e-06)
+
+[node name="polySurface40" type="Node3D" parent="Grinder_body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4125386e-06, 0, 3.547405e-06)
+
+[node name="polySurface41" type="Node3D" parent="Grinder_body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4125386e-06, 0, 3.547405e-06)
+
+[node name="polySurface41_rsWood1_0" type="MeshInstance3D" parent="Grinder_body/polySurface41"]
+>>>>>>> Stashed changes
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4125386e-06, 0, 3.547405e-06)
 mesh = SubResource("ArrayMesh_3qhwu")
 
+<<<<<<< Updated upstream
 [node name="polySurface42" type="Node3D" parent="Grinder_body" unique_id=1516414748]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4125386e-06, 0, 3.547405e-06)
 
 [node name="polySurface42_rsWood1_0" type="MeshInstance3D" parent="Grinder_body/polySurface42" unique_id=45729352]
+=======
+[node name="polySurface42" type="Node3D" parent="Grinder_body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4125386e-06, 0, 3.547405e-06)
+
+[node name="polySurface42_rsWood1_0" type="MeshInstance3D" parent="Grinder_body/polySurface42"]
+>>>>>>> Stashed changes
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4125386e-06, 0, 3.547405e-06)
 mesh = SubResource("ArrayMesh_tkq7t")
 
+<<<<<<< Updated upstream
 [node name="polySurface43" type="Node3D" parent="Grinder_body" unique_id=1517785945]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4125386e-06, 0, 3.547405e-06)
 
 [node name="polySurface43_rsWood1_0" type="MeshInstance3D" parent="Grinder_body/polySurface43" unique_id=1956958551]
+=======
+[node name="polySurface43" type="Node3D" parent="Grinder_body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4125386e-06, 0, 3.547405e-06)
+
+[node name="polySurface43_rsWood1_0" type="MeshInstance3D" parent="Grinder_body/polySurface43"]
+>>>>>>> Stashed changes
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4125386e-06, 0, 3.547405e-06)
 mesh = SubResource("ArrayMesh_md8ms")
 
+<<<<<<< Updated upstream
 [node name="polySurface44" type="Node3D" parent="Grinder_body" unique_id=876448392]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4125386e-06, 0, 3.547405e-06)
 
 [node name="polySurface44_rsWood1_0" type="MeshInstance3D" parent="Grinder_body/polySurface44" unique_id=92736824]
+=======
+[node name="polySurface44" type="Node3D" parent="Grinder_body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4125386e-06, 0, 3.547405e-06)
+
+[node name="polySurface44_rsWood1_0" type="MeshInstance3D" parent="Grinder_body/polySurface44"]
+>>>>>>> Stashed changes
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4125386e-06, 0, 3.547405e-06)
 mesh = SubResource("ArrayMesh_wnfcn")
 
+<<<<<<< Updated upstream
 [node name="polySurface45" type="Node3D" parent="Grinder_body" unique_id=1862750908]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4125386e-06, 0, 3.547405e-06)
 
 [node name="polySurface45_rsWood1_0" type="MeshInstance3D" parent="Grinder_body/polySurface45" unique_id=1748927766]
+=======
+[node name="polySurface45" type="Node3D" parent="Grinder_body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4125386e-06, 0, 3.547405e-06)
+
+[node name="polySurface45_rsWood1_0" type="MeshInstance3D" parent="Grinder_body/polySurface45"]
+>>>>>>> Stashed changes
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4125386e-06, 0, 3.547405e-06)
 mesh = SubResource("ArrayMesh_tyrxd")
 
+<<<<<<< Updated upstream
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Grinder_body" unique_id=501664811]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.009887695, -0.1169762, -0.005859375)
 shape = SubResource("BoxShape3D_oqy7v")
+=======
+[node name="BottomColl" type="StaticBody3D" parent="Grinder_body"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Grinder_body/BottomColl"]
+transform = Transform3D(1, 0, 1.4901161e-08, 0, 0.9999999, 0, -1.4901161e-08, 0, 1, -0.009887695, -0.116975784, -0.005859375)
+shape = SubResource("BoxShape3D_6shfn")
+
+[node name="TablePos" type="Marker3D" parent="."]
+transform = Transform3D(0.32772136, 0, -0.9447744, 0, 1, 0, 0.9447744, 0, 0.32772136, 0.39029145, 0, 0.06289804)
+>>>>>>> Stashed changes
