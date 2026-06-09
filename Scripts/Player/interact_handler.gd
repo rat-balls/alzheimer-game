@@ -77,8 +77,10 @@ func rotate_held_object(mouse_delta: Vector2) -> void:
 	held_object.angular_velocity = Vector3.ZERO
 	var obj_rotate_y = -mouse_delta.x * OBJECT_ROTATE_SENSITIVITY
 	var obj_rotate_x = -mouse_delta.y * OBJECT_ROTATE_SENSITIVITY
-	held_object.rotate_object_local(Vector3.UP, obj_rotate_y)
-	held_object.rotate_object_local(Vector3.RIGHT, obj_rotate_x)
+	var camera_right = camera.global_transform.basis.x.normalized()
+	var camera_up = camera.global_transform.basis.y.normalized()
+	held_object.rotate(camera_up, obj_rotate_y)
+	held_object.rotate(camera_right, obj_rotate_x)
 
 func throw_object() -> void:
 	var obj = held_object

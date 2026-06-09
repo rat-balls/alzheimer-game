@@ -1,19 +1,13 @@
 extends RigidBody3D
-
+@onready var pour_point: Marker3D = $PourPoint
 @onready var coffee_particles: GPUParticles3D = $PourPoint/CoffeeParticles
-
-@export var pour_angle_threshold : float= 0.55
+@export var pour_angle_threshold : float= 0.4
 
 func _ready() -> void:
 	coffee_particles.emitting = false
 
 func _physics_process(_delta: float) -> void:
-	var bag_up = global_transform.basis.y
-	var world_up = Vector3.UP
+	var opening_direction := pour_point.global_transform.basis.y
+	var is_opening_down := opening_direction.dot(Vector3.DOWN)
 
-	var tilt_amount = bag_up.dot(world_up)
-
-	if tilt_amount < pour_angle_threshold:
-		coffee_particles.emitting = true
-	else:
-		coffee_particles.emitting = false
+	coffee_particles.emitting = is_opening_down > pour_angle_threshold
