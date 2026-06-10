@@ -567,7 +567,6 @@ skin = SubResource("Skin_lk4hs")
 
 [node name="FABRIK3D" type="FABRIK3D" parent="arms/Skeleton3D" unique_id=1442048926]
 transform = Transform3D(0.8251628, 0, -0.564895, 0, 1, 0, 0.564895, 0, 0.8251628, 0, 0, 0)
-active = false
 max_iterations = 15
 setting_count = 2
 settings/0/target_node = NodePath("../../../WristIK_Target")
@@ -609,7 +608,6 @@ settings/0/use_euler = false
 settings/0/relative = true
 
 [node name="BoneTwistDisperser3D" type="BoneTwistDisperser3D" parent="arms/Skeleton3D" unique_id=1256785355]
-active = false
 setting_count = 1
 settings/0/root_bone_name = "forearm.r"
 settings/0/root_bone = 3
