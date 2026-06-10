@@ -23,8 +23,8 @@ func _ready() -> void:
 	default_pos_ik = wrist_ik.position
 	default_pos_lookat = wrist_look_at.position
 	
-	arm_bone_idx = armature.find_bone("Arm")
-	forearm_bone_idx = armature.find_bone("Forearm")
+	arm_bone_idx = armature.find_bone("bicep.r")
+	forearm_bone_idx = armature.find_bone("forearm.r")
 
 func _process(_delta: float) -> void:
 	if(interact_handler.held_object):
@@ -61,12 +61,13 @@ func handle_held_obj(obj) ->void:
 			ik_tween.set_parallel(true)
 			ik_tween.tween_property(wrist_look_at, "global_position", obj_la.global_position, 0.3).set_trans(Tween.TRANS_QUAD)
 			ik_tween.tween_property(wrist_ik, "global_position", obj_gp.global_position, 0.3).set_trans(Tween.TRANS_QUAD)
-			
+
 			ik_tween.tween_callback(func() -> void: 
 				animating = false 
 				print("here2")).set_delay(0.3)
 		elif(!animating):
 			wrist_look_at.global_position = obj_la.global_position
 			wrist_ik.global_position = obj_gp.global_position
-			armature.set_bone_pose_scale(arm_bone_idx, Vector3(1, clamp(armature.global_position.distance_to(obj_gp.global_position) * 0.47, 0.6, 1.), 1))
-			armature.set_bone_pose_scale(forearm_bone_idx, Vector3(1, clamp(armature.global_position.distance_to(obj_gp.global_position) * 0.47, 0.6, 1), 1))
+			if(!interact_handler.grabbed_grinder):
+				armature.set_bone_pose_scale(arm_bone_idx, Vector3(1, clamp(armature.global_position.distance_to(obj_gp.global_position) * 0.47, 0.8, 1), 1))
+				armature.set_bone_pose_scale(forearm_bone_idx, Vector3(1, clamp(armature.global_position.distance_to(obj_gp.global_position) * 0.47, 0.8, 1), 1))
