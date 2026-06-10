@@ -4,6 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://hry5epxqfm8v" path="res://Scenes/Prefabs/Player/player.tscn" id="1_g0qe1"]
 [ext_resource type="Script" uid="uid://dxbpv7qmp6gwn" path="res://Scripts/Player/reticle_handler.gd" id="3_gd5k8"]
 [ext_resource type="PackedScene" uid="uid://2grnl4vl0826" path="res://Scenes/Prefabs/House/house.tscn" id="4_ducwh"]
+[ext_resource type="Script" uid="uid://cjvobdo17cyfg" path="res://Scripts/Systems/game_manager.gd" id="5_y4r2c"]
+[ext_resource type="Script" uid="uid://ccvj5q47q5n1x" path="res://Scripts/Systems/blink_effect.gd" id="6_kn5yr"]
+[ext_resource type="Shader" uid="uid://citmki41hu2ld" path="res://Scripts/Systems/blink.gdshader" id="6_prmnh"]
 
 [sub_resource type="Environment" id="Environment_gd5k8"]
 ambient_light_color = Color(1, 0.34657717, 0.2800086, 1)
@@ -17,6 +20,11 @@ friction = 0.3
 transparency = 1
 
 [sub_resource type="BoxMesh" id="BoxMesh_rwo3f"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kn5yr"]
+shader = ExtResource("6_prmnh")
+shader_parameter/blink_amount = 0.0
+shader_parameter/softness = 0.04
 
 [node name="sc_game" type="Node3D" unique_id=533166297]
 
@@ -89,3 +97,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.9998498, 0)
 
 [node name="Player" parent="." unique_id=812184645 instance=ExtResource("1_g0qe1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.765, 0)
+
+[node name="PlayerSpawn" type="Marker3D" parent="." unique_id=875758490]
+transform = Transform3D(0.8245708, 0, -0.56575876, 0, 1, 0, 0.56575876, 0, 0.8245708, 13.939402, -2.2797184, 10.862835)
+
+[node name="GameManager" type="Node3D" parent="." unique_id=372219250 node_paths=PackedStringArray("player", "player_spawn", "blink_effect")]
+script = ExtResource("5_y4r2c")
+player = NodePath("../Player")
+player_spawn = NodePath("../PlayerSpawn")
+blink_effect = NodePath("../BlinkEffect")
+loop_delay = 20.0
+
+[node name="BlinkEffect" type="CanvasLayer" parent="." unique_id=1841266626]
+script = ExtResource("6_kn5yr")
+
+[node name="BlinkOverlay" type="ColorRect" parent="BlinkEffect" unique_id=1299920238]
+material = SubResource("ShaderMaterial_kn5yr")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="AudioManager" type="Node" parent="." unique_id=607443424]

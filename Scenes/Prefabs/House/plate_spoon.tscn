@@ -1,4 +1,4 @@
-[gd_scene load_steps=0 format=4 uid="uid://cyims0wc7yfkc"]
+[gd_scene format=4 uid="uid://cyims0wc7yfkc"]
 
 [ext_resource type="Texture2D" uid="uid://isfpw0sf1rob" path="res://Assets/Models/House/plateSpoon_misc_mp_1.png" id="1_3ppxt"]
 [ext_resource type="Texture2D" uid="uid://cg3tcug7yskfx" path="res://Assets/Models/House/plateSpoon_plate_mp_1.png" id="2_mkbkp"]
