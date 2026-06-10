@@ -3,7 +3,7 @@ extends Node3D
 const INTERACT_DISTANCE = 4.0
 const HOLD_FORCE = 15.0
 const THROW_FORCE = 6.0
-const OBJECT_ROTATE_SENSITIVITY = 1
+const OBJECT_ROTATE_SENSITIVITY = 0.005
 const MIN_HOLD_DISTANCE = 1.0
 const MAX_HOLD_DISTANCE = 4.0
 const SCROLL_SPEED = 0.3
@@ -77,8 +77,10 @@ func rotate_held_object(mouse_delta: Vector2) -> void:
 	held_object.angular_velocity = Vector3.ZERO
 	var obj_rotate_y = -mouse_delta.x * OBJECT_ROTATE_SENSITIVITY
 	var obj_rotate_x = -mouse_delta.y * OBJECT_ROTATE_SENSITIVITY
-	held_object.rotate_object_local(Vector3.UP, obj_rotate_y)
-	held_object.rotate_object_local(Vector3.RIGHT, obj_rotate_x)
+	var camera_right = camera.global_transform.basis.x.normalized()
+	var camera_up = camera.global_transform.basis.y.normalized()
+	held_object.rotate(camera_up, obj_rotate_y)
+	held_object.rotate(camera_right, obj_rotate_x)
 
 func throw_object() -> void:
 	var obj = held_object
@@ -132,7 +134,7 @@ func try_interact_object() -> void:
 		interact()
 
 func grab() -> void:
-	hold_distance = default_hold_distance
+	hold_distance = valid_hold_target.global_position.distance_to(global_position)
 	held_object = valid_hold_target
 	held_object.gravity_scale = 0.0
 	held_object.linear_damp = 6.0

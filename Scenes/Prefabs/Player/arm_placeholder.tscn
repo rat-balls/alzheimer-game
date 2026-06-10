@@ -3,6 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://ct15vjl0abwew" path="res://Assets/Models/Arm/arm_placeholder.glb" id="1_6m1ft"]
 [ext_resource type="Script" uid="uid://dhhvodesedabd" path="res://Scripts/Player/arm_ik_handler.gd" id="2_r1roq"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_moh0u"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.50980395)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r1roq"]
 albedo_color = Color(1, 1, 0, 1)
 
@@ -19,6 +23,9 @@ script = ExtResource("2_r1roq")
 wrist_ik = NodePath("WristIK_Target")
 wrist_look_at = NodePath("WristLookAt_Target")
 armature = NodePath("Armature/Skeleton3D")
+
+[node name="ArmMesh" parent="Armature/Skeleton3D" parent_id_path=PackedInt32Array(2121869969) index="0" unique_id=279143546]
+material_override = SubResource("StandardMaterial3D_moh0u")
 
 [node name="FABRIK3D" type="FABRIK3D" parent="Armature/Skeleton3D" parent_id_path=PackedInt32Array(2121869969) index="1" unique_id=984959619]
 transform = Transform3D(0.8251628, 0, -0.564895, 0, 1, 0, 0.564895, 0, 0.8251628, 0, 0, 0)
@@ -49,11 +56,21 @@ settings/0/forward_axis = 2
 settings/0/use_euler = false
 settings/0/relative = false
 
+[node name="BoneTwistDisperser3D" type="BoneTwistDisperser3D" parent="Armature/Skeleton3D" parent_id_path=PackedInt32Array(2121869969) index="3" unique_id=1736502038]
+setting_count = 1
+settings/0/root_bone_name = "Arm"
+settings/0/root_bone = 0
+settings/0/end_bone_name = "Wrist"
+settings/0/end_bone = 2
+settings/0/extend_end_bone = false
+settings/0/twist_from_rest = true
+settings/0/disperse_mode = 0
+settings/0/joint_count = 3
+
 [node name="WristIK_Target" type="Node3D" parent="." index="1" unique_id=105438438]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.028361611, -2.4205704, -0.15033627)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05742959, -1.7426813, 0.47567773)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="WristIK_Target" index="0" unique_id=1068863661]
-visible = false
 material_override = SubResource("StandardMaterial3D_r1roq")
 mesh = SubResource("SphereMesh_6m1ft")
 
@@ -61,6 +78,6 @@ mesh = SubResource("SphereMesh_6m1ft")
 transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -0.33388874, -2.609622, 9.949475e-05)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="WristLookAt_Target" index="0" unique_id=1726819383]
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.103461385, 0, 0.7341861)
 material_override = SubResource("StandardMaterial3D_6m1ft")
 mesh = SubResource("SphereMesh_6m1ft")
