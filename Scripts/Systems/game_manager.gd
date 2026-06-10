@@ -21,6 +21,7 @@ func respawn_player() -> void:
 		return
 	
 	player.global_transform = player_spawn.global_transform
+	DiseaseProgManager.increment_prog(100)
 
 func start_loop_timer() -> void:
 	await get_tree().create_timer(loop_delay).timeout

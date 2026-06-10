@@ -66,7 +66,6 @@ func handle_held_obj(obj) ->void:
 				animating = false 
 				print("here2")).set_delay(0.3)
 		elif(!animating):
-			print("here")
 			wrist_look_at.global_position = obj_la.global_position
 			wrist_ik.global_position = obj_gp.global_position
 			armature.set_bone_pose_scale(arm_bone_idx, Vector3(1, clamp(armature.global_position.distance_to(obj_gp.global_position) * 0.47, 0.6, 1.), 1))

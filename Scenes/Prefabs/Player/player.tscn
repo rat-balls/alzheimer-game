@@ -16,6 +16,7 @@ height = 3.0
 
 [node name="Player" type="CharacterBody3D" unique_id=812184645 groups=["Player"]]
 collision_layer = 2
+axis_lock_linear_y = true
 script = ExtResource("1_pv3ct")
 
 [node name="PlayerColl" type="CollisionShape3D" parent="." unique_id=1342834600]
