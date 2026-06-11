@@ -7,10 +7,10 @@ var drawer_grabbed :bool= false
 var coffee_filled: bool = false
 var drawer_filled: bool = false
 var virtual_mouse_pos :Vector2= Vector2.ZERO
-var previous_angle :float= 0.0
-var rotation_sensitivity :float= 1.0
+var previous_angle: float = 0.0
+var rotation_sensitivity: float = 1.0
 var grind_progress: float = 0.0
-@export var grind_needed: float = 20.0
+@export var grind_needed: float = 50.0
 
 func fill_coffee() -> void:
 	if coffee_filled:
@@ -30,8 +30,6 @@ func stop_grabbing_handle() -> void:
 func rotate_handle(mouse_delta: Vector2) -> void:
 	if not handle_grabbed:
 		return
-	if not coffee_filled:
-		return
 	
 	var viewport_size = get_viewport().get_visible_rect().size
 	var center = viewport_size / 2.0
@@ -40,9 +38,10 @@ func rotate_handle(mouse_delta: Vector2) -> void:
 	var current_angle = get_virtual_mouse_angle()
 	var delta_angle = wrapf(current_angle - previous_angle, -PI, PI)
 	grinder_handle.rotate_object_local(Vector3.UP, -delta_angle * rotation_sensitivity)
-	grind_progress += abs(delta_angle)
-	if grind_progress >= grind_needed:
-		fill_drawer()
+	if coffee_filled:
+		grind_progress += abs(delta_angle)
+		if grind_progress >= grind_needed:
+			fill_drawer()
 	previous_angle = current_angle
 
 func get_virtual_mouse_angle() -> float:

@@ -106,15 +106,20 @@ bind/19/pose = Transform3D(-0.7965295, 9.754673e-17, -0.60459965, 1.9650679e-16,
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bwm4r"]
 albedo_color = Color(1, 1, 0, 1)
 
-[sub_resource type="SphereMesh" id="SphereMesh_ko3t0"]
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ko3t0"]
 radius = 0.1
-height = 0.2
+height = 0.8
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_ko3t0"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xd0tv"]
 radius = 0.1
+height = 0.8
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ko3t0"]
 albedo_color = Color(0.15294118, 1, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_ko3t0"]
+radius = 0.1
+height = 0.2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xd0tv"]
 albedo_color = Color(0.2, 0, 0.24705882, 1)
@@ -123,6 +128,8 @@ albedo_color = Color(0.2, 0, 0.24705882, 1)
 script = ExtResource("1_ko3t0")
 wrist_ik = NodePath("WristIK_Target")
 wrist_look_at = NodePath("WristLookAt_Target")
+grinder_offset_mult = 0.5
+debug_twist_bone = false
 
 [node name="Armature" type="Skeleton3D" parent="." unique_id=847036572]
 transform = Transform3D(1, 0, 0, 0, 1, -2.220446e-16, 0, 2.220446e-16, 1, 0, 0, 0)
@@ -290,7 +297,7 @@ settings/0/joints/2/limitation = null
 
 [node name="WristLookAt" type="AimModifier3D" parent="Armature" unique_id=1568633183]
 setting_count = 1
-settings/0/amount = 1.0
+settings/0/amount = 0.7
 settings/0/apply_bone_name = "wrist_03"
 settings/0/apply_bone = 4
 settings/0/reference_type = 1
@@ -300,9 +307,24 @@ settings/0/use_euler = false
 settings/0/relative = true
 
 [node name="HandMarker" type="BoneAttachment3D" parent="Armature" unique_id=1926085601]
-transform = Transform3D(0.18287149, 0.011221998, 0.9830727, 0.9830433, -0.015876845, -0.18268487, 0.013557934, 0.999811, -0.013935121, 0.012397105, 0.298414, -1.8437409)
+transform = Transform3D(0.17764863, 0.010452008, 0.9840385, 0.8788587, 0.44821972, -0.16342127, -0.44277352, 0.8938623, 0.070439786, 0.010735715, 0.26939195, -1.9892318)
 bone_name = "middlefinger_010"
 bone_idx = 11
+
+[node name="Elbow01" type="BoneAttachment3D" parent="Armature" unique_id=1588773918]
+transform = Transform3D(0.010962763, 0.00073217636, 0.9999396, -0.015510138, 0.99987954, -0.0005620881, -0.99981964, -0.01550304, 0.010972799, 6.090659e-08, -2.2689474e-16, -1.0218431)
+bone_name = "elbow_01"
+bone_idx = 2
+
+[node name="Twist02" type="BoneAttachment3D" parent="Armature" unique_id=857338471]
+transform = Transform3D(0.010962763, 0.00073217636, 0.9999396, -0.015510138, 0.99987954, -0.0005620881, -0.99981964, -0.01550304, 0.010972799, 3.2035594e-08, -1.7334971e-09, -1.7169166)
+bone_name = "twist_02"
+bone_idx = 3
+
+[node name="Wrist03" type="BoneAttachment3D" parent="Armature" unique_id=1853977314]
+transform = Transform3D(-0.74978817, 0.010452008, 0.66159534, 0.59495276, 0.44821972, 0.66718084, -0.28956673, 0.8938623, -0.34228832, 0.0091599915, -0.012959488, -1.8572417)
+bone_name = "wrist_03"
+bone_idx = 4
 
 [node name="WristIK_Target" type="RigidBody3D" parent="." unique_id=793687914]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.0948982)
@@ -310,18 +332,23 @@ collision_layer = 2
 collision_mask = 4
 mass = 0.001
 gravity_scale = 0.0
+linear_damp = 6.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="WristIK_Target" unique_id=654555271]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+visible = false
 material_override = SubResource("StandardMaterial3D_bwm4r")
-mesh = SubResource("SphereMesh_ko3t0")
+mesh = SubResource("CapsuleMesh_ko3t0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="WristIK_Target" unique_id=2108185105]
-shape = SubResource("SphereShape3D_ko3t0")
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_xd0tv")
 
 [node name="ElbowIK_Target" type="Node3D" parent="." unique_id=664951168]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.161228)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="ElbowIK_Target" unique_id=235026216]
+visible = false
 material_override = SubResource("StandardMaterial3D_ko3t0")
 mesh = SubResource("SphereMesh_ko3t0")
 
@@ -329,5 +356,6 @@ mesh = SubResource("SphereMesh_ko3t0")
 transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0, 0, -2.6733482)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="WristLookAt_Target" unique_id=1401824484]
+visible = false
 material_override = SubResource("StandardMaterial3D_xd0tv")
 mesh = SubResource("SphereMesh_ko3t0")

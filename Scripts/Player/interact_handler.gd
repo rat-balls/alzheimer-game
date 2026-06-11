@@ -4,14 +4,14 @@ const INTERACT_DISTANCE = 4.0
 const HOLD_FORCE = 15.0
 const THROW_FORCE = 6.0
 const OBJECT_ROTATE_SENSITIVITY = 0.005
-const MIN_HOLD_DISTANCE = 1.0
-const MAX_HOLD_DISTANCE = 3.0
+const MIN_HOLD_DISTANCE = 1.5
+const MAX_HOLD_DISTANCE = 2.5
 const SCROLL_SPEED = 0.3
 
 var player: CharacterBody3D
 var camera: Camera3D
 
-var default_hold_distance: float = 1.0
+var default_hold_distance: float = 2.0
 var hold_distance: float = default_hold_distance
 var valid_hold_target: RigidBody3D = null
 var valid_interact_target: Area3D = null
@@ -36,8 +36,10 @@ func _physics_process(_delta: float) -> void:
 		var target_rotation = global_transform.basis.get_rotation_quaternion() * held_rotation_offset
 		held_object.global_transform = Transform3D(Basis(target_rotation), held_object.global_position)
 		held_object.angular_velocity = Vector3.ZERO
-	if held_object.global_position.distance_to(global_position) > MAX_HOLD_DISTANCE + 1.5:
+	if held_object.global_position.distance_to(global_position) > MAX_HOLD_DISTANCE + 2:
 		drop_object()
+	elif held_object.global_position.distance_to(global_position) > MAX_HOLD_DISTANCE:
+		hold_distance = MAX_HOLD_DISTANCE
 
 func _input(event: InputEvent) -> void:
 	if camera.mouse_visible:
