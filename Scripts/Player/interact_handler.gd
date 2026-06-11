@@ -145,4 +145,4 @@ func interact() -> void:
 	if valid_interact_target.is_in_group("GrinderHandle"):
 		grabbed_grinder = valid_interact_target.grinder
 		is_rotating_object = true
-	valid_interact_target.interact()
+		valid_interact_target.interact()

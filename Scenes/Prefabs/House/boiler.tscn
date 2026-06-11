@@ -1,6 +1,8 @@
 [gd_scene format=4 uid="uid://dnv74xxskn2h8"]
 
+[ext_resource type="Script" uid="uid://l2fqn1w2myyk" path="res://Scripts/Boiler/boiler.gd" id="1_4v7k5"]
 [ext_resource type="Texture2D" uid="uid://d4m0rdrghbliu" path="res://Assets/Models/House/boiler_0.png" id="1_egro5"]
+[ext_resource type="Script" uid="uid://d4k744o8kaw3r" path="res://Scripts/Boiler/water_detection.gd" id="2_x2w13"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_633ce"]
 resource_name = "material_0"
@@ -48,7 +50,13 @@ radius = 0.37415096
 [sub_resource type="BoxShape3D" id="BoxShape3D_egro5"]
 size = Vector3(0.56066895, 0.07611084, 0.5135498)
 
-[node name="Boiler" type="RigidBody3D" unique_id=669336461]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_x2w13"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_4v7k5"]
+radius = 0.03
+
+[node name="Boiler" type="RigidBody3D" unique_id=669336461 groups=["Boiler", "Rotatable"]]
+script = ExtResource("1_4v7k5")
 
 [node name="Boiler_model" type="Node3D" parent="." unique_id=1227962647]
 transform = Transform3D(1, 0, 0, 0, 2.220446e-16, 1, 0, -1, 2.220446e-16, 0, 0, 0)
@@ -66,3 +74,17 @@ shape = SubResource("SphereShape3D_egro5")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1782463421]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0014038086, 0.046783447, -0.008850098)
 shape = SubResource("BoxShape3D_egro5")
+
+[node name="WaterDetection" type="Area3D" parent="." unique_id=1185062497]
+script = ExtResource("2_x2w13")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WaterDetection" unique_id=418187020]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.054265976, 0.3948254, 0)
+shape = SubResource("SphereShape3D_egro5")
+
+[node name="PourPoint" type="Marker3D" parent="." unique_id=320544959]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2747064, 0.17924798, 0)
+
+[node name="WaterParticules" type="GPUParticles3D" parent="PourPoint" unique_id=486129795]
+process_material = SubResource("ParticleProcessMaterial_x2w13")
+draw_pass_1 = SubResource("SphereMesh_4v7k5")

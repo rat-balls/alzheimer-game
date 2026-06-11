@@ -39,6 +39,7 @@ door=""
 GrinderHandle=""
 GrinderDrawer=""
 Rotatable=""
+Boiler=""
 
 [input]
 
