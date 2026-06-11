@@ -53,7 +53,8 @@ size = Vector3(0.56066895, 0.07611084, 0.5135498)
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_x2w13"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_4v7k5"]
-radius = 0.03
+radius = 0.01
+height = 0.01
 
 [node name="Boiler" type="RigidBody3D" unique_id=669336461 groups=["Boiler", "Rotatable"]]
 script = ExtResource("1_4v7k5")
@@ -86,5 +87,9 @@ shape = SubResource("SphereShape3D_egro5")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2747064, 0.17924798, 0)
 
 [node name="WaterParticules" type="GPUParticles3D" parent="PourPoint" unique_id=486129795]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.40200084, 0)
+amount = 300
+lifetime = 0.8
+randomness = 0.2
 process_material = SubResource("ParticleProcessMaterial_x2w13")
 draw_pass_1 = SubResource("SphereMesh_4v7k5")
