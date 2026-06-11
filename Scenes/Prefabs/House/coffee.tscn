@@ -146,6 +146,8 @@ radius = 0.01
 height = 0.01
 
 [node name="Coffee_Bag" type="RigidBody3D" unique_id=564029172 groups=["Rotatable"]]
+collision_layer = 4
+collision_mask = 7
 script = ExtResource("1_4xfj4")
 
 [node name="Sketchfab_model" type="Node3D" parent="." unique_id=1163491096]

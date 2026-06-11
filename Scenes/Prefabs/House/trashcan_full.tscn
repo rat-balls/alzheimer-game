@@ -45,6 +45,8 @@ shadow_mesh = SubResource("ArrayMesh_swa5i")
 size = Vector3(0.7640381, 1.2590103, 1.1692352)
 
 [node name="trashcan_full" type="RigidBody3D" unique_id=631766612 groups=["Rotatable"]]
+collision_layer = 4
+collision_mask = 7
 
 [node name="Trash_can_full" type="MeshInstance3D" parent="." unique_id=1293996998]
 mesh = SubResource("ArrayMesh_0c87o")

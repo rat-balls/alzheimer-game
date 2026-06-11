@@ -101,6 +101,8 @@ shadow_mesh = SubResource("ArrayMesh_xqoqq")
 [node name="moka" type="Node3D" unique_id=777016317]
 
 [node name="Kettle" type="RigidBody3D" parent="." unique_id=20312699 groups=["Rotatable"]]
+collision_layer = 4
+collision_mask = 7
 
 [node name="Moka_Kettle" type="MeshInstance3D" parent="Kettle" unique_id=75299469]
 transform = Transform3D(-0.122753024, 0, -0.118520625, 0, 0.17063253, 0, 0.118520595, 0, -0.122753054, 0, 0, 0)
@@ -127,6 +129,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0077904314, 0.4110072, 0.0
 
 [node name="Lid" type="RigidBody3D" parent="." unique_id=130269953 groups=["Rotatable"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1367135, 0.7021689, 0.12856615)
+collision_layer = 4
+collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Lid" unique_id=708096808]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13574862, 0.028831542, -0.13052765)

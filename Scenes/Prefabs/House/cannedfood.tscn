@@ -240,6 +240,8 @@ shadow_mesh = SubResource("ArrayMesh_e6b86")
 
 [node name="Can1" type="RigidBody3D" parent="." unique_id=1254044704 groups=["Rotatable"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
+collision_layer = 4
+collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Can1" unique_id=486752815]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16238022, 0)
@@ -258,6 +260,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.017960161, 0.13915154, 0)
 
 [node name="Can2" type="RigidBody3D" parent="." unique_id=729759830 groups=["Rotatable"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, 0)
+collision_layer = 4
+collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Can2" unique_id=1814332914]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16238022, 0)
@@ -275,6 +279,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.102018416, 0.13915154, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.017960161, 0.13915154, 0)
 
 [node name="Can3" type="RigidBody3D" parent="." unique_id=1198590111 groups=["Rotatable"]]
+collision_layer = 4
+collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Can3" unique_id=1852469521]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16238022, 0)
@@ -293,6 +299,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.017960161, 0.13915154, 0)
 
 [node name="Can4" type="RigidBody3D" parent="." unique_id=1772282783 groups=["Rotatable"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0, 0)
+collision_layer = 4
+collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Can4" unique_id=49517140]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16238022, 0)

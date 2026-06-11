@@ -52,6 +52,8 @@ size = Vector3(0.5529785, 0.08276367, 0.52841187)
 size = Vector3(0.9359436, 0.22949219, 0.1725769)
 
 [node name="phone" type="RigidBody3D" unique_id=1147667700 groups=["Rotatable"]]
+collision_layer = 4
+collision_mask = 7
 
 [node name="Phone" type="MeshInstance3D" parent="." unique_id=1546469535]
 transform = Transform3D(-0.017802848, 0, -0.82237864, 0, 0.8225714, 0, 0.82237864, 0, -0.017802848, 0, 0, 0)

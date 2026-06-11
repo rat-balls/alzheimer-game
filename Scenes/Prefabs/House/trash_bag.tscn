@@ -46,6 +46,8 @@ radius = 0.3876953
 height = 0.9459839
 
 [node name="trash_bag" type="RigidBody3D" unique_id=289285072 groups=["Rotatable"]]
+collision_layer = 4
+collision_mask = 7
 
 [node name="Garbage_bag" type="MeshInstance3D" parent="." unique_id=1480182766]
 transform = Transform3D(-0.011383968, -0.001698541, 0.30575272, 0.04331905, 0.30286926, 0.0032954037, -0.30267322, 0.043410994, -0.01102815, 0, 0, 0)

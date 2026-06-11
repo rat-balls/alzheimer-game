@@ -99,6 +99,8 @@ radius = 0.30859375
 
 [node name="Spoon" type="RigidBody3D" parent="." unique_id=858415265 groups=["Rotatable"]]
 transform = Transform3D(0.49522346, -0.120531514, -0.86036384, -0.023511302, 0.9881069, -0.15196055, 0.8684475, 0.09548271, 0.48649985, -0.30622676, 0.1522811, -0.044746995)
+collision_layer = 4
+collision_mask = 7
 
 [node name="spoon" type="MeshInstance3D" parent="Spoon" unique_id=2028771290]
 transform = Transform3D(1.9089894, 0, 0, 0, 1.9089898, 0, 0, 0, 1.9089895, 0, 0, 0)
@@ -120,6 +122,8 @@ transform = Transform3D(1, -7.450581e-09, 0, 0, 1, 0, 0, 7.450581e-09, 1, -0.001
 transform = Transform3D(1, -2.2351742e-08, 0, 0, 1, 0, 0, 1.8626451e-08, 1, 0.0004262179, -0.05676894, 0.10473436)
 
 [node name="Plate" type="RigidBody3D" parent="." unique_id=1623006465 groups=["Rotatable"]]
+collision_layer = 4
+collision_mask = 7
 
 [node name="plate" type="MeshInstance3D" parent="Plate" unique_id=505852524]
 transform = Transform3D(1.9089893, 0, 0, 0, 1.9089894, 0, 0, 0, 1.9089893, 0, 0, 0)
