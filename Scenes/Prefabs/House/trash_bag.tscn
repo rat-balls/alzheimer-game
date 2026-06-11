@@ -48,16 +48,13 @@ height = 0.9459839
 [node name="trash_bag" type="RigidBody3D" unique_id=289285072 groups=["Rotatable"]]
 
 [node name="Garbage_bag" type="MeshInstance3D" parent="." unique_id=1480182766]
-transform = Transform3D(-0.011383968, -0.001698541, 0.30575272, 0.04331905, 0.30286926, 0.0032954037, -0.30267322, 0.043410994, -0.01102815, 0, 0, -0.1490432)
+transform = Transform3D(-0.011383968, -0.001698541, 0.30575272, 0.04331905, 0.30286926, 0.0032954037, -0.30267322, 0.043410994, -0.01102815, 0, 0, 0)
 mesh = SubResource("ArrayMesh_8uxws")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1059441428]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.044708252, -0.14593077)
 shape = SubResource("CapsuleShape3D_8w1js")
 
 [node name="GrabPointMark" type="Marker3D" parent="." unique_id=1043421979]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.103339285, 0.63713735, -0.1919713)
 
 [node name="LookAtMark" type="Marker3D" parent="." unique_id=1384197026]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10008478, 0.16752794, -0.082294226)
