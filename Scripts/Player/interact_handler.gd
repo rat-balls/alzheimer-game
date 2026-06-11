@@ -5,13 +5,13 @@ const HOLD_FORCE = 15.0
 const THROW_FORCE = 6.0
 const OBJECT_ROTATE_SENSITIVITY = 0.005
 const MIN_HOLD_DISTANCE = 1.0
-const MAX_HOLD_DISTANCE = 4.0
+const MAX_HOLD_DISTANCE = 3.0
 const SCROLL_SPEED = 0.3
 
 var player: CharacterBody3D
 var camera: Camera3D
 
-var default_hold_distance: float = 2.0
+var default_hold_distance: float = 1.0
 var hold_distance: float = default_hold_distance
 var valid_hold_target: RigidBody3D = null
 var valid_interact_target: Area3D = null
@@ -145,4 +145,5 @@ func interact() -> void:
 	if valid_interact_target.is_in_group("GrinderHandle"):
 		grabbed_grinder = valid_interact_target.grinder
 		is_rotating_object = true
-	valid_interact_target.interact()
+	if valid_interact_target.has_method("interact"):
+		valid_interact_target.interact()
