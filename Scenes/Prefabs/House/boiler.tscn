@@ -57,6 +57,8 @@ radius = 0.01
 height = 0.01
 
 [node name="Boiler" type="RigidBody3D" unique_id=669336461 groups=["Boiler", "Rotatable"]]
+collision_layer = 4
+collision_mask = 7
 script = ExtResource("1_4v7k5")
 
 [node name="Boiler_model" type="Node3D" parent="." unique_id=1227962647]
