@@ -45,10 +45,13 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_kw2fw")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_egro5"]
-radius = 0.37415096
+radius = 0.41774523
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_egro5"]
 size = Vector3(0.56066895, 0.07611084, 0.5135498)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4v7k5"]
+size = Vector3(0.6455078, 0.5678711, 0.3218994)
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_x2w13"]
 
@@ -80,8 +83,8 @@ shape = SubResource("BoxShape3D_egro5")
 script = ExtResource("2_x2w13")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="WaterDetection" unique_id=418187020]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.054265976, 0.3948254, 0)
-shape = SubResource("SphereShape3D_egro5")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12298012, 0.32738477, 0.0040893555)
+shape = SubResource("BoxShape3D_4v7k5")
 
 [node name="PourPoint" type="Marker3D" parent="." unique_id=320544959]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2747064, 0.17924798, 0)

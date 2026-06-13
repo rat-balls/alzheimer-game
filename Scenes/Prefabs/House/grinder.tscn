@@ -140,6 +140,7 @@ spread = 8.0
 
 [sub_resource type="SphereMesh" id="SphereMesh_0iq71"]
 radius = 0.006
+height = 0.006
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2210i"]
 size = Vector3(1.7, 1.3058838, 2.3976562)
@@ -394,6 +395,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18206975, 0.123207346, -2.9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014381617, 0.08141601, 0)
 
 [node name="PourPoint" type="Marker3D" parent="GrinderDrawerBod" unique_id=681918638]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16769363, 0.044408366)
 
 [node name="CoffeeParticles" type="GPUParticles3D" parent="GrinderDrawerBod/PourPoint" unique_id=1621886375]
 amount = 250
