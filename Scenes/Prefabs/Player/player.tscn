@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://dmhgiml00bguu" path="res://Scenes/Prefabs/Player/player_camera.tscn" id="2_pv3ct"]
 [ext_resource type="Script" uid="uid://dpe4d5p7xlpki" path="res://Scripts/Player/interact_handler.gd" id="3_o22ie"]
 [ext_resource type="PackedScene" uid="uid://dfywv2od7k1bv" path="res://Scenes/Prefabs/Player/arm2.tscn" id="4_7cae0"]
+[ext_resource type="AudioStream" uid="uid://bs4qfrqhwr5al" path="res://Assets/SFX/male-yawn.wav" id="5_e6m8t"]
+[ext_resource type="AudioStream" uid="uid://cfmpddkm8ujn6" path="res://Assets/SFX/body-fall.wav" id="6_sh7ss"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_63f0y"]
 radius = 0.2
@@ -39,3 +41,9 @@ script = ExtResource("3_o22ie")
 
 [node name="Arm" parent="PlayerCamera" unique_id=101306765 instance=ExtResource("4_7cae0")]
 transform = Transform3D(1, 0, 0, 0, 0.64278764, 0.76604444, 0, -0.76604444, 0.64278764, 1, -1, 0)
+
+[node name="YawnSound" type="AudioStreamPlayer3D" parent="." unique_id=764085898]
+stream = ExtResource("5_e6m8t")
+
+[node name="FallSound" type="AudioStreamPlayer3D" parent="." unique_id=970352691]
+stream = ExtResource("6_sh7ss")
