@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://cj51j7s1t02of"]
+
+[ext_resource type="Script" uid="uid://cerabprl54ihb" path="res://Scripts/Menu/menu_button.gd" id="1_vfwin"]
+[ext_resource type="Texture2D" uid="uid://dymem7w1q7ojg" path="res://Assets/UI/button_idle.png" id="2_ve8jg"]
+[ext_resource type="Texture2D" uid="uid://3ugdy6nji1mf" path="res://Assets/UI/button_hover.png" id="3_n4knw"]
+[ext_resource type="FontFile" uid="uid://1kxk503tlmy3" path="res://Assets/Fonts/Cinzel-VariableFont_wght.ttf" id="4_n4knw"]
+[ext_resource type="AudioStream" uid="uid://blb1xijdh1mpx" path="res://Assets/SFX/hover_button.wav" id="4_ve8jg"]
+
+[node name="MenuButton" type="Control" unique_id=391164538]
+custom_minimum_size = Vector2(300, 70)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 300.0
+offset_bottom = 70.0
+script = ExtResource("1_vfwin")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1045983497]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_ve8jg")
+texture_pressed = ExtResource("3_n4knw")
+texture_hover = ExtResource("3_n4knw")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="." unique_id=261785301]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 22.0
+offset_right = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_n4knw")
+theme_override_font_sizes/font_size = 20
+text = "COMMENCER"
+vertical_alignment = 1
+
+[node name="HoverSound" type="AudioStreamPlayer" parent="." unique_id=1338430952]
+stream = ExtResource("4_ve8jg")
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="." unique_id=106523362]

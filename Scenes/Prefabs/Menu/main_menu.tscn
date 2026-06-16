@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://b3pbwx80n8jtb"]
+
+[ext_resource type="Script" uid="uid://dk03ms2q7lycq" path="res://Scripts/Menu/main_menu.gd" id="1_5agjd"]
+[ext_resource type="Texture2D" uid="uid://onylgoi1prwa" path="res://Assets/UI/backgound.png" id="2_dfvp2"]
+[ext_resource type="PackedScene" uid="uid://cj51j7s1t02of" path="res://Scenes/Prefabs/Menu/menu_button.tscn" id="2_myc4t"]
+[ext_resource type="PackedScene" uid="uid://bli40yyncoth8" path="res://Scenes/Prefabs/Menu/options_menu.tscn" id="4_nhtyl"]
+[ext_resource type="PackedScene" uid="uid://c8opnow23ro1h" path="res://Scenes/Prefabs/Menu/controls_menu.tscn" id="5_nhtyl"]
+[ext_resource type="Script" uid="uid://bqvwex336bm66" path="res://Scenes/Prefabs/Menu/controls_menu.gd" id="6_dfvp2"]
+
+[node name="Control" type="Control" unique_id=299562952]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5agjd")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1663927577]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_dfvp2")
+expand_mode = 1
+
+[node name="MainButtons" type="VBoxContainer" parent="." unique_id=2061704285]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 258.635
+offset_right = 376.0
+offset_bottom = 592.63525
+theme_override_constants/separation = 18
+
+[node name="StartButton" parent="MainButtons" unique_id=391164538 instance=ExtResource("2_myc4t")]
+layout_mode = 2
+button_text = "COMMENCER"
+
+[node name="OptionsButton" parent="MainButtons" unique_id=1800201580 instance=ExtResource("2_myc4t")]
+layout_mode = 2
+button_text = "OPTIONS"
+
+[node name="CommandesButton" parent="MainButtons" unique_id=369325876 instance=ExtResource("2_myc4t")]
+layout_mode = 2
+button_text = "COMMANDES"
+
+[node name="QuitButton" parent="MainButtons" unique_id=709929907 instance=ExtResource("2_myc4t")]
+layout_mode = 2
+button_text = "QUITTER"
+
+[node name="OptionsMenu" parent="." unique_id=1258949131 instance=ExtResource("4_nhtyl")]
+visible = false
+layout_mode = 1
+
+[node name="ControlsMenu" parent="." unique_id=915889193 instance=ExtResource("5_nhtyl")]
+visible = false
+layout_mode = 1
+script = ExtResource("6_dfvp2")
