@@ -7,7 +7,6 @@ extends Control
 @onready var start_button = $MainButtons/StartButton
 @onready var options_button = $MainButtons/OptionsButton
 @onready var controls_button = $MainButtons/CommandesButton
-@onready var credits_button = $MainButtons/CreditsButton
 @onready var quit_button = $MainButtons/QuitButton
 
 @onready var options_menu = $OptionsMenu
