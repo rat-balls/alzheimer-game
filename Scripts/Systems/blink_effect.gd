@@ -1,7 +1,7 @@
 class_name BlinkEffect
 extends CanvasLayer
 
-@onready var overlay: ColorRect = $BlinkOverlay
+@onready var overlay: ColorRect = $"../BlinkOverlay"
 @onready var shader_material: ShaderMaterial = overlay.material as ShaderMaterial
 
 @export var wake_open_duration := 2.4

@@ -72,27 +72,12 @@ pivot_offset = Vector2(65, 70)
 texture = ExtResource("1_8v6fc")
 script = ExtResource("3_gd5k8")
 
-[node name="house" parent="." unique_id=1270187101 instance=ExtResource("4_ducwh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.9998498, 0)
-
-[node name="Player" parent="." unique_id=812184645 instance=ExtResource("1_g0qe1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.765, 0)
-
-[node name="PlayerSpawn" type="Marker3D" parent="." unique_id=875758490]
-transform = Transform3D(0.8245708, 0, -0.56575876, 0, 1, 0, 0.56575876, 0, 0.8245708, 13.939402, -2.2797184, 10.862835)
-
-[node name="GameManager" type="Node3D" parent="." unique_id=372219250 node_paths=PackedStringArray("player", "player_spawn", "blink_effect", "alarm_sound")]
-script = ExtResource("5_y4r2c")
-player = NodePath("../Player")
-player_spawn = NodePath("../PlayerSpawn")
-blink_effect = NodePath("../BlinkEffect")
-alarm_sound = NodePath("../AudioManager/AlarmSound")
-
-[node name="BlinkEffect" type="CanvasLayer" parent="." unique_id=1841266626]
+[node name="BlinkEffect" type="CanvasLayer" parent="UserInterface" unique_id=1841266626]
 script = ExtResource("6_kn5yr")
 
-[node name="BlinkOverlay" type="ColorRect" parent="UserInterface/BlinkEffect" unique_id=1299920238]
+[node name="BlinkOverlay" type="ColorRect" parent="UserInterface" unique_id=1299920238]
 material = SubResource("ShaderMaterial_kn5yr")
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -127,15 +112,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27412653, -0.10941148, -0.
 [node name="Player" parent="." unique_id=812184645 instance=ExtResource("1_g0qe1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.765, 0)
 
-[node name="PlayerSpawn" type="Marker3D" parent="." unique_id=875758490]
-transform = Transform3D(0.8245708, 0, -0.56575876, 0, 1, 0, 0.56575876, 0, 0.8245708, 13.939, -0.765, 10.863)
-
-[node name="GameManager" type="Node3D" parent="." unique_id=372219250 node_paths=PackedStringArray("player", "player_spawn", "blink_effect")]
+[node name="GameManager" type="Node3D" parent="." unique_id=372219250 node_paths=PackedStringArray("player", "player_spawn", "blink_effect", "alarm_sound")]
 script = ExtResource("5_y4r2c")
 player = NodePath("../Player")
 player_spawn = NodePath("../PlayerSpawn")
 blink_effect = NodePath("../UserInterface/BlinkEffect")
-loop_delay = 9000.0
+alarm_sound = NodePath("../AudioManager/AlarmSound")
+
+[node name="PlayerSpawn" type="Marker3D" parent="." unique_id=875758490]
+transform = Transform3D(0.8245708, 0, -0.56575876, 0, 1, 0, 0.56575876, 0, 0.8245708, 13.939, -0.765, 10.863)
 
 [node name="AudioManager" type="Node" parent="." unique_id=607443424]
 
