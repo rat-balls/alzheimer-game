@@ -4,7 +4,7 @@ uniform sampler2D screen_texture : hint_screen_texture, filter_nearest;
 
 uniform bool enabled = true;
 
-uniform float pixel_resolution : hint_range(64.0, 1024.0) = 480.0;
+uniform float pixel_resolution : hint_range(64.0, 1280.0) = 480.0;
 uniform int color_steps : hint_range(2, 64) = 32;
 
 uniform bool enable_noise = true;

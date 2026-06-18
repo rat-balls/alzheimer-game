@@ -1,13 +1,6 @@
 [gd_scene format=3 uid="uid://dmhgiml00bguu"]
 
 [ext_resource type="Script" uid="uid://b41nd265m0muj" path="res://Scripts/Player/player_camera.gd" id="1_d00q6"]
-[ext_resource type="Shader" uid="uid://ecaurgagv8kd" path="res://Scenes/Prefabs/Player/psx_screen_effect.gdshader" id="2_jy8mn"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_5jkb5"]
-shader = ExtResource("2_jy8mn")
-shader_parameter/grain_strength = 0.08
-shader_parameter/vignette_strength = 0.35
-shader_parameter/scanline_strength = 0.06
 
 [node name="PlayerCamera" type="Camera3D" unique_id=537137786]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
@@ -16,14 +9,3 @@ script = ExtResource("1_d00q6")
 [node name="RayCast3D" type="RayCast3D" parent="." unique_id=1783065532]
 collision_mask = 4
 collide_with_areas = true
-
-[node name="PsxScreenEffect" type="CanvasLayer" parent="." unique_id=67494995]
-
-[node name="ScreenOverlay" type="ColorRect" parent="PsxScreenEffect" unique_id=1988515358]
-material = SubResource("ShaderMaterial_5jkb5")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2

@@ -140,10 +140,18 @@ script = ExtResource("3_gd5k8")
 
 [node name="RotateIndic" type="Label" parent="UserInterface/ReticleLayer" unique_id=1736787585]
 z_index = 7
-offset_left = 648.0
-offset_top = 322.0
-offset_right = 688.0
-offset_bottom = 366.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 6.0
+offset_top = -39.0
+offset_right = 23.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
 text = "R"
 label_settings = SubResource("LabelSettings_f2o6q")
 
