@@ -10,6 +10,7 @@
 [ext_resource type="Shader" uid="uid://citmki41hu2ld" path="res://Scripts/Systems/blink.gdshader" id="6_prmnh"]
 [ext_resource type="AudioStream" uid="uid://duqv10owmxiys" path="res://Assets/SFX/alarm-clock.wav" id="8_kn5yr"]
 [ext_resource type="PackedScene" uid="uid://b3jsusn22kphx" path="res://Scenes/Prefabs/Neighborhood/neighborhood.glb" id="9_qoi30"]
+[ext_resource type="PackedScene" uid="uid://jlikhki0na3g" path="res://Scenes/Prefabs/LightPole/sketchfab_scene.tscn" id="11_kekvp"]
 
 [sub_resource type="Environment" id="Environment_gd5k8"]
 background_mode = 1
@@ -43,18 +44,6 @@ transparency = 1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=627650426]
 environment = SubResource("Environment_gd5k8")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1767550168]
-transform = Transform3D(0.9756916, 0.16495071, -0.14428143, 0, 0.65837425, 0.75269073, 0.21914807, -0.734394, 0.6423702, -12.610869, 14.710951, 8.609891)
-light_color = Color(1, 1, 0.99215686, 1)
-light_energy = 0.1
-light_indirect_energy = 3.218
-
-[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="." unique_id=961163658]
-transform = Transform3D(-0.75219643, -0.49597725, 0.43382838, 3.776458e-08, 0.6583742, 0.75269085, -0.65893906, 0.5661713, -0.49522662, -12.610869, 14.710951, 8.609891)
-light_color = Color(1, 0.84705883, 0.9137255, 1)
-light_energy = 0.5
-light_indirect_energy = 3.218
 
 [node name="UserInterface" type="Control" parent="." unique_id=1295240603 groups=["UI"]]
 layout_mode = 3
@@ -251,12 +240,26 @@ spot_angle_attenuation = 1.9318731
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 12.764156, 3.5290437, 8.435026)
 light_color = Color(1, 0.81960785, 0.6039216, 1)
 light_energy = 1.2
+shadow_transmittance_bias = 16.0
+shadow_opacity = 0.0
+shadow_blur = 0.0
+spot_range = 9.172
+spot_attenuation = 0.63
+spot_angle = 110.0
+
+[node name="SpotLight3D13" type="SpotLight3D" parent="Light" unique_id=432328561]
+transform = Transform3D(-0.99971163, -1.0496638e-09, 0.024013508, -0.024013508, 4.3698783e-08, -0.99971163, 0, -1, -4.371139e-08, 12.764156, 3.5290437, 8.435026)
+light_color = Color(1, 0.81960785, 0.6039216, 1)
+light_energy = 1.2
+shadow_transmittance_bias = 16.0
+shadow_opacity = 0.0
+shadow_blur = 0.0
 spot_range = 9.172
 spot_attenuation = 0.63
 spot_angle = 110.0
 
 [node name="SpotLight3D3" type="SpotLight3D" parent="Light" unique_id=1712344528]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 13.5612955, 1.8194764, 0.22830284)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 8.899824, 1.3299217, 0.22830284)
 light_color = Color(1, 0.81960785, 0.6039216, 1)
 light_energy = 1.2
 spot_range = 9.731
@@ -265,29 +268,12 @@ spot_angle = 60.0
 spot_angle_attenuation = 1.9318731
 
 [node name="SpotLight3D4" type="SpotLight3D" parent="Light" unique_id=2087568495]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 13.5612955, 3.5290437, 0.22830284)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 8.396513, 3.5290437, 0.49936825)
 light_color = Color(1, 0.81960785, 0.6039216, 1)
 light_energy = 1.2
-spot_range = 9.172
+spot_range = 10.699
 spot_attenuation = 0.63
 spot_angle = 110.0
-
-[node name="SpotLight3D5" type="SpotLight3D" parent="Light" unique_id=422083428]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 5.0614634, 1.8194764, 0.22830284)
-light_color = Color(1, 0.81960785, 0.6039216, 1)
-light_energy = 1.2
-spot_range = 9.731
-spot_attenuation = 0.0
-spot_angle = 60.0
-spot_angle_attenuation = 1.9318731
-
-[node name="SpotLight3D6" type="SpotLight3D" parent="Light" unique_id=695688888]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 5.0614634, 3.0447998, 0.71606886)
-light_color = Color(1, 0.81960785, 0.6039216, 1)
-light_energy = 1.2
-spot_range = 9.172
-spot_attenuation = 0.63
-spot_angle = 180.0
 
 [node name="SpotLight3D7" type="SpotLight3D" parent="Light" unique_id=149221864]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -3.009922, 1.8194764, 0.22830284)
@@ -299,12 +285,33 @@ spot_angle = 60.0
 spot_angle_attenuation = 1.9318731
 
 [node name="SpotLight3D8" type="SpotLight3D" parent="Light" unique_id=922609684]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -3.009922, 3.5290437, 0.22830284)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -2.1464643, 3.5290437, 2.1538382)
 light_color = Color(1, 0.81960785, 0.6039216, 1)
 light_energy = 1.2
-spot_range = 9.172
+spot_range = 10.702
 spot_attenuation = 0.63
 spot_angle = 110.0
+
+[node name="SpotLight3D18" type="SpotLight3D" parent="Light" unique_id=1758886491]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -7.005462, 1.122647, -3.5515857)
+light_energy = 1.2
+spot_range = 2.895
+spot_attenuation = 0.63
+spot_angle = 54.31
+
+[node name="SpotLight3D20" type="SpotLight3D" parent="Light" unique_id=985005221]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -5.6406283, 1.122647, -5.142111)
+light_energy = 1.2
+spot_range = 2.895
+spot_attenuation = 0.63
+spot_angle = 54.31
+
+[node name="SpotLight3D19" type="SpotLight3D" parent="Light" unique_id=1989997884]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -6.9732976, 1.122647, 0.16488385)
+light_energy = 1.2
+spot_range = 2.895
+spot_attenuation = 0.63
+spot_angle = 54.31
 
 [node name="SpotLight3D9" type="SpotLight3D" parent="Light" unique_id=424498083]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -3.009922, 1.8194764, 5.9371614)
@@ -315,31 +322,56 @@ spot_attenuation = 0.0
 spot_angle = 60.0
 spot_angle_attenuation = 1.9318731
 
-[node name="SpotLight3D10" type="SpotLight3D" parent="Light" unique_id=637391146]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -3.009922, 3.5290437, 5.9371614)
+[node name="SpotLight3D11" type="SpotLight3D" parent="Light" unique_id=667982680]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.95297956, 1.8194764, 11.508913)
+light_color = Color(1, 0.81960785, 0.6039216, 1)
+light_energy = 1.2
+spot_range = 9.731
+spot_attenuation = 0.0
+spot_angle = 60.0
+spot_angle_attenuation = 1.9318731
+
+[node name="SpotLight3D12" type="SpotLight3D" parent="Light" unique_id=2031650482]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.95297956, 3.5290437, 11.508913)
+light_color = Color(1, 0.81960785, 0.6039216, 1)
+light_energy = 1.2
+spot_range = 5.778
+spot_attenuation = 0.63
+spot_angle = 102.95
+
+[node name="SpotLight3D14" type="SpotLight3D" parent="Light" unique_id=1339308666]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 5.7572913, 1.8194764, 10.571179)
+light_color = Color(1, 0.81960785, 0.6039216, 1)
+light_energy = 1.2
+spot_range = 9.731
+spot_attenuation = 0.0
+spot_angle = 60.0
+spot_angle_attenuation = 1.9318731
+
+[node name="SpotLight3D15" type="SpotLight3D" parent="Light" unique_id=1939642552]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 5.7572913, 3.5290437, 10.571179)
 light_color = Color(1, 0.81960785, 0.6039216, 1)
 light_energy = 1.2
 spot_range = 9.172
 spot_attenuation = 0.63
 spot_angle = 110.0
 
-[node name="SpotLight3D11" type="SpotLight3D" parent="Light" unique_id=1370699055]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.66452813, 1.8194764, 13.223202)
+[node name="SpotLight3D16" type="SpotLight3D" parent="Light" unique_id=1813129962]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 11.60156, 1.8194764, -7.1662235)
 light_color = Color(1, 0.81960785, 0.6039216, 1)
-light_energy = 0.0
-spot_range = 9.731
+light_energy = 1.2
+spot_range = 14.302
 spot_attenuation = 0.0
 spot_angle = 60.0
-spot_angle_attenuation = 1.1095697
+spot_angle_attenuation = 1.9318731
 
-[node name="SpotLight3D12" type="SpotLight3D" parent="Light" unique_id=1396147973]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.66452813, 3.5290437, 13.223202)
+[node name="SpotLight3D17" type="SpotLight3D" parent="Light" unique_id=2110819469]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 11.60156, 3.5290437, -7.000952)
 light_color = Color(1, 0.81960785, 0.6039216, 1)
-light_energy = 0.0
-spot_range = 9.172
+light_energy = 1.2
+spot_range = 11.352
 spot_attenuation = 0.63
 spot_angle = 110.0
-spot_angle_attenuation = 1.1095697
 
 [node name="neighborhood" parent="." unique_id=1312138673 instance=ExtResource("9_qoi30")]
 transform = Transform3D(-2.9505188e-08, 0, -0.675, 0, 0.675, 0, 0.675, 0, -2.9505188e-08, -18.72556, -4.978403, 53.61647)
@@ -348,3 +380,53 @@ transform = Transform3D(-2.9505188e-08, 0, -0.675, 0, 0.675, 0, 0.675, 0, -2.950
 transform = Transform3D(1, 0, 0, 0, 0.14894852, 0.98884493, 0, -0.98884493, 0.14894852, -165.5061, 86.33502, 0)
 light_color = Color(0.47843137, 0.5647059, 0.72156864, 1)
 light_energy = 0.25
+
+[node name="LightPole" type="Node3D" parent="." unique_id=791561047]
+
+[node name="LightPole" parent="LightPole" unique_id=471159687 instance=ExtResource("11_kekvp")]
+transform = Transform3D(1.5301003, 0, 0.1225446, 0, 1.5349998, 0, -0.1225446, 0, 1.5301003, 27.060398, -3.6806045, 50.186543)
+
+[node name="LightPole2" parent="LightPole" unique_id=1821769045 instance=ExtResource("11_kekvp")]
+transform = Transform3D(1.5301003, 0, 0.1225446, 0, 1.5349998, 0, -0.1225446, 0, 1.5301003, -6.9311256, -3.6806045, 50.186543)
+
+[node name="LightPole9" parent="LightPole" unique_id=975628409 instance=ExtResource("11_kekvp")]
+transform = Transform3D(-1.5349997, 0, 1.3419394e-07, 0, 1.5349998, 0, -1.3419394e-07, 0, -1.5349997, -6.9311256, -3.6806045, 35.333813)
+
+[node name="LightPole10" parent="LightPole" unique_id=1177605480 instance=ExtResource("11_kekvp")]
+transform = Transform3D(-1.5349997, 0, 1.3419394e-07, 0, 1.5349998, 0, -1.3419394e-07, 0, -1.5349997, 26.124043, -3.6806045, 35.333813)
+
+[node name="LightPole11" parent="LightPole" unique_id=2051748106 instance=ExtResource("11_kekvp")]
+transform = Transform3D(-1.5349997, 0, 1.3419394e-07, 0, 1.5349998, 0, -1.3419394e-07, 0, -1.5349997, 48.62417, -3.6806045, 35.333813)
+
+[node name="LightPole12" parent="LightPole" unique_id=1260476561 instance=ExtResource("11_kekvp")]
+transform = Transform3D(-1.5349997, 0, 1.3419394e-07, 0, 1.5349998, 0, -1.3419394e-07, 0, -1.5349997, 72.729385, -3.6806045, 35.333813)
+
+[node name="LightPole13" parent="LightPole" unique_id=1224864117 instance=ExtResource("11_kekvp")]
+transform = Transform3D(-1.5349997, 0, 1.3419394e-07, 0, 1.5349998, 0, -1.3419394e-07, 0, -1.5349997, 94.391335, -3.6806045, 35.333813)
+
+[node name="LightPole14" parent="LightPole" unique_id=836764622 instance=ExtResource("11_kekvp")]
+transform = Transform3D(-1.5349997, 0, 1.3419394e-07, 0, 1.5349998, 0, -1.3419394e-07, 0, -1.5349997, -32.690254, -3.6806045, 35.333813)
+
+[node name="LightPole15" parent="LightPole" unique_id=638642624 instance=ExtResource("11_kekvp")]
+transform = Transform3D(-1.5349997, 0, 1.3419394e-07, 0, 1.5349998, 0, -1.3419394e-07, 0, -1.5349997, -55.66216, -3.6806045, 35.333813)
+
+[node name="LightPole16" parent="LightPole" unique_id=731245108 instance=ExtResource("11_kekvp")]
+transform = Transform3D(-1.5349997, 0, 1.3419394e-07, 0, 1.5349998, 0, -1.3419394e-07, 0, -1.5349997, -78.01196, -3.6806045, 35.333813)
+
+[node name="LightPole3" parent="LightPole" unique_id=778372253 instance=ExtResource("11_kekvp")]
+transform = Transform3D(1.5301003, 0, 0.1225446, 0, 1.5349998, 0, -0.1225446, 0, 1.5301003, -31.56259, -3.6806045, 50.186543)
+
+[node name="LightPole4" parent="LightPole" unique_id=950296405 instance=ExtResource("11_kekvp")]
+transform = Transform3D(1.5301003, 0, 0.1225446, 0, 1.5349998, 0, -0.1225446, 0, 1.5301003, -56.67485, -3.6806045, 50.186543)
+
+[node name="LightPole5" parent="LightPole" unique_id=884077841 instance=ExtResource("11_kekvp")]
+transform = Transform3D(1.5301003, 0, 0.1225446, 0, 1.5349998, 0, -0.1225446, 0, 1.5301003, 50.10533, -3.6806045, 50.186543)
+
+[node name="LightPole6" parent="LightPole" unique_id=1277648127 instance=ExtResource("11_kekvp")]
+transform = Transform3D(1.5301003, 0, 0.1225446, 0, 1.5349998, 0, -0.1225446, 0, 1.5301003, 74.09296, -3.6806045, 50.186543)
+
+[node name="LightPole7" parent="LightPole" unique_id=1194879916 instance=ExtResource("11_kekvp")]
+transform = Transform3D(1.5301003, 0, 0.1225446, 0, 1.5349998, 0, -0.1225446, 0, 1.5301003, 94.497635, -3.6806045, 50.186543)
+
+[node name="LightPole8" parent="LightPole" unique_id=1794454948 instance=ExtResource("11_kekvp")]
+transform = Transform3D(1.5301003, 0, 0.1225446, 0, 1.5349998, 0, -0.1225446, 0, 1.5301003, -77.86714, -3.6806045, 50.186543)
