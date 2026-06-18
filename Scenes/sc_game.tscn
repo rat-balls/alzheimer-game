@@ -11,8 +11,10 @@
 [ext_resource type="Script" uid="uid://ccvj5q47q5n1x" path="res://Scripts/Systems/blink_effect.gd" id="6_kn5yr"]
 [ext_resource type="Shader" uid="uid://citmki41hu2ld" path="res://Scripts/Systems/blink.gdshader" id="6_prmnh"]
 [ext_resource type="AudioStream" uid="uid://duqv10owmxiys" path="res://Assets/SFX/alarm-clock.wav" id="8_kn5yr"]
+[ext_resource type="PackedScene" uid="uid://b3jsusn22kphx" path="res://Scenes/Prefabs/Neighborhood/neighborhood.glb" id="9_qoi30"]
 
 [sub_resource type="Environment" id="Environment_gd5k8"]
+background_mode = 1
 ambient_light_color = Color(1, 0.34657717, 0.2800086, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kekvp"]
@@ -305,3 +307,116 @@ transform = Transform3D(0.8245708, 0, -0.56575876, 0, 1, 0, 0.56575876, 0, 0.824
 [node name="AlarmSound" type="AudioStreamPlayer3D" parent="AudioManager" unique_id=879597549]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.201085, -0.65136105, 12.479972)
 stream = ExtResource("8_kn5yr")
+
+[node name="Light" type="Node3D" parent="." unique_id=1934948295]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Light" unique_id=1280828583]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 12.764156, 1.8194764, 8.435026)
+light_color = Color(1, 0.81960785, 0.6039216, 1)
+light_energy = 1.2
+spot_range = 9.731
+spot_attenuation = 0.0
+spot_angle = 60.0
+spot_angle_attenuation = 1.9318731
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Light" unique_id=1525066854]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 12.764156, 3.5290437, 8.435026)
+light_color = Color(1, 0.81960785, 0.6039216, 1)
+light_energy = 1.2
+spot_range = 9.172
+spot_attenuation = 0.63
+spot_angle = 110.0
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Light" unique_id=1712344528]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 13.5612955, 1.8194764, 0.22830284)
+light_color = Color(1, 0.81960785, 0.6039216, 1)
+light_energy = 1.2
+spot_range = 9.731
+spot_attenuation = 0.0
+spot_angle = 60.0
+spot_angle_attenuation = 1.9318731
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="Light" unique_id=2087568495]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 13.5612955, 3.5290437, 0.22830284)
+light_color = Color(1, 0.81960785, 0.6039216, 1)
+light_energy = 1.2
+spot_range = 9.172
+spot_attenuation = 0.63
+spot_angle = 110.0
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="Light" unique_id=422083428]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 5.0614634, 1.8194764, 0.22830284)
+light_color = Color(1, 0.81960785, 0.6039216, 1)
+light_energy = 1.2
+spot_range = 9.731
+spot_attenuation = 0.0
+spot_angle = 60.0
+spot_angle_attenuation = 1.9318731
+
+[node name="SpotLight3D6" type="SpotLight3D" parent="Light" unique_id=695688888]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 5.0614634, 3.0447998, 0.71606886)
+light_color = Color(1, 0.81960785, 0.6039216, 1)
+light_energy = 1.2
+spot_range = 9.172
+spot_attenuation = 0.63
+spot_angle = 180.0
+
+[node name="SpotLight3D7" type="SpotLight3D" parent="Light" unique_id=149221864]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -3.009922, 1.8194764, 0.22830284)
+light_color = Color(1, 0.81960785, 0.6039216, 1)
+light_energy = 1.2
+spot_range = 9.731
+spot_attenuation = 0.0
+spot_angle = 60.0
+spot_angle_attenuation = 1.9318731
+
+[node name="SpotLight3D8" type="SpotLight3D" parent="Light" unique_id=922609684]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -3.009922, 3.5290437, 0.22830284)
+light_color = Color(1, 0.81960785, 0.6039216, 1)
+light_energy = 1.2
+spot_range = 9.172
+spot_attenuation = 0.63
+spot_angle = 110.0
+
+[node name="SpotLight3D9" type="SpotLight3D" parent="Light" unique_id=424498083]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -3.009922, 1.8194764, 5.9371614)
+light_color = Color(1, 0.81960785, 0.6039216, 1)
+light_energy = 1.2
+spot_range = 9.731
+spot_attenuation = 0.0
+spot_angle = 60.0
+spot_angle_attenuation = 1.9318731
+
+[node name="SpotLight3D10" type="SpotLight3D" parent="Light" unique_id=637391146]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -3.009922, 3.5290437, 5.9371614)
+light_color = Color(1, 0.81960785, 0.6039216, 1)
+light_energy = 1.2
+spot_range = 9.172
+spot_attenuation = 0.63
+spot_angle = 110.0
+
+[node name="SpotLight3D11" type="SpotLight3D" parent="Light" unique_id=1370699055]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.66452813, 1.8194764, 13.223202)
+light_color = Color(1, 0.81960785, 0.6039216, 1)
+light_energy = 0.0
+spot_range = 9.731
+spot_attenuation = 0.0
+spot_angle = 60.0
+spot_angle_attenuation = 1.1095697
+
+[node name="SpotLight3D12" type="SpotLight3D" parent="Light" unique_id=1396147973]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.66452813, 3.5290437, 13.223202)
+light_color = Color(1, 0.81960785, 0.6039216, 1)
+light_energy = 0.0
+spot_range = 9.172
+spot_attenuation = 0.63
+spot_angle = 110.0
+spot_angle_attenuation = 1.1095697
+
+[node name="neighborhood" parent="." unique_id=1312138673 instance=ExtResource("9_qoi30")]
+transform = Transform3D(-2.9505188e-08, 0, -0.675, 0, 0.675, 0, 0.675, 0, -2.9505188e-08, -18.72556, -4.978403, 53.61647)
+
+[node name="Moon" type="DirectionalLight3D" parent="." unique_id=989858942]
+transform = Transform3D(1, 0, 0, 0, 0.14894852, 0.98884493, 0, -0.98884493, 0.14894852, -165.5061, 86.33502, 0)
+light_color = Color(0.47843137, 0.5647059, 0.72156864, 1)
+light_energy = 0.25

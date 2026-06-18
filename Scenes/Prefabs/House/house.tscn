@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dnv74xxskn2h8" path="res://Scenes/Prefabs/House/boiler.tscn" id="11_g260h"]
 [ext_resource type="PackedScene" uid="uid://5jt0ld6a3v3e" path="res://Scenes/Prefabs/House/mug.tscn" id="12_11toi"]
 [ext_resource type="Script" uid="uid://buhn4buqk7018" path="res://Scripts/Sink/sink_handle.gd" id="13_11toi"]
+[ext_resource type="PackedScene" uid="uid://b3jsusn22kphx" path="res://Scenes/Prefabs/Neighborhood/neighborhood.glb" id="14_68r4r"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s6yue"]
 size = Vector3(0.9317627, 1.6720428, 1.7729492)
@@ -198,6 +199,12 @@ albedo_color = Color(0.71932274, 1, 1, 0.36800003)
 material = SubResource("StandardMaterial3D_ivgs6")
 radius = 0.02
 height = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_11toi"]
+transparency = 1
+albedo_color = Color(0.7058824, 0.78431374, 0.8627451, 0.3137255)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_68r4r"]
 
 [node name="house" unique_id=1270187101 instance=ExtResource("1_mebax")]
 
@@ -511,5 +518,13 @@ lifetime = 0.45
 randomness = 0.2
 process_material = SubResource("ParticleProcessMaterial_tup4b")
 draw_pass_1 = SubResource("CapsuleMesh_2vhif")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="22" unique_id=633842388]
+transform = Transform3D(1.9745989, 0, 0, 0, -8.631246e-08, -1.9745989, 0, 1.9745989, -8.631246e-08, 12.086543, 3.9579887, 13.214183)
+material_override = SubResource("StandardMaterial3D_11toi")
+mesh = SubResource("PlaneMesh_68r4r")
+
+[node name="neighborhood" parent="." index="23" unique_id=1934648152 instance=ExtResource("14_68r4r")]
+transform = Transform3D(-2.2948479e-08, 0, -0.525, 0, 0.525, 0, 0.525, 0, -2.2948479e-08, -17.935806, -1.7403793, 40.830482)
 
 [editable path="Doors/FrontDoor"]
