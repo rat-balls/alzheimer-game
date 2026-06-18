@@ -31,6 +31,7 @@ var UI: Control
 var normal_keys_container: VBoxContainer
 var holding_keys_container: VBoxContainer
 var rotating_keys_container: VBoxContainer
+var rotation_label: Label
 
 
 func _ready() -> void:
@@ -41,7 +42,7 @@ func _ready() -> void:
 	normal_keys_container = UI.find_child("NormalKeys")
 	holding_keys_container = UI.find_child("HoldingKeys")
 	rotating_keys_container = UI.find_child("RotatingKeys")
-
+	rotation_label = holding_keys_container.find_child("Rotation")
 
 func _process(_delta: float) -> void:
 	find_valid_grab_target()
@@ -58,6 +59,7 @@ func handle_keys_display():
 				normal_keys_container.visible = false
 				holding_keys_container.visible = true
 				rotating_keys_container.visible = false
+				rotation_label.visible = held_object.is_in_group("Rotatable")
 			InteractionState.Rotating:
 				normal_keys_container.visible = false
 				holding_keys_container.visible = false
@@ -117,7 +119,10 @@ func _input(event: InputEvent) -> void:
 		throw_object()
 	elif event.is_action_pressed("RotateObject") and held_object and held_object.is_in_group("Rotatable"):
 		is_rotating_object = !is_rotating_object
-		update_state(InteractionState.Rotating)
+		if(is_rotating_object):
+			update_state(InteractionState.Rotating)
+		else:
+			update_state(InteractionState.Holding)
 	elif event.is_action_pressed("WHEEL_UP"):
 		hold_distance = clamp(hold_distance + SCROLL_SPEED, MIN_HOLD_DISTANCE, MAX_HOLD_DISTANCE)
 	elif event.is_action_pressed("WHEEL_DOWN"):

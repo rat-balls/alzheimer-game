@@ -63,14 +63,13 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="NormalKeys" type="VBoxContainer" parent="UserInterface" unique_id=802440350]
-visible = false
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
 offset_left = 28.0
-offset_top = 539.0
+offset_top = 533.0
 offset_right = 390.0
-offset_bottom = -32.0
+offset_bottom = -26.0
 grow_vertical = 2
 alignment = 2
 
@@ -85,19 +84,25 @@ text = "WASD - Se déplacer"
 label_settings = SubResource("LabelSettings_d2xqe")
 
 [node name="HoldingKeys" type="VBoxContainer" parent="UserInterface" unique_id=345473472]
+visible = false
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
 offset_left = 28.0
-offset_top = 539.0
+offset_top = 533.0
 offset_right = 390.0
-offset_bottom = -32.0
+offset_bottom = -26.0
 grow_vertical = 2
 alignment = 2
 
-[node name="Label" type="Label" parent="UserInterface/HoldingKeys" unique_id=412869133]
+[node name="Rotation" type="Label" parent="UserInterface/HoldingKeys" unique_id=616704535]
 layout_mode = 2
-text = "M1 - Lâcher"
+text = "R - Mode Rotation"
+label_settings = SubResource("LabelSettings_d2xqe")
+
+[node name="Label4" type="Label" parent="UserInterface/HoldingKeys" unique_id=1802577090]
+layout_mode = 2
+text = "WHEEL - Avancer/Reculer"
 label_settings = SubResource("LabelSettings_d2xqe")
 
 [node name="Label2" type="Label" parent="UserInterface/HoldingKeys" unique_id=1950051544]
@@ -105,14 +110,14 @@ layout_mode = 2
 text = "M2 - Jeter"
 label_settings = SubResource("LabelSettings_d2xqe")
 
-[node name="Label4" type="Label" parent="UserInterface/HoldingKeys" unique_id=1802577090]
+[node name="Label" type="Label" parent="UserInterface/HoldingKeys" unique_id=412869133]
 layout_mode = 2
-text = "WHEEL - AVANCER/RECULER"
+text = "M1 - Lâcher"
 label_settings = SubResource("LabelSettings_d2xqe")
 
-[node name="Label3" type="Label" parent="UserInterface/HoldingKeys" unique_id=616704535]
+[node name="Label3" type="Label" parent="UserInterface/HoldingKeys" unique_id=1447173038]
 layout_mode = 2
-text = "R - Mode Rotation"
+text = "WASD - Se déplacer"
 label_settings = SubResource("LabelSettings_d2xqe")
 
 [node name="RotatingKeys" type="VBoxContainer" parent="UserInterface" unique_id=985070608]
@@ -121,35 +126,35 @@ layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
 offset_left = 28.0
-offset_top = 539.0
+offset_top = 533.0
 offset_right = 390.0
-offset_bottom = -32.0
+offset_bottom = -26.0
 grow_vertical = 2
 alignment = 2
 
-[node name="Label" type="Label" parent="UserInterface/RotatingKeys" unique_id=1026026127]
+[node name="Label3" type="Label" parent="UserInterface/RotatingKeys" unique_id=319699496]
 layout_mode = 2
-text = "WASD - TOURNER"
-label_settings = SubResource("LabelSettings_d2xqe")
-
-[node name="Label2" type="Label" parent="UserInterface/RotatingKeys" unique_id=285118318]
-layout_mode = 2
-text = "M1 - LÂCHER"
-label_settings = SubResource("LabelSettings_d2xqe")
-
-[node name="Label4" type="Label" parent="UserInterface/RotatingKeys" unique_id=570469251]
-layout_mode = 2
-text = "M2 - JETER"
+text = "R - Arrêter le mode Rotation"
 label_settings = SubResource("LabelSettings_d2xqe")
 
 [node name="Label5" type="Label" parent="UserInterface/RotatingKeys" unique_id=207300015]
 layout_mode = 2
-text = "WHEEL - AVANCER/RECULER"
+text = "WHEEL - Avancer/Reculer"
 label_settings = SubResource("LabelSettings_d2xqe")
 
-[node name="Label3" type="Label" parent="UserInterface/RotatingKeys" unique_id=319699496]
+[node name="Label4" type="Label" parent="UserInterface/RotatingKeys" unique_id=570469251]
 layout_mode = 2
-text = "R - ARRÊTER LE MODE ROTATION"
+text = "M2 - Jeter"
+label_settings = SubResource("LabelSettings_d2xqe")
+
+[node name="Label2" type="Label" parent="UserInterface/RotatingKeys" unique_id=285118318]
+layout_mode = 2
+text = "M1 - Lâcher"
+label_settings = SubResource("LabelSettings_d2xqe")
+
+[node name="Label" type="Label" parent="UserInterface/RotatingKeys" unique_id=1026026127]
+layout_mode = 2
+text = "WASD - Tourner"
 label_settings = SubResource("LabelSettings_d2xqe")
 
 [node name="Reticle" type="TextureRect" parent="UserInterface" unique_id=643870409]
