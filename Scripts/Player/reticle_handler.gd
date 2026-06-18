@@ -6,6 +6,7 @@ const RETICLE_ICON = preload("uid://cemueeiiwuruf")
 const FINAL_GRAB = preload("uid://bf81dph7yeeoq")
 const FINAL_INTERACT = preload("uid://djrunetac7dsi")
 const FINAL_OPEN = preload("uid://dpd6e3agpwcsb")
+@onready var rotate_indic: Label = $"../RotateIndic"
 
 func _ready() -> void:
 	interact_handler = get_tree().get_first_node_in_group("InteractHandler")
@@ -13,21 +14,23 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if(interact_handler):
 		if(interact_handler.held_object != null):
+			if(interact_handler.is_rotating_object):
+				rotate_indic.visible = true
+			else:
+				rotate_indic.visible = false
 			texture = FINAL_GRAB
 		elif(interact_handler.valid_interact_target != null):
 			texture = FINAL_INTERACT
+			rotate_indic.visible = false
 		elif(interact_handler.valid_hold_target != null):
 			texture = FINAL_OPEN
+			rotate_indic.visible = false
 		else:
 			texture = RETICLE_ICON
+			rotate_indic.visible = false
 		
 		if texture == RETICLE_ICON:
 			rotation_degrees = 0.0
-			size = Vector2(64, 64)
-			position = Vector2(608, 328)
-			pivot_offset = Vector2(32, 32)
 		else:
-			rotation_degrees = 135
-			size = Vector2(128, 256)
-			position = Vector2(576, 256)
-			pivot_offset = Vector2(64, 128)
+			rotation_degrees = -35
+		

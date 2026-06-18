@@ -53,11 +53,37 @@ size = Vector3(0.56066895, 0.07611084, 0.5135498)
 [sub_resource type="BoxShape3D" id="BoxShape3D_4v7k5"]
 size = Vector3(0.6455078, 0.5678711, 0.3218994)
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_x2w13"]
+[sub_resource type="Curve" id="Curve_68r4r"]
+_data = [Vector2(0, 0.49262792), 0.0, 0.0, 0, 0, Vector2(1, 0.70121425), 0.0, 0.0, 0, 0]
+point_count = 2
 
-[sub_resource type="SphereMesh" id="SphereMesh_4v7k5"]
-radius = 0.01
-height = 0.01
+[sub_resource type="Curve" id="Curve_wqn2a"]
+_data = [Vector2(0, 0.46444058), 0.0, 0.0, 0, 0, Vector2(1, 0.6955768), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_b0cf4"]
+_data = [Vector2(0, 0.48135298), 0.0, 0.0, 0, 0, Vector2(1, 0.70121425), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_xiblt"]
+curve_x = SubResource("Curve_68r4r")
+curve_y = SubResource("Curve_wqn2a")
+curve_z = SubResource("Curve_b0cf4")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_tup4b"]
+gravity = Vector3(0, 0, 0)
+linear_accel_min = 5.0399976
+linear_accel_max = 17.639997
+scale_curve = SubResource("CurveXYZTexture_xiblt")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ivgs6"]
+transparency = 1
+albedo_color = Color(0.71932274, 1, 1, 0.36800003)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_2vhif"]
+material = SubResource("StandardMaterial3D_ivgs6")
+radius = 0.02
+height = 0.2
 
 [node name="Boiler" type="RigidBody3D" unique_id=669336461 groups=["Boiler", "Rotatable"]]
 collision_layer = 4
@@ -92,9 +118,9 @@ shape = SubResource("BoxShape3D_4v7k5")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2747064, 0.17924798, 0)
 
 [node name="WaterParticules" type="GPUParticles3D" parent="PourPoint" unique_id=486129795]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.40200084, 0)
-amount = 300
-lifetime = 0.8
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.053892598, 0.3967445, 0)
+amount = 20
+lifetime = 0.6
 randomness = 0.2
-process_material = SubResource("ParticleProcessMaterial_x2w13")
-draw_pass_1 = SubResource("SphereMesh_4v7k5")
+process_material = SubResource("ParticleProcessMaterial_tup4b")
+draw_pass_1 = SubResource("CapsuleMesh_2vhif")
