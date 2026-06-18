@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://okh1ikorqos7"
-path="res://.godot/imported/temp-open-hand.png-66d3e9962f9405082b8bf516f173c1ef.ctex"
+uid="uid://djrunetac7dsi"
+path="res://.godot/imported/final-interact.png-5234823da28d232025babb84905756ac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/temp-open-hand.png"
-dest_files=["res://.godot/imported/temp-open-hand.png-66d3e9962f9405082b8bf516f173c1ef.ctex"]
+source_file="res://Assets/Sprites/final-interact.png"
+dest_files=["res://.godot/imported/final-interact.png-5234823da28d232025babb84905756ac.ctex"]
 
 [params]
 
