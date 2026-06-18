@@ -1,3 +1,7 @@
 [gd_scene format=3 uid="uid://ba5qim2ypux4s"]
 
+[ext_resource type="PackedScene" uid="uid://b3pbwx80n8jtb" path="res://Scenes/Prefabs/Menu/main_menu.tscn" id="1_f528i"]
+
 [node name="Main" type="Node3D" unique_id=1661718318]
+
+[node name="Control" parent="." unique_id=299562952 instance=ExtResource("1_f528i")]

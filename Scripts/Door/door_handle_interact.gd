@@ -2,6 +2,7 @@ extends Area3D
 
 var door_base: RigidBody3D
 @export var door_joint: HingeJoint3D
+@export var unlockable: bool = true
 var door_closed_rotation: float
 var door_locked: bool = true
 var handle_tween: Tween
@@ -12,7 +13,7 @@ func _ready() -> void:
 
 func interact() -> void:
 	handle_anim()
-	if(door_locked):
+	if(door_locked and unlockable):
 		unlock_door()
 
 

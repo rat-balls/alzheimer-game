@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dtoqgovwuhw2m" path="res://icon.svg" id="1_8v6fc"]
 [ext_resource type="PackedScene" uid="uid://hry5epxqfm8v" path="res://Scenes/Prefabs/Player/player.tscn" id="1_g0qe1"]
+[ext_resource type="FontFile" uid="uid://1kxk503tlmy3" path="res://Assets/Fonts/Cinzel-VariableFont_wght.ttf" id="1_qoi30"]
 [ext_resource type="Script" uid="uid://dxbpv7qmp6gwn" path="res://Scripts/Player/reticle_handler.gd" id="3_gd5k8"]
 [ext_resource type="PackedScene" uid="uid://2grnl4vl0826" path="res://Scenes/Prefabs/House/house.tscn" id="4_ducwh"]
 [ext_resource type="Script" uid="uid://cjvobdo17cyfg" path="res://Scripts/Systems/game_manager.gd" id="5_y4r2c"]
@@ -11,6 +12,13 @@
 
 [sub_resource type="Environment" id="Environment_gd5k8"]
 ambient_light_color = Color(1, 0.34657717, 0.2800086, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_d2xqe"]
+font = ExtResource("1_qoi30")
+font_size = 21
+outline_size = 1
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kn5yr"]
 shader = ExtResource("6_prmnh")
@@ -46,13 +54,103 @@ light_color = Color(1, 0.84705883, 0.9137255, 1)
 light_energy = 0.5
 light_indirect_energy = 3.218
 
-[node name="UserInterface" type="Control" parent="." unique_id=1295240603]
+[node name="UserInterface" type="Control" parent="." unique_id=1295240603 groups=["UI"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="NormalKeys" type="VBoxContainer" parent="UserInterface" unique_id=802440350]
+visible = false
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 28.0
+offset_top = 539.0
+offset_right = 390.0
+offset_bottom = -32.0
+grow_vertical = 2
+alignment = 2
+
+[node name="Label" type="Label" parent="UserInterface/NormalKeys" unique_id=601888318]
+layout_mode = 2
+text = "M1 - Attraper/Interagir"
+label_settings = SubResource("LabelSettings_d2xqe")
+
+[node name="Label2" type="Label" parent="UserInterface/NormalKeys" unique_id=131215318]
+layout_mode = 2
+text = "WASD - Se déplacer"
+label_settings = SubResource("LabelSettings_d2xqe")
+
+[node name="HoldingKeys" type="VBoxContainer" parent="UserInterface" unique_id=345473472]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 28.0
+offset_top = 539.0
+offset_right = 390.0
+offset_bottom = -32.0
+grow_vertical = 2
+alignment = 2
+
+[node name="Label" type="Label" parent="UserInterface/HoldingKeys" unique_id=412869133]
+layout_mode = 2
+text = "M1 - Lâcher"
+label_settings = SubResource("LabelSettings_d2xqe")
+
+[node name="Label2" type="Label" parent="UserInterface/HoldingKeys" unique_id=1950051544]
+layout_mode = 2
+text = "M2 - Jeter"
+label_settings = SubResource("LabelSettings_d2xqe")
+
+[node name="Label4" type="Label" parent="UserInterface/HoldingKeys" unique_id=1802577090]
+layout_mode = 2
+text = "WHEEL - AVANCER/RECULER"
+label_settings = SubResource("LabelSettings_d2xqe")
+
+[node name="Label3" type="Label" parent="UserInterface/HoldingKeys" unique_id=616704535]
+layout_mode = 2
+text = "R - Mode Rotation"
+label_settings = SubResource("LabelSettings_d2xqe")
+
+[node name="RotatingKeys" type="VBoxContainer" parent="UserInterface" unique_id=985070608]
+visible = false
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 28.0
+offset_top = 539.0
+offset_right = 390.0
+offset_bottom = -32.0
+grow_vertical = 2
+alignment = 2
+
+[node name="Label" type="Label" parent="UserInterface/RotatingKeys" unique_id=1026026127]
+layout_mode = 2
+text = "WASD - TOURNER"
+label_settings = SubResource("LabelSettings_d2xqe")
+
+[node name="Label2" type="Label" parent="UserInterface/RotatingKeys" unique_id=285118318]
+layout_mode = 2
+text = "M1 - LÂCHER"
+label_settings = SubResource("LabelSettings_d2xqe")
+
+[node name="Label4" type="Label" parent="UserInterface/RotatingKeys" unique_id=570469251]
+layout_mode = 2
+text = "M2 - JETER"
+label_settings = SubResource("LabelSettings_d2xqe")
+
+[node name="Label5" type="Label" parent="UserInterface/RotatingKeys" unique_id=207300015]
+layout_mode = 2
+text = "WHEEL - AVANCER/RECULER"
+label_settings = SubResource("LabelSettings_d2xqe")
+
+[node name="Label3" type="Label" parent="UserInterface/RotatingKeys" unique_id=319699496]
+layout_mode = 2
+text = "R - ARRÊTER LE MODE ROTATION"
+label_settings = SubResource("LabelSettings_d2xqe")
 
 [node name="Reticle" type="TextureRect" parent="UserInterface" unique_id=643870409]
 layout_mode = 1
@@ -118,6 +216,7 @@ player = NodePath("../Player")
 player_spawn = NodePath("../PlayerSpawn")
 blink_effect = NodePath("../UserInterface/BlinkEffect")
 alarm_sound = NodePath("../AudioManager/AlarmSound")
+loop_delay = 90.0
 
 [node name="PlayerSpawn" type="Marker3D" parent="." unique_id=875758490]
 transform = Transform3D(0.8245708, 0, -0.56575876, 0, 1, 0, 0.56575876, 0, 0.8245708, 13.939, -0.765, 10.863)

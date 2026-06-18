@@ -295,8 +295,9 @@ settings/0/joints/2/rotation_axis = 3
 settings/0/joints/2/limitation = null
 
 [node name="WristLookAt" type="AimModifier3D" parent="Armature" unique_id=1568633183]
+influence = 0.6
 setting_count = 1
-settings/0/amount = 0.7
+settings/0/amount = 1.0
 settings/0/apply_bone_name = "wrist_03"
 settings/0/apply_bone = 4
 settings/0/reference_type = 1
@@ -306,7 +307,7 @@ settings/0/use_euler = false
 settings/0/relative = true
 
 [node name="HandMarker" type="BoneAttachment3D" parent="Armature" unique_id=1926085601]
-transform = Transform3D(0.17764863, 0.010452008, 0.9840385, 0.8788587, 0.44821972, -0.16342127, -0.44277352, 0.8938623, 0.070439786, 0.010735715, 0.26939195, -1.9892318)
+transform = Transform3D(0.17606199, 0.009643886, 0.9843317, 0.7972871, 0.5850887, -0.14833876, -0.577352, 0.81091195, 0.09532291, 0.010226095, 0.24472323, -2.0325832)
 bone_name = "middlefinger_010"
 bone_idx = 11
 
@@ -321,7 +322,7 @@ bone_name = "twist_02"
 bone_idx = 3
 
 [node name="Wrist03" type="BoneAttachment3D" parent="Armature" unique_id=1853977314]
-transform = Transform3D(-0.74978817, 0.010452008, 0.66159534, 0.59495276, 0.44821972, 0.66718084, -0.28956673, 0.8938623, -0.34228832, 0.0091599915, -0.012959488, -1.8572417)
+transform = Transform3D(-0.75086075, 0.009643886, 0.66038996, 0.5398051, 0.5850887, 0.6052119, -0.38055012, 0.81091195, -0.44452602, 0.0091599915, -0.012959488, -1.8572417)
 bone_name = "wrist_03"
 bone_idx = 4
 

@@ -1,6 +1,8 @@
 extends Camera3D
 
-const SENSITIVITY = 0.003
+const DEFAULT_SENS = 0.003
+const ROTATE_SENS = 0.0015
+var sensitivity = DEFAULT_SENS
 
 var interact_handler: Node3D
 var player: CharacterBody3D
@@ -16,17 +18,18 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ESC"):
 		handle_mouse_visible()
-	
+		
 	#Prevent camera from rotating in menu
 	if event is InputEventMouseMotion and !mouse_visible:
-		if !interact_handler.is_rotating_object:
+		if !interact_handler.grabbed_grinder:
+			sensitivity = ROTATE_SENS if interact_handler.is_rotating_object else DEFAULT_SENS
 			handle_rot_camera(event.relative)
 
 func handle_rot_camera(mouse_motion: Vector2):
-	rotation.x -= mouse_motion.y * SENSITIVITY
+	rotation.x -= mouse_motion.y * sensitivity
 	#Prevent camera from rotating verticaly
 	rotation.x = clamp(rotation.x, deg_to_rad(-80), deg_to_rad(80)) 
-	player.rotation.y -= mouse_motion.x * SENSITIVITY
+	player.rotation.y -= mouse_motion.x * sensitivity
 
 func handle_mouse_visible():
 	if(!mouse_visible):

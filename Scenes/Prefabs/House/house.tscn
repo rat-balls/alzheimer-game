@@ -179,10 +179,16 @@ radius = 0.03
 [node name="Door" parent="Doors" index="0" unique_id=580823533 instance=ExtResource("2_e7tt3")]
 transform = Transform3D(1.05, 0, 0, 0, 0.98, 0, 0, 0, 1, 6.563, 0.732, -2.063)
 
-[node name="Door2" parent="Doors" index="1" unique_id=287948244 instance=ExtResource("2_e7tt3")]
+[node name="FrontDoor" parent="Doors" index="1" unique_id=1578061675 instance=ExtResource("2_e7tt3")]
+transform = Transform3D(1.05, 0, 0, 0, 0.98, 0, 0, 0, 1, 1.4694915, 0.732, -5.533472)
+
+[node name="Handle_base" parent="Doors/FrontDoor/Door_base" parent_id_path=PackedInt32Array(1578061675, 1105293989) index="2" unique_id=296723261]
+unlockable = false
+
+[node name="Door2" parent="Doors" index="2" unique_id=287948244 instance=ExtResource("2_e7tt3")]
 transform = Transform3D(-1.05, 0, -1.509958e-07, 0, 0.98, 0, 1.5854559e-07, 0, -1, 4.041, 0.737, 3.483)
 
-[node name="Door3" parent="Doors" index="2" unique_id=668262184 instance=ExtResource("2_e7tt3")]
+[node name="Door3" parent="Doors" index="3" unique_id=668262184 instance=ExtResource("2_e7tt3")]
 transform = Transform3D(-1.05, 0, -1.509958e-07, 0, 0.98, 0, 1.5854559e-07, 0, -1, 9.23, 0.737, 3.483)
 
 [node name="Colliders" type="StaticBody3D" parent="." index="2" unique_id=538779629]
@@ -475,3 +481,5 @@ shape = SubResource("BoxShape3D_467vc")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0056626797, 0.0887773, 0)
 process_material = SubResource("ParticleProcessMaterial_tup4b")
 draw_pass_1 = SubResource("SphereMesh_onsf1")
+
+[editable path="Doors/FrontDoor"]
