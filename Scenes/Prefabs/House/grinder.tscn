@@ -379,7 +379,7 @@ shape = SubResource("BoxShape3D_vkprn")
 [node name="GrinderDrawerBod" type="RigidBody3D" parent="." unique_id=1376825091 groups=["Rotatable"]]
 script = ExtResource("9_0iq71")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="GrinderDrawerBod" unique_id=823355508]
+[node name="GribderDrawerBodColl" type="CollisionShape3D" parent="GrinderDrawerBod" unique_id=823355508]
 transform = Transform3D(0.029798334, 0, 0.13727212, 0, 0.14046909, 0, -0.13727212, 0, 0.029798334, 0.008099478, 0.09962082, -0.0067870812)
 shape = SubResource("BoxShape3D_yiaim")
 
@@ -410,7 +410,7 @@ script = ExtResource("9_yiaim")
 grinder_drawer_bod = NodePath("../GrinderDrawerBod")
 table_position = NodePath("../TablePos")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="GrinderDrawerArea" unique_id=1713814844]
+[node name="GrinderDrawerAreaColl" type="CollisionShape3D" parent="GrinderDrawerArea" unique_id=1713814844]
 transform = Transform3D(0.029798334, 0, 0.13727212, 0, 0.14046909, 0, -0.13727212, 0, 0.029798334, 0.016376985, 0.10718729, -0.004434831)
 shape = SubResource("BoxShape3D_2210i")
 

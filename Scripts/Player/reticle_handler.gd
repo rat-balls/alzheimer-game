@@ -22,13 +22,11 @@ func _process(_delta: float) -> void:
 			texture = RETICLE_ICON
 		
 		if texture == RETICLE_ICON:
-			print("reticle_icon")
 			rotation_degrees = 0.0
 			size = Vector2(64, 64)
 			position = Vector2(608, 328)
 			pivot_offset = Vector2(32, 32)
 		else:
-			print("hand_icon")
 			rotation_degrees = 135
 			size = Vector2(128, 256)
 			position = Vector2(576, 256)
