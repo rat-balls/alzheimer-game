@@ -32,7 +32,7 @@ var normal_keys_container: VBoxContainer
 var holding_keys_container: VBoxContainer
 var rotating_keys_container: VBoxContainer
 var rotation_label: Label
-
+var grind_label: Label
 
 func _ready() -> void:
 	var sc_tree = get_tree()
@@ -43,6 +43,7 @@ func _ready() -> void:
 	holding_keys_container = UI.find_child("HoldingKeys")
 	rotating_keys_container = UI.find_child("RotatingKeys")
 	rotation_label = holding_keys_container.find_child("Rotation")
+	grind_label = normal_keys_container.find_child("GRINDER")
 
 func _process(_delta: float) -> void:
 	find_valid_grab_target()
@@ -55,6 +56,7 @@ func handle_keys_display():
 				normal_keys_container.visible = true
 				holding_keys_container.visible = false
 				rotating_keys_container.visible = false
+				grind_label.visible = true if grabbed_grinder else false
 			InteractionState.Holding:
 				normal_keys_container.visible = false
 				holding_keys_container.visible = true

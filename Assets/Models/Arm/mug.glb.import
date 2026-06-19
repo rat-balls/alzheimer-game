@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bdugqyytr2udo"
-path="res://.godot/imported/mug.glb-bd9e80810c732cd22ce8c2d24e9b4e58.scn"
+path="res://.godot/imported/mug.glb-d11c31dba8a4292efc32923f7bafb84f.scn"
 
 [deps]
 
-source_file="res://Assets/Models/mug.glb"
-dest_files=["res://.godot/imported/mug.glb-bd9e80810c732cd22ce8c2d24e9b4e58.scn"]
+source_file="res://Assets/Models/Arm/mug.glb"
+dest_files=["res://.godot/imported/mug.glb-d11c31dba8a4292efc32923f7bafb84f.scn"]
 
 [params]
 

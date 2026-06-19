@@ -12,9 +12,9 @@
 [ext_resource type="Shader" uid="uid://citmki41hu2ld" path="res://Scripts/Systems/blink.gdshader" id="6_prmnh"]
 [ext_resource type="AudioStream" uid="uid://duqv10owmxiys" path="res://Assets/SFX/alarm-clock.wav" id="8_kn5yr"]
 [ext_resource type="PackedScene" uid="uid://b3jsusn22kphx" path="res://Scenes/Prefabs/Neighborhood/neighborhood.glb" id="9_qoi30"]
-[ext_resource type="PackedScene" uid="uid://jlikhki0na3g" path="res://Scenes/Prefabs/LightPole/sketchfab_scene.tscn" id="11_kekvp"]
 [ext_resource type="AudioStream" uid="uid://k2kffeqvvrb" path="res://Assets/SFX/oldwood.wav" id="10_3umwc"]
 [ext_resource type="Script" uid="uid://csm4jg5an6i4h" path="res://Scripts/Systems/house_ambience.gd" id="10_kekvp"]
+[ext_resource type="PackedScene" uid="uid://jlikhki0na3g" path="res://Scenes/Prefabs/LightPole/sketchfab_scene.tscn" id="11_kekvp"]
 
 [sub_resource type="Environment" id="Environment_gd5k8"]
 background_mode = 1
@@ -169,7 +169,13 @@ offset_bottom = -26.0
 grow_vertical = 2
 alignment = 2
 
-[node name="Label" type="Label" parent="UserInterface/KeyIndicators/NormalKeys" unique_id=601888318]
+[node name="GRINDER" type="Label" parent="UserInterface/KeyIndicators/NormalKeys" unique_id=601888318]
+visible = false
+layout_mode = 2
+text = "Move Mouse in Circle to Grind Coffee"
+label_settings = SubResource("LabelSettings_d2xqe")
+
+[node name="Label3" type="Label" parent="UserInterface/KeyIndicators/NormalKeys" unique_id=1313878928]
 layout_mode = 2
 text = "M1 - Attraper/Interagir"
 label_settings = SubResource("LabelSettings_d2xqe")
@@ -392,6 +398,14 @@ spot_angle = 54.31
 
 [node name="SpotLight3D20" type="SpotLight3D" parent="Light" unique_id=985005221]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -5.6406283, 1.122647, -5.142111)
+light_energy = 1.2
+spot_range = 2.895
+spot_attenuation = 0.63
+spot_angle = 54.31
+
+[node name="SpotLight3D21" type="SpotLight3D" parent="Light" unique_id=247663404]
+transform = Transform3D(0.96822625, -1.0931163e-08, 0.25007585, -0.24367623, 0.22478096, 0.9434487, -0.0562123, -0.97440934, 0.21763884, -6.5852284, 1.1850173, -4.3874435)
+light_color = Color(1, 0.81166345, 0.86070985, 1)
 light_energy = 1.2
 spot_range = 2.895
 spot_attenuation = 0.63

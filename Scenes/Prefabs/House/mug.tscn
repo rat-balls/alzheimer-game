@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://5jt0ld6a3v3e"]
 
-[ext_resource type="Texture2D" uid="uid://cs4gk0rhqailb" path="res://Assets/Models/mug_M_Mug_baseColor.png" id="1_nk6xs"]
+[ext_resource type="Texture2D" uid="uid://cs4gk0rhqailb" path="res://Assets/Models/Arm/mug_M_Mug_baseColor.png" id="1_nk6xs"]
 [ext_resource type="Script" uid="uid://dy8aaigmnsggu" path="res://Scripts/Cup/fill_area.gd" id="2_5gsr5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4bv2w"]

@@ -11,6 +11,8 @@ var previous_angle: float = 0.0
 var rotation_sensitivity: float = 1.0
 var grind_progress: float = 0.0
 @export var grind_needed: float = 50.0
+@onready var grinder_drawer_area_coll: CollisionShape3D = $GrinderDrawerArea/GrinderDrawerAreaColl
+@onready var grinder_drawer_bod_coll: CollisionShape3D = $GrinderDrawerBod/GribderDrawerBodColl
 
 func fill_coffee() -> void:
 	if coffee_filled:
@@ -55,6 +57,9 @@ func fill_drawer() -> void:
 		return
 	drawer_filled = true
 	coffee_filled = false
+	grinder_drawer_area_coll.disabled = false
+	grinder_drawer_bod_coll.disabled = false
+	grinder_drawer.freeze = false
 	print("drawer filled")
 	if grinder_drawer.has_method("fill_ground_coffee"):
 		grinder_drawer.fill_ground_coffee()

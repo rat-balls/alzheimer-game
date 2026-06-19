@@ -12,7 +12,7 @@ func _ready() -> void:
 	interact_handler = get_tree().get_first_node_in_group("InteractHandler")
 
 func _process(_delta: float) -> void:
-	if(interact_handler):
+	if(interact_handler and !interact_handler.grabbed_grinder):
 		if(interact_handler.held_object != null):
 			if(interact_handler.is_rotating_object):
 				rotate_indic.visible = true

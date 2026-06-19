@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cs4gk0rhqailb"
-path.s3tc="res://.godot/imported/mug_M_Mug_baseColor.png-bca48ecb7eced4c41514318ce485dd37.s3tc.ctex"
+path.s3tc="res://.godot/imported/mug_M_Mug_baseColor.png-b859e33105bf4538cb23e479cedac9d0.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/Models/mug_M_Mug_baseColor.png"
-dest_files=["res://.godot/imported/mug_M_Mug_baseColor.png-bca48ecb7eced4c41514318ce485dd37.s3tc.ctex"]
+source_file="res://Assets/Models/Arm/mug_M_Mug_baseColor.png"
+dest_files=["res://.godot/imported/mug_M_Mug_baseColor.png-b859e33105bf4538cb23e479cedac9d0.s3tc.ctex"]
 
 [params]
 

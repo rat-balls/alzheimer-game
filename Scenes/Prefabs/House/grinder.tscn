@@ -136,11 +136,29 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_334wk")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_aykdd"]
+emission_shape_scale = Vector3(0.08, 0.02, 0.06)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+angle_min = -214.0
+angle_max = 163.00002
 spread = 8.0
+orbit_velocity_min = -1.821
+orbit_velocity_max = 2.0000002
+scale_min = 0.7
+scale_max = 2.0
+color = Color(0.3352051, 0.10700176, 2.4065375e-08, 1)
+hue_variation_min = -0.51
+hue_variation_max = 0.53999996
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0iq71"]
+albedo_color = Color(0.4511456, 0.19810662, 0, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_0iq71"]
-radius = 0.006
-height = 0.006
+material = SubResource("StandardMaterial3D_0iq71")
+radius = 0.002
+height = 0.002
+radial_segments = 4
+rings = 2
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2210i"]
 size = Vector3(1.7, 1.3058838, 2.3976562)
@@ -377,11 +395,13 @@ transform = Transform3D(0.79515606, 0, -0.60640484, 0, 1.0000005, 0, 0.60640484,
 shape = SubResource("BoxShape3D_vkprn")
 
 [node name="GrinderDrawerBod" type="RigidBody3D" parent="." unique_id=1376825091 groups=["Rotatable"]]
+freeze = true
 script = ExtResource("9_0iq71")
 
 [node name="GribderDrawerBodColl" type="CollisionShape3D" parent="GrinderDrawerBod" unique_id=823355508]
 transform = Transform3D(0.029798334, 0, 0.13727212, 0, 0.14046909, 0, -0.13727212, 0, 0.029798334, 0.008099478, 0.09962082, -0.0067870812)
 shape = SubResource("BoxShape3D_yiaim")
+disabled = true
 
 [node name="Grinder_drawer" type="MeshInstance3D" parent="GrinderDrawerBod" unique_id=227129599]
 transform = Transform3D(0.029798338, 0, 0.13727213, 0, 0.14046909, 0, -0.13727213, 0, 0.029798338, 0.10449493, 0.09962082, 0.0141379535)
@@ -395,11 +415,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18206975, 0.123207346, -2.9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014381617, 0.08141601, 0)
 
 [node name="PourPoint" type="Marker3D" parent="GrinderDrawerBod" unique_id=681918638]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16769363, 0.044408366)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.009921193, 0.18693717, -0.00992116)
 
 [node name="CoffeeParticles" type="GPUParticles3D" parent="GrinderDrawerBod/PourPoint" unique_id=1621886375]
-amount = 250
-lifetime = 0.8
+transform = Transform3D(0.9749401, 0, -0.22246745, 0, 1, 0, 0.22246745, 0, 0.9749401, 0, -0.053612918, 0)
+amount = 3000
+lifetime = 0.4
+randomness = 0.89
 process_material = SubResource("ParticleProcessMaterial_aykdd")
 draw_pass_1 = SubResource("SphereMesh_0iq71")
 
@@ -413,6 +435,7 @@ table_position = NodePath("../TablePos")
 [node name="GrinderDrawerAreaColl" type="CollisionShape3D" parent="GrinderDrawerArea" unique_id=1713814844]
 transform = Transform3D(0.029798334, 0, 0.13727212, 0, 0.14046909, 0, -0.13727212, 0, 0.029798334, 0.016376985, 0.10718729, -0.004434831)
 shape = SubResource("BoxShape3D_2210i")
+disabled = true
 
 [node name="Grinder_body" type="Node3D" parent="." unique_id=1417415564]
 transform = Transform3D(0.029798344, 0, 0.13727212, 0, 0.14046909, 0, -0.13727212, 0, 0.029798344, 0, 0, 0)

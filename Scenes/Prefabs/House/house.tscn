@@ -209,7 +209,7 @@ albedo_color = Color(0.6117647, 0.72156864, 0.8156863, 0.3137255)
 
 [node name="house" unique_id=1270187101 instance=ExtResource("1_mebax")]
 
-[node name="HOUSE" parent="." index="0" unique_id=1180297424]
+[node name="HOUSE" parent="." index="0" unique_id=148009691]
 transform = Transform3D(2.2476673, 0, 0, 0, 2.2476673, 0, 0, 0, 2.2476673, 10.2900715, 1.6098022, 13.176028)
 
 [node name="Doors" type="Node3D" parent="." index="1" unique_id=1455572208]
@@ -516,7 +516,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.019325256, -0.07975769, -0
 shape = SubResource("BoxShape3D_467vc")
 
 [node name="WaterParticles" type="GPUParticles3D" parent="sink" index="1" unique_id=1132363266]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0056626797, 0.5582466, 0.0017848015)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.023375988, 0.5582466, 0.0101213455)
 amount = 12
 lifetime = 0.45
 randomness = 0.2

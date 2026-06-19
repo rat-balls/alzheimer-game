@@ -137,13 +137,19 @@ shadow_mesh = SubResource("ArrayMesh_336oj")
 size = Vector3(0.26098633, 0.42370605, 0.17248535)
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_737ug"]
-spread = 10.0
-initial_velocity_min = 0.5
-initial_velocity_max = 1.5
+spread = 30.0
+initial_velocity_min = 0.099999994
+initial_velocity_max = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4xfj4"]
+albedo_color = Color(0.28532556, 0.164256, 0.08430173, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_4xfj4"]
-radius = 0.01
-height = 0.01
+material = SubResource("StandardMaterial3D_4xfj4")
+radius = 0.012
+height = 0.016
+radial_segments = 8
+rings = 4
 
 [node name="Coffee_Bag" type="RigidBody3D" unique_id=564029172 groups=["Rotatable"]]
 collision_layer = 4
@@ -190,7 +196,9 @@ shape = SubResource("BoxShape3D_737ug")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11733259, 0.41177142, 0)
 
 [node name="CoffeeParticles" type="GPUParticles3D" parent="PourPoint" unique_id=1106819678]
-emitting = false
-amount = 200
+amount = 50
+lifetime = 0.8
+speed_scale = 0.6
+randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_737ug")
 draw_pass_1 = SubResource("SphereMesh_4xfj4")
