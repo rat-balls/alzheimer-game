@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bslv5sc0kqm3j"]
+
+[ext_resource type="Texture2D" uid="uid://crfolmqf0do4h" path="res://Assets/Models/House/door_Door.jpg" id="1_ctlkn"]
+
+[resource]
+resource_name = "Door.002"
+cull_mode = 2
+albedo_texture = ExtResource("1_ctlkn")

@@ -1,0 +1,19 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://xd6okxxh2hex"]
+
+[ext_resource type="Texture2D" uid="uid://d33p6yfwdpslj" path="res://Assets/Models/House/door_Image_0.png" id="1_gyvhm"]
+[ext_resource type="Texture2D" uid="uid://cudlti6rwwt5m" path="res://Assets/Models/House/door_Image_1.png" id="2_0b0vm"]
+[ext_resource type="Texture2D" uid="uid://bh1ccaohhlg4o" path="res://Assets/Models/House/door_Image_2.png" id="3_wr3hg"]
+
+[resource]
+resource_name = "material.002"
+cull_mode = 2
+albedo_texture = ExtResource("1_gyvhm")
+metallic = 1.0
+metallic_texture = ExtResource("2_0b0vm")
+metallic_texture_channel = 2
+roughness = 0.6
+roughness_texture = ExtResource("2_0b0vm")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_wr3hg")
+texture_filter = 2
