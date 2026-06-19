@@ -1,18 +1,17 @@
 [gd_scene format=4 uid="uid://db6bav2exlwp6"]
 
+[ext_resource type="AudioStream" uid="uid://dcyrcvpl124k0" path="res://Assets/SFX/doorhandle.wav" id="2_72j4c"]
+[ext_resource type="AudioStream" uid="uid://dv0efssmidwju" path="res://Assets/SFX/creakingdoor.wav" id="3_smoqx"]
 [ext_resource type="Script" uid="uid://c2n5pcot8a5iq" path="res://Scripts/Door/door_handle_interact.gd" id="4_smoqx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_72j4c"]
 size = Vector3(0.21166992, 1.9915518, 4.9971924)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i46wq"]
-load_path = "res://.godot/imported/Maison_Image_0_56.png-f62b6d6911e70b268914731a3bd0a25a.s3tc.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cddik"]
-load_path = "res://.godot/imported/Maison_Image_1_57.png-0bbdeaeddd522ddf129b8c0cc0d9c71f.s3tc.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_72j4c"]
-load_path = "res://.godot/imported/Maison_Image_2_55.png-62fb45e8c44789677d86308ea592743f.s3tc.ctex"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5vkhd"]
 resource_name = "material.001"
@@ -140,11 +139,22 @@ mesh = SubResource("ArrayMesh_mhitx")
 transform = Transform3D(1, 0, 0, 0, 1, 1.1602379e-21, 0, 1.1602379e-21, 1, -0.122741506, -0.19539726, -0.0010948181)
 shape = SubResource("BoxShape3D_x2i7t")
 
+[node name="HandleSound" type="AudioStreamPlayer3D" parent="Door_base/Handle_base" unique_id=317888885]
+stream = ExtResource("2_72j4c")
+volume_db = -8.0
+max_distance = 5.0
+
 [node name="GrabPointMark" type="Marker3D" parent="Door_base" unique_id=1261946097]
 transform = Transform3D(-1.629207e-07, 0, -1, -1.0000001, -4.3711392e-08, 1.629207e-07, -4.371139e-08, 1, 7.12149e-15, -0.082716264, 1.604049, -2.709992)
 
 [node name="LookAtMark" type="Marker3D" parent="Door_base" unique_id=1959296257]
 transform = Transform3D(-1.6292068e-07, 0, -1, -1, -4.371139e-08, 1.6292068e-07, -4.371139e-08, 1, 7.12149e-15, 0.15436457, 1.6040488, -2.709992)
+
+[node name="DoorCreakSound" type="AudioStreamPlayer3D" parent="Door_base" unique_id=1049398344]
+transform = Transform3D(-1.5516258e-07, 0, -1, -0.9523811, -4.460346e-08, 1.629207e-07, -4.1629896e-08, 1.0204082, 7.12149e-15, 0.00826931, 2.3178471e-07, -5.333437)
+stream = ExtResource("3_smoqx")
+volume_db = -12.0
+max_distance = 12.0
 
 [node name="DoorHingeJoint" type="HingeJoint3D" parent="." unique_id=1584299198]
 transform = Transform3D(-4.371139e-08, -0.99999994, 4.3711385e-08, 0, -4.3711385e-08, -0.99999994, 1, -4.3711385e-08, 1.9106853e-15, 0, 0, 0)
