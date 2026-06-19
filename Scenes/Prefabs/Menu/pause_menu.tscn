@@ -1,3 +1,88 @@
 [gd_scene format=3 uid="uid://cff6kwijofybg"]
 
-[node name="PauseMenu" type="Node2D" unique_id=745019209]
+[ext_resource type="Script" uid="uid://b22wd8v2q1xt6" path="res://Scenes/Prefabs/Menu/pause_menu.gd" id="1_i0fbs"]
+[ext_resource type="Texture2D" uid="uid://rlvbm4ovcdy1" path="res://Assets/UI/fond.png" id="2_qjkpo"]
+[ext_resource type="FontFile" uid="uid://1kxk503tlmy3" path="res://Assets/Fonts/Cinzel-VariableFont_wght.ttf" id="3_a2pk6"]
+[ext_resource type="PackedScene" uid="uid://cj51j7s1t02of" path="res://Scenes/Prefabs/Menu/menu_button.tscn" id="4_6l3vc"]
+
+[node name="OptionsMenu" type="Control" unique_id=1258949131]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i0fbs")
+
+[node name="Panel Shadow" type="ColorRect" parent="." unique_id=1954408018]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.47058824)
+
+[node name="Panel" type="TextureRect" parent="." unique_id=855803532]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -250.0
+offset_right = 249.99994
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_qjkpo")
+expand_mode = 1
+
+[node name="Title" type="Label" parent="Panel" unique_id=1527469827]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.0
+offset_top = 40.0
+offset_right = 150.00006
+offset_bottom = 63.000004
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_a2pk6")
+theme_override_font_sizes/font_size = 35
+text = "PAUSE"
+horizontal_alignment = 1
+
+[node name="Content" type="VBoxContainer" parent="Panel" unique_id=847013161]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -149.99997
+offset_top = -130.0
+offset_right = 150.00003
+offset_bottom = 190.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="ResumeButton" parent="Panel/Content" unique_id=391164538 instance=ExtResource("4_6l3vc")]
+layout_mode = 2
+button_text = "REPRENDRE"
+
+[node name="OptionsButton" parent="Panel/Content" unique_id=907400635 instance=ExtResource("4_6l3vc")]
+layout_mode = 2
+button_text = "OPTIONS"
+
+[node name="MainMenuButton" parent="Panel/Content" unique_id=1017748858 instance=ExtResource("4_6l3vc")]
+layout_mode = 2
+button_text = "MENU PRINCIPAL"
+
+[node name="QuitButton" parent="Panel/Content" unique_id=315490336 instance=ExtResource("4_6l3vc")]
+layout_mode = 2
+button_text = "QUITTER"
