@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://5jt0ld6a3v3e" path="res://Scenes/Prefabs/House/mug.tscn" id="12_11toi"]
 [ext_resource type="Script" uid="uid://buhn4buqk7018" path="res://Scripts/Sink/sink_handle.gd" id="13_11toi"]
 [ext_resource type="PackedScene" uid="uid://b3jsusn22kphx" path="res://Scenes/Prefabs/Neighborhood/neighborhood.glb" id="14_68r4r"]
+[ext_resource type="AudioStream" uid="uid://dikfqiqjosokq" path="res://Assets/SFX/fridge.wav" id="15_wqn2a"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s6yue"]
 size = Vector3(0.9317627, 1.6720428, 1.7729492)
@@ -173,13 +174,16 @@ size = Vector3(0.1756134, 0.16067505, 0.1675415)
 [sub_resource type="SphereMesh" id="SphereMesh_onsf1"]
 radius = 0.03
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_11toi"]
-transparency = 1
-albedo_color = Color(0.7058824, 0.78431374, 0.8627451, 0.3137255)
-
 [sub_resource type="PlaneMesh" id="PlaneMesh_68r4r"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wqn2a"]
+transparency = 1
+albedo_color = Color(0.6117647, 0.72156864, 0.8156863, 0.3137255)
+
 [node name="house" unique_id=1270187101 instance=ExtResource("1_mebax")]
+
+[node name="HOUSE" parent="." index="0" unique_id=1180297424]
+transform = Transform3D(2.2476673, 0, 0, 0, 2.2476673, 0, 0, 0, 2.2476673, 10.2900715, 1.6098022, 13.176028)
 
 [node name="Doors" type="Node3D" parent="." index="1" unique_id=1455572208]
 
@@ -489,12 +493,38 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0056626797, 0.0887773, 0)
 process_material = SubResource("ParticleProcessMaterial_tup4b")
 draw_pass_1 = SubResource("SphereMesh_onsf1")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="22" unique_id=633842388]
-transform = Transform3D(1.9745989, 0, 0, 0, -8.631246e-08, -1.9745989, 0, 1.9745989, -8.631246e-08, 12.086543, 3.9579887, 13.214183)
-material_override = SubResource("StandardMaterial3D_11toi")
-mesh = SubResource("PlaneMesh_68r4r")
-
-[node name="neighborhood" parent="." index="23" unique_id=1934648152 instance=ExtResource("14_68r4r")]
+[node name="neighborhood" parent="." index="22" unique_id=1934648152 instance=ExtResource("14_68r4r")]
 transform = Transform3D(-2.2948479e-08, 0, -0.525, 0, 0.525, 0, 0.525, 0, -2.2948479e-08, -17.935806, -1.7403793, 40.830482)
+
+[node name="WindowGlass" type="MeshInstance3D" parent="." index="23" unique_id=253575037]
+transform = Transform3D(2.0631397, 0, 0, 0, -4.3711385e-08, 1.9430308, 0, -0.99999994, -8.493257e-08, 12.271001, 4.2906437, 13.287362)
+mesh = SubResource("PlaneMesh_68r4r")
+surface_material_override/0 = SubResource("StandardMaterial3D_wqn2a")
+
+[node name="WindowGlass2" type="MeshInstance3D" parent="." index="24" unique_id=1647380408]
+transform = Transform3D(2.0631397, 0, 0, 0, -4.3711385e-08, 1.9430308, 0, -0.99999994, -8.493257e-08, 5.8921824, 4.2906437, 13.287362)
+mesh = SubResource("PlaneMesh_68r4r")
+surface_material_override/0 = SubResource("StandardMaterial3D_wqn2a")
+
+[node name="WindowGlass3" type="MeshInstance3D" parent="." index="25" unique_id=895937576]
+transform = Transform3D(2.0631397, 0, 0, 0, -4.3711385e-08, 1.9430308, 0, -0.99999994, -8.493257e-08, -4.313385, 4.2906437, 9.443299)
+mesh = SubResource("PlaneMesh_68r4r")
+surface_material_override/0 = SubResource("StandardMaterial3D_wqn2a")
+
+[node name="WindowGlass4" type="MeshInstance3D" parent="." index="26" unique_id=1826796247]
+transform = Transform3D(-9.018272e-08, -1.0000001, -8.4932566e-08, 0, -4.3711392e-08, 1.9430306, -2.0631402, 4.3711392e-08, 3.7125204e-15, 18.321316, 4.2906437, 7.7537384)
+mesh = SubResource("PlaneMesh_68r4r")
+surface_material_override/0 = SubResource("StandardMaterial3D_wqn2a")
+
+[node name="WindowGlass5" type="MeshInstance3D" parent="." index="27" unique_id=608559701]
+transform = Transform3D(-9.018272e-08, -1.0000001, -8.4932566e-08, 0, -4.3711392e-08, 1.9430306, -2.0631402, 4.3711392e-08, 3.7125204e-15, 18.361883, 4.2906437, -5.7899036)
+mesh = SubResource("PlaneMesh_68r4r")
+surface_material_override/0 = SubResource("StandardMaterial3D_wqn2a")
+
+[node name="FridgeSound" type="AudioStreamPlayer3D" parent="." index="28" unique_id=447306428]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.817145, 2.4912732, 1.8833661)
+stream = ExtResource("15_wqn2a")
+volume_db = -15.0
+autoplay = true
 
 [editable path="Doors/FrontDoor"]
