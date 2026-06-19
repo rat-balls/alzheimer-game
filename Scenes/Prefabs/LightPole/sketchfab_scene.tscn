@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://jlikhki0na3g"]
+
+[ext_resource type="PackedScene" uid="uid://7e7rimnkyol3" path="res://Scenes/Prefabs/LightPole/ligh_pole.glb" id="1_irwqx"]
+
+[node name="Sketchfab_Scene" unique_id=471159687 instance=ExtResource("1_irwqx")]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." index="1" unique_id=1075922165]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.041111946, 5.587442, -1.3596678)
+light_color = Color(1, 0.7019608, 0.41568628, 1)
+light_energy = 2.0
+light_specular = 0.25
+spot_range = 35.0
+spot_angle = 55.0
+spot_angle_attenuation = 1.4
