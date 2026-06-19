@@ -10,6 +10,8 @@
 [ext_resource type="Shader" uid="uid://citmki41hu2ld" path="res://Scripts/Systems/blink.gdshader" id="6_prmnh"]
 [ext_resource type="AudioStream" uid="uid://duqv10owmxiys" path="res://Assets/SFX/alarm-clock.wav" id="8_kn5yr"]
 [ext_resource type="PackedScene" uid="uid://b3jsusn22kphx" path="res://Scenes/Prefabs/Neighborhood/neighborhood.glb" id="9_qoi30"]
+[ext_resource type="PackedScene" uid="uid://bli40yyncoth8" path="res://Scenes/Prefabs/Menu/options_menu.tscn" id="11_3umwc"]
+[ext_resource type="PackedScene" uid="uid://cff6kwijofybg" path="res://Scenes/Prefabs/Menu/pause_menu.tscn" id="12_7twgl"]
 
 [sub_resource type="Environment" id="Environment_gd5k8"]
 background_mode = 1
@@ -348,3 +350,10 @@ transform = Transform3D(-2.9505188e-08, 0, -0.675, 0, 0.675, 0, 0.675, 0, -2.950
 transform = Transform3D(1, 0, 0, 0, 0.14894852, 0.98884493, 0, -0.98884493, 0.14894852, -165.5061, 86.33502, 0)
 light_color = Color(0.47843137, 0.5647059, 0.72156864, 1)
 light_energy = 0.25
+
+[node name="OptionsMenu" parent="." unique_id=1258949131 instance=ExtResource("11_3umwc")]
+visible = false
+
+[node name="PauseMenu" parent="." unique_id=672894754 node_paths=PackedStringArray("options_menu") instance=ExtResource("12_7twgl")]
+visible = false
+options_menu = NodePath("../OptionsMenu")

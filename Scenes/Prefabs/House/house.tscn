@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://5jt0ld6a3v3e" path="res://Scenes/Prefabs/House/mug.tscn" id="12_11toi"]
 [ext_resource type="Script" uid="uid://buhn4buqk7018" path="res://Scripts/Sink/sink_handle.gd" id="13_11toi"]
 [ext_resource type="PackedScene" uid="uid://b3jsusn22kphx" path="res://Scenes/Prefabs/Neighborhood/neighborhood.glb" id="14_68r4r"]
+[ext_resource type="AudioStream" uid="uid://b88ytjjjtu74y" path="res://Assets/SFX/water.wav" id="14_wqn2a"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s6yue"]
 size = Vector3(0.9317627, 1.6720428, 1.7729492)
@@ -488,6 +489,13 @@ shape = SubResource("BoxShape3D_467vc")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0056626797, 0.0887773, 0)
 process_material = SubResource("ParticleProcessMaterial_tup4b")
 draw_pass_1 = SubResource("SphereMesh_onsf1")
+
+[node name="WaterSound" type="AudioStreamPlayer3D" parent="sink" index="2" unique_id=1200512437]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25766158, 0, -0.59600925)
+stream = ExtResource("14_wqn2a")
+volume_db = -12.0
+unit_size = 2.0
+max_distance = 8.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." index="22" unique_id=633842388]
 transform = Transform3D(1.9745989, 0, 0, 0, -8.631246e-08, -1.9745989, 0, 1.9745989, -8.631246e-08, 12.086543, 3.9579887, 13.214183)
